@@ -16,6 +16,24 @@
       "message": "Looks like we\u0027re double-merging this?",
       "revId": "e0e81d959f118f0a157342239e9b0cad6d31e4e5",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c6a3dd88_3af4e4d2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2024-06-24T13:34:47Z",
+      "side": 1,
+      "message": "We are tracking this from lineage for ThemePicker changes, so it might contain empty merges like this",
+      "parentUuid": "d93ce265_b122e67b",
+      "revId": "e0e81d959f118f0a157342239e9b0cad6d31e4e5",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
