@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e9bc8e5a_f585e049",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2025-04-01T16:40:35Z",
+      "side": 1,
+      "message": "This fixes empty wallpaper section after QPR2",
+      "revId": "7aa4e88c935d32894ea1a00d7fc0e7c85b1459fd",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
