@@ -24,28 +24,31 @@
     <string name="set_wallpaper_button_text" msgid="5445978864530156290">"הגדרה כטפט"</string>
     <string name="set_wallpaper_progress_message" msgid="7986528287618716715">"מגדיר טפט…"</string>
     <string name="try_again" msgid="8278874823700921234">"ניסיון חוזר"</string>
+    <string name="select_a_photo" msgid="7273925950262860696">"בחירת תמונה"</string>
     <string name="set_wallpaper_error_message" msgid="6819986999041085130">"לא ניתן להגדיר טפט."</string>
     <string name="load_wallpaper_error_message" msgid="7913278480467707374">"לא ניתן לטעון את הטפט. התמונה פגומה או לא זמינה."</string>
     <string name="static_wallpaper_presentation_mode_message" msgid="417940227049360906">"מוגדר עכשיו"</string>
     <string name="rotating_wallpaper_presentation_mode_message" msgid="3361676041605733288">"טפט יומי"</string>
     <string name="wallpaper_destination_both" msgid="1124197176741944063">"מסך הבית ומסך הנעילה"</string>
     <string name="choose_a_wallpaper_section_title" msgid="1009823506890453891">"בחירת טפט"</string>
+    <string name="choose_a_curated_photo_section_title" msgid="7360675459203465887">"הצעות לתמונות"</string>
     <string name="creative_wallpaper_title" msgid="3581650238648981372">"יצירת טפט"</string>
     <string name="home_screen_message" msgid="106444102822522813">"מסך הבית"</string>
-    <string name="lock_screen_message" msgid="1534506081955058013">"מסך נעילה"</string>
+    <string name="lock_screen_message" msgid="1534506081955058013">"מסך הנעילה"</string>
     <string name="home_and_lock_short_label" msgid="2937922943541927983">"מסך הבית ונעילה"</string>
     <string name="set_wallpaper_dialog_message" msgid="2110475703996853076">"הגדרת טפט עבור"</string>
     <string name="set_wallpaper_home_screen_destination" msgid="7315594722013109354">"מסך הבית"</string>
-    <string name="set_wallpaper_lock_screen_destination" msgid="6224685559375417945">"מסך נעילה"</string>
+    <string name="set_wallpaper_lock_screen_destination" msgid="6224685559375417945">"מסך הנעילה"</string>
     <string name="set_wallpaper_both_destination" msgid="2536004558738350775">"מסך הבית ומסך הנעילה"</string>
     <string name="no_backup_image_wallpaper_label" msgid="6316627676107284851">"טפט של סבב תמונות"</string>
     <string name="permission_needed_explanation" msgid="139166837541426823">"כדי להציג כאן את הטפט הנוכחי, האפליקציה <xliff:g id="APP_NAME">%1$s</xliff:g> צריכה לגשת לאחסון של המכשיר."</string>
     <string name="permission_needed_explanation_go_to_settings" msgid="3923551582092599609">"צריך להעניק לאפליקציית הטפטים גישה לאחסון של המכשיר כדי להציג כאן את הטפט הנוכחי.\n\nכדי לשנות את ההגדרה הזו, ניתן לעבור לקטע \'הרשאות\' בפרטים של אפליקציית הטפטים."</string>
     <string name="permission_needed_allow_access_button_label" msgid="1943133660612924306">"מתן גישה"</string>
     <string name="no_backup_image_wallpaper_description" msgid="8303268619408738057">"שירות טפט דינמי לסבב של טפטים"</string>
+    <string name="more_photos" msgid="2183343115041498453">"עוד תמונות"</string>
     <string name="daily_refresh_tile_title" msgid="3270456074558525091">"טפט יומי"</string>
-    <string name="daily_refresh_tile_subtitle" msgid="3976682014885446443">"הקשה כדי להפעיל"</string>
-    <string name="start_rotation_dialog_body_live_wallpaper_needed" msgid="5132580257563846082">"‏הטפט יתחלף מדי יום באופן אוטומטי. כדי לסיים את ההגדרה, יש להקיש על &lt;strong&gt;הגדרת טפט&lt;/strong&gt; במסך הבא."</string>
+    <string name="daily_refresh_tile_subtitle" msgid="3976682014885446443">"לחיצה כדי להפעיל"</string>
+    <string name="start_rotation_dialog_body_live_wallpaper_needed" msgid="5132580257563846082">"‏הטפט יתחלף מדי יום באופן אוטומטי. כדי לסיים את ההגדרה, יש ללחוץ על &lt;strong&gt;הגדרת טפט&lt;/strong&gt; במסך הבא."</string>
     <string name="start_rotation_dialog_wifi_only_option_message" msgid="3126269859713666225">"‏הורדה של טפטים תיעשה בעתיד ברשת Wi-Fi בלבד"</string>
     <string name="start_rotation_dialog_continue" msgid="276678987852274872">"המשך"</string>
     <string name="start_rotation_progress_message" msgid="7872623873682262083">"מוריד את הטפט הראשון ..."</string>
@@ -67,7 +70,8 @@
     <string name="refresh_daily_wallpaper_home_content_description" msgid="2770445044556164259">"רענון הטפט היומי של מסך הבית"</string>
     <string name="refresh_daily_wallpaper_content_description" msgid="4362142658237147583">"רענון הטפט היומי"</string>
     <string name="preview_screen_description" msgid="3386387053327775919">"מסך התצוגה המקדימה של הטפט"</string>
-    <string name="preview_screen_description_editable" msgid="506875963019888699">"‏מסך תצוגה מקדימה של טפט %1$s. שימוש בשתי אצבעות כדי להזיז ולשנות את מרחק התצוגה."</string>
+    <string name="preview_screen_description_editable" msgid="5558037286562127705">"‏מסך תצוגה מקדימה של הטפט ב%1$s. משתמשים בשתי אצבעות כדי להזיז את הטפט ולשנות את מרחק התצוגה"</string>
+    <string name="preview_screen_description_non_editable" msgid="5861996326502454566">"‏מסך תצוגה מקדימה של הטפט ב%1$s"</string>
     <string name="folded_device_state_description" msgid="4972608448265616264">"מצב מקופל"</string>
     <string name="unfolded_device_state_description" msgid="3071975681472460627">"מצב לא מקופל"</string>
     <string name="full_preview_check_button_description" msgid="700484353763952975">"סיימתי לערוך את הטפט"</string>
@@ -105,26 +109,27 @@
     <string name="previous_page_content_description" msgid="1138597031571078429">"הקודם"</string>
     <string name="wallpaper_title" msgid="6754214682228331092">"טפט"</string>
     <string name="wallpaper_preview_card_content_description" msgid="6049261033541034584">"תצוגה מקדימה של הטפט"</string>
-    <string name="wallpaper_preview_card_content_description_editable" msgid="3111763100515242340">"‏תצוגה מקדימה של טפט %1$s, אפשר להקיש כדי לערוך את התמונה"</string>
+    <string name="wallpaper_preview_card_content_description_editable" msgid="8147628993184862003">"‏תצוגה מקדימה של טפט %1$s %2$s. כדי לערוך את התמונה, לוחצים לחיצה כפולה"</string>
+    <string name="wallpaper_preview_card_content_description_non_editable" msgid="2201116657175733260">"‏תצוגה מקדימה של הטפט ב%1$s‏ ב%2$s"</string>
     <string name="lock_wallpaper_preview_card_content_description" msgid="5236839857695985498">"תצוגה מקדימה של הטפט במסך הנעילה"</string>
     <string name="home_wallpaper_preview_card_content_description" msgid="4059418716070821630">"תצוגה מקדימה של הטפט במסך הבית"</string>
     <string name="collection_not_exist_msg" msgid="3504852962885064842">"האוסף לא קיים"</string>
-    <string name="wallpaper_exit_split_screen" msgid="1928870664619591636">"יש לצאת ממצב מסך מפוצל ולנסות שוב"</string>
+    <string name="wallpaper_exit_split_screen" msgid="1928870664619591636">"צריך לצאת מהמסך המפוצל ולנסות שוב"</string>
     <string name="set_wallpaper_dialog_set_button" msgid="5760149969510325088">"הגדרה"</string>
     <string name="cancel" msgid="4970902691067201584">"ביטול"</string>
     <string name="hide_ui_preview_text" msgid="6766076482511252295">"ללא תצוגה מקדימה בממשק המשתמש"</string>
     <string name="hint_hide_ui_preview" msgid="4527603797714586070">"הממשק מוסתר בתצוגה. לוחצים פעמיים לביטול ההסתרה"</string>
     <string name="show_ui_preview_text" msgid="5993063062417070806">"עם תצוגה מקדימה בממשק המשתמש"</string>
-    <string name="hide_preview_controls_content_description" msgid="894958599274977655">"הפקדים של התצוגה המקדימה מוצגים. צריך להקיש הקשה כפולה כדי להסתיר אותם"</string>
+    <string name="hide_preview_controls_content_description" msgid="894958599274977655">"הפקדים של התצוגה המקדימה מוצגים. צריך ללחוץ לחיצה כפולה כדי להסתיר אותם"</string>
     <string name="hide_preview_controls_action" msgid="3419260118386783295">"הסתרת פקדי התצוגה המקדימה"</string>
-    <string name="show_preview_controls_content_description" msgid="908147864005440602">"הפקדים של התצוגה המקדימה מוסתרים. צריך להקיש הקשה כפולה כדי להציג אותם"</string>
+    <string name="show_preview_controls_content_description" msgid="908147864005440602">"הפקדים של התצוגה המקדימה מוסתרים. צריך ללחוץ לחיצה כפולה כדי להציג אותם"</string>
     <string name="show_preview_controls_action" msgid="7700775001986890400">"הצגת פקדי התצוגה המקדימה"</string>
     <string name="hide_wallpaper_info_action" msgid="6572492484253895374">"הסתרת פרטי הטפט"</string>
     <string name="hint_show_ui_preview" msgid="2744155435325318349">"הממשק מוצג בתצוגה. לוחצים פעמיים לביטול ההסתרה"</string>
     <string name="wallpaper_picker_entry_title" msgid="5185793991582084891">"החלפת הטפט"</string>
     <string name="lockscreen_wallpaper_preview_card_content_description" msgid="2244890820627302245">"תצוגה מקדימה של הטפט במסך הנעילה"</string>
     <string name="apply_btn" msgid="5764555565943538528">"אישור"</string>
-    <string name="apply_wallpaper_title_text" msgid="2100301064316744087">"להחיל את הטפט?"</string>
+    <string name="apply_wallpaper_title_text" msgid="2100301064316744087">"להשתמש בטפט?"</string>
     <string name="accessibility_customize_hidden" msgid="6320568529768181691">"חלונית ההתאמה אישית מוסתרת"</string>
     <string name="accessibility_customize_shown" msgid="590964727831547651">"חלונית ההתאמה אישית מוצגת"</string>
     <string name="accessibility_info_hidden" msgid="2288603712350168107">"חלונית המידע מוסתרת"</string>
@@ -132,14 +137,23 @@
     <string name="settings_snackbar_description" msgid="890168814524778486">"עליך להפעיל את ההרשאה \'קבצים ומדיה\' בהגדרות."</string>
     <string name="settings_snackbar_enable" msgid="5992112808061426068">"הפעלה"</string>
     <string name="open_my_photos" msgid="4107196465713868381">"פתיחת \'התמונות שלי\'"</string>
-    <string name="lock_screen_tab" msgid="6672930765010407652">"מסך נעילה"</string>
+    <string name="lock_screen_tab" msgid="6672930765010407652">"מסך הנעילה"</string>
     <string name="home_screen_tab" msgid="1080445697837877526">"מסך הבית"</string>
     <string name="reset" msgid="4945445169532850631">"איפוס"</string>
     <string name="reset_confirmation_dialog_title" msgid="3391905685838213712">"לאפס את השינויים?"</string>
     <string name="reset_confirmation_dialog_message" msgid="888669268626289603">"השינויים שביצעת לא יישמרו"</string>
     <string name="more_wallpapers" msgid="8116268433411881705">"עוד טפטים"</string>
+    <string name="wallpapers" msgid="7133442512006469886">"טפטים"</string>
     <string name="recents_wallpaper_label" msgid="8653165542635660222">"‏%1$s‏, %2$d"</string>
     <string name="default_wallpaper_title" msgid="2541071182656978180">"טפט"</string>
-    <string name="small_preview_tooltip" msgid="1920430079013352071">"אפשר להקיש כדי לערוך את התמונה"</string>
+    <string name="small_preview_tooltip" msgid="1920430079013352071">"כדי לערוך את התמונה, צריך ללחוץ עליה"</string>
     <string name="full_preview_tooltip" msgid="4648994028015322759">"שינוי המיקום, הגודל והזווית של התמונות"</string>
+    <string name="discard_changes_dialog_message" msgid="8462485277292103457">"למחוק את השינויים?"</string>
+    <string name="discard_changes_dialog_button_keep_editing" msgid="9118931326834547216">"המשך העריכה"</string>
+    <string name="discard_changes_dialog_button_discard" msgid="6585071548322908206">"מחיקה"</string>
+    <string name="action_zoom_in" msgid="3326782160671405449">"הגדלת התצוגה"</string>
+    <string name="action_zoom_out" msgid="5454911090443175449">"הקטנת התצוגה"</string>
+    <string name="zoomed_to_percent" msgid="1243039994190840132">"‏שינוי מרחק התצוגה ל-%d%%"</string>
+    <string name="max_zoom_percentage" msgid="2111670558746866030">"הגעת לזום המקסימלי"</string>
+    <string name="min_zoom_percentage" msgid="5931879817379214316">"הגעת לזום המינימלי"</string>
 </resources>

@@ -24,12 +24,14 @@
     <string name="set_wallpaper_button_text" msgid="5445978864530156290">"Définir comme fond d\'écran"</string>
     <string name="set_wallpaper_progress_message" msgid="7986528287618716715">"Définition du fond d\'écran…"</string>
     <string name="try_again" msgid="8278874823700921234">"Réessayer"</string>
+    <string name="select_a_photo" msgid="7273925950262860696">"Sélectionner une photo"</string>
     <string name="set_wallpaper_error_message" msgid="6819986999041085130">"Impossible de définir le fond d\'écran."</string>
     <string name="load_wallpaper_error_message" msgid="7913278480467707374">"Impossible de charger le fond d\'écran. L\'image est corrompue ou indisponible."</string>
     <string name="static_wallpaper_presentation_mode_message" msgid="417940227049360906">"Sélectionné"</string>
     <string name="rotating_wallpaper_presentation_mode_message" msgid="3361676041605733288">"Fond d\'écran quotidien"</string>
     <string name="wallpaper_destination_both" msgid="1124197176741944063">"Écran d\'accueil et écran de verrouillage"</string>
     <string name="choose_a_wallpaper_section_title" msgid="1009823506890453891">"Choisir un fond d\'écran"</string>
+    <string name="choose_a_curated_photo_section_title" msgid="7360675459203465887">"Photos suggérées"</string>
     <string name="creative_wallpaper_title" msgid="3581650238648981372">"Créer un fond d\'écran"</string>
     <string name="home_screen_message" msgid="106444102822522813">"Écran d\'accueil"</string>
     <string name="lock_screen_message" msgid="1534506081955058013">"Écran de verrouillage"</string>
@@ -43,6 +45,7 @@
     <string name="permission_needed_explanation_go_to_settings" msgid="3923551582092599609">"Pour afficher le fond d\'écran actuel, l\'application Wallpapers doit pouvoir accéder à l\'espace de stockage de votre appareil.\n\nPour modifier ce paramètre, accédez à la section \"Autorisations\" des informations sur l\'application Wallpapers."</string>
     <string name="permission_needed_allow_access_button_label" msgid="1943133660612924306">"Autoriser l\'accès"</string>
     <string name="no_backup_image_wallpaper_description" msgid="8303268619408738057">"Service de fonds d\'écran animés pour la rotation de fonds d\'écran"</string>
+    <string name="more_photos" msgid="2183343115041498453">"Plus de photos"</string>
     <string name="daily_refresh_tile_title" msgid="3270456074558525091">"Fond d\'écran quotidien"</string>
     <string name="daily_refresh_tile_subtitle" msgid="3976682014885446443">"Appuyer pour activer"</string>
     <string name="start_rotation_dialog_body_live_wallpaper_needed" msgid="5132580257563846082">"Le fond d\'écran change automatiquement chaque jour. Pour terminer la configuration, appuyez sur &lt;strong&gt;Définir comme fond d\'écran&lt;/strong&gt; sur l\'écran suivant."</string>
@@ -67,7 +70,8 @@
     <string name="refresh_daily_wallpaper_home_content_description" msgid="2770445044556164259">"Actualiser le fond d\'écran quotidien de l\'écran d\'accueil"</string>
     <string name="refresh_daily_wallpaper_content_description" msgid="4362142658237147583">"Actualiser le fond d\'écran quotidien"</string>
     <string name="preview_screen_description" msgid="3386387053327775919">"Écran d\'aperçu des fonds d\'écran"</string>
-    <string name="preview_screen_description_editable" msgid="506875963019888699">"Écran d\'aperçu de fond d\'écran %1$s. Utilisez deux doigts pour effectuer un panoramique et un zoom."</string>
+    <string name="preview_screen_description_editable" msgid="5558037286562127705">"Écran d\'aperçu de fond d\'écran %1$s. Utilisez deux doigts pour effectuer un panoramique et un zoom"</string>
+    <string name="preview_screen_description_non_editable" msgid="5861996326502454566">"Écran d\'aperçu de fond d\'écran %1$s"</string>
     <string name="folded_device_state_description" msgid="4972608448265616264">"Plié"</string>
     <string name="unfolded_device_state_description" msgid="3071975681472460627">"Déplié"</string>
     <string name="full_preview_check_button_description" msgid="700484353763952975">"Modification du fond d\'écran terminée"</string>
@@ -105,7 +109,8 @@
     <string name="previous_page_content_description" msgid="1138597031571078429">"Précédente"</string>
     <string name="wallpaper_title" msgid="6754214682228331092">"Fond d\'écran"</string>
     <string name="wallpaper_preview_card_content_description" msgid="6049261033541034584">"Aperçu du fond d\'écran"</string>
-    <string name="wallpaper_preview_card_content_description_editable" msgid="3111763100515242340">"Aperçu de fond d\'écran %1$s, appuyez pour modifier votre photo"</string>
+    <string name="wallpaper_preview_card_content_description_editable" msgid="8147628993184862003">"Aperçu de fond d\'écran pour %1$s %2$s, appuyez deux fois pour modifier votre photo"</string>
+    <string name="wallpaper_preview_card_content_description_non_editable" msgid="2201116657175733260">"Aperçu de fond d\'écran pour %1$s %2$s"</string>
     <string name="lock_wallpaper_preview_card_content_description" msgid="5236839857695985498">"Aperçu du fond d\'écran de verrouillage"</string>
     <string name="home_wallpaper_preview_card_content_description" msgid="4059418716070821630">"Aperçu du fond d\'écran d\'accueil"</string>
     <string name="collection_not_exist_msg" msgid="3504852962885064842">"Cette collection n\'existe pas"</string>
@@ -138,8 +143,17 @@
     <string name="reset_confirmation_dialog_title" msgid="3391905685838213712">"Réinitialiser les modifications ?"</string>
     <string name="reset_confirmation_dialog_message" msgid="888669268626289603">"Vos modifications ne seront pas enregistrées"</string>
     <string name="more_wallpapers" msgid="8116268433411881705">"Autres fonds d\'écran"</string>
+    <string name="wallpapers" msgid="7133442512006469886">"Fonds d\'écran"</string>
     <string name="recents_wallpaper_label" msgid="8653165542635660222">"%1$s, %2$d"</string>
     <string name="default_wallpaper_title" msgid="2541071182656978180">"Fond d\'écran"</string>
     <string name="small_preview_tooltip" msgid="1920430079013352071">"Appuyez pour modifier votre photo"</string>
     <string name="full_preview_tooltip" msgid="4648994028015322759">"Ajustez la position, l\'échelle et l\'angle de vos photos"</string>
+    <string name="discard_changes_dialog_message" msgid="8462485277292103457">"Supprimer les modifications ?"</string>
+    <string name="discard_changes_dialog_button_keep_editing" msgid="9118931326834547216">"Poursuivre les modifications"</string>
+    <string name="discard_changes_dialog_button_discard" msgid="6585071548322908206">"Supprimer"</string>
+    <string name="action_zoom_in" msgid="3326782160671405449">"Zoom avant"</string>
+    <string name="action_zoom_out" msgid="5454911090443175449">"Zoom arrière"</string>
+    <string name="zoomed_to_percent" msgid="1243039994190840132">"Zoom à %d%%"</string>
+    <string name="max_zoom_percentage" msgid="2111670558746866030">"Zoom maximal atteint"</string>
+    <string name="min_zoom_percentage" msgid="5931879817379214316">"Zoom minimal atteint"</string>
 </resources>

@@ -24,12 +24,14 @@
     <string name="set_wallpaper_button_text" msgid="5445978864530156290">"Hintergrund festlegen"</string>
     <string name="set_wallpaper_progress_message" msgid="7986528287618716715">"Hintergrund wird festgelegt…"</string>
     <string name="try_again" msgid="8278874823700921234">"Noch einmal versuchen"</string>
+    <string name="select_a_photo" msgid="7273925950262860696">"Foto auswählen"</string>
     <string name="set_wallpaper_error_message" msgid="6819986999041085130">"Hintergrund kann nicht festgelegt werden."</string>
     <string name="load_wallpaper_error_message" msgid="7913278480467707374">"Der Hintergrund konnte nicht geladen werden. Das Bild ist entweder beschädigt oder nicht verfügbar."</string>
     <string name="static_wallpaper_presentation_mode_message" msgid="417940227049360906">"Derzeit festgelegt"</string>
     <string name="rotating_wallpaper_presentation_mode_message" msgid="3361676041605733288">"Täglicher Hintergrund"</string>
     <string name="wallpaper_destination_both" msgid="1124197176741944063">"Startbildschirm &amp; Sperrbildschirm"</string>
     <string name="choose_a_wallpaper_section_title" msgid="1009823506890453891">"Hintergrund auswählen"</string>
+    <string name="choose_a_curated_photo_section_title" msgid="7360675459203465887">"Vorgeschlagene Fotos"</string>
     <string name="creative_wallpaper_title" msgid="3581650238648981372">"Hintergrund erstellen"</string>
     <string name="home_screen_message" msgid="106444102822522813">"Startbildschirm"</string>
     <string name="lock_screen_message" msgid="1534506081955058013">"Sperrbildschirm"</string>
@@ -43,6 +45,7 @@
     <string name="permission_needed_explanation_go_to_settings" msgid="3923551582092599609">"Um den aktuellen Hintergrund hier anzuzeigen, benötigt die App \"Hintergründe\" Zugriff zu deinem Gerätespeicher.\n\nGehe auf der Seite \"Informationen zur App\" zum Bereich \"Berechtigungen\", um diese Einstellung zu ändern."</string>
     <string name="permission_needed_allow_access_button_label" msgid="1943133660612924306">"Zugriff erlauben"</string>
     <string name="no_backup_image_wallpaper_description" msgid="8303268619408738057">"Live-Hintergrunddienst mit rotierenden Bildern"</string>
+    <string name="more_photos" msgid="2183343115041498453">"Weitere Fotos"</string>
     <string name="daily_refresh_tile_title" msgid="3270456074558525091">"Täglicher Hintergrund"</string>
     <string name="daily_refresh_tile_subtitle" msgid="3976682014885446443">"Zum Aktivieren tippen"</string>
     <string name="start_rotation_dialog_body_live_wallpaper_needed" msgid="5132580257563846082">"Hintergrund ändert sich automatisch jeden Tag. Um die Einrichtung abzuschließen, tippe auf dem nächsten Bildschirm auf &lt;strong&gt;Als Hintergrund festlegen&lt;/strong&gt;."</string>
@@ -67,7 +70,8 @@
     <string name="refresh_daily_wallpaper_home_content_description" msgid="2770445044556164259">"Täglichen Hintergrund des Startbildschirms aktualisieren"</string>
     <string name="refresh_daily_wallpaper_content_description" msgid="4362142658237147583">"Täglichen Hintergrund aktualisieren"</string>
     <string name="preview_screen_description" msgid="3386387053327775919">"Vorschau für Bildschirmhintergrund"</string>
-    <string name="preview_screen_description_editable" msgid="506875963019888699">"Hintergrund-Vorschaubildschirm %1$s. Verwende zum Schwenken und Zoomen zwei Finger."</string>
+    <string name="preview_screen_description_editable" msgid="5558037286562127705">"Hintergrund-Vorschaubildschirm %1$s. Verwende zum Schwenken und Zoomen zwei Finger."</string>
+    <string name="preview_screen_description_non_editable" msgid="5861996326502454566">"Hintergrund-Vorschaubildschirm %1$s"</string>
     <string name="folded_device_state_description" msgid="4972608448265616264">"Zugeklappt"</string>
     <string name="unfolded_device_state_description" msgid="3071975681472460627">"Aufgeklappt"</string>
     <string name="full_preview_check_button_description" msgid="700484353763952975">"Bearbeitung des Hintergrunds abgeschlossen"</string>
@@ -105,11 +109,12 @@
     <string name="previous_page_content_description" msgid="1138597031571078429">"Zurück"</string>
     <string name="wallpaper_title" msgid="6754214682228331092">"Hintergrund"</string>
     <string name="wallpaper_preview_card_content_description" msgid="6049261033541034584">"Hintergrundvorschau"</string>
-    <string name="wallpaper_preview_card_content_description_editable" msgid="3111763100515242340">"Hintergrundvorschau %1$s, zur Bearbeitung tippen"</string>
+    <string name="wallpaper_preview_card_content_description_editable" msgid="8147628993184862003">"%1$s Hintergrundvorschau %2$s, zum Bearbeiten des Fotos doppeltippen"</string>
+    <string name="wallpaper_preview_card_content_description_non_editable" msgid="2201116657175733260">"%1$s Hintergrundvorschau %2$s"</string>
     <string name="lock_wallpaper_preview_card_content_description" msgid="5236839857695985498">"Vorschau für Sperrbildschirmhintergrund"</string>
     <string name="home_wallpaper_preview_card_content_description" msgid="4059418716070821630">"Vorschau für Startbildschirmhintergrund"</string>
     <string name="collection_not_exist_msg" msgid="3504852962885064842">"Die Sammlung existiert nicht"</string>
-    <string name="wallpaper_exit_split_screen" msgid="1928870664619591636">"Bitte beende den Splitscreen-Modus und versuch es noch einmal"</string>
+    <string name="wallpaper_exit_split_screen" msgid="1928870664619591636">"Beende den Splitscreen-Modus und versuch es noch einmal"</string>
     <string name="set_wallpaper_dialog_set_button" msgid="5760149969510325088">"Festlegen"</string>
     <string name="cancel" msgid="4970902691067201584">"Abbrechen"</string>
     <string name="hide_ui_preview_text" msgid="6766076482511252295">"UI-Vorschau ausblenden"</string>
@@ -138,8 +143,17 @@
     <string name="reset_confirmation_dialog_title" msgid="3391905685838213712">"Änderungen zurücksetzen?"</string>
     <string name="reset_confirmation_dialog_message" msgid="888669268626289603">"Änderungen werden nicht gespeichert."</string>
     <string name="more_wallpapers" msgid="8116268433411881705">"Weitere Hintergrundbilder"</string>
+    <string name="wallpapers" msgid="7133442512006469886">"Hintergründe"</string>
     <string name="recents_wallpaper_label" msgid="8653165542635660222">"%1$s, %2$d"</string>
     <string name="default_wallpaper_title" msgid="2541071182656978180">"Hintergrund"</string>
     <string name="small_preview_tooltip" msgid="1920430079013352071">"Tippen, um das Foto zu bearbeiten"</string>
     <string name="full_preview_tooltip" msgid="4648994028015322759">"Position, Maßstab und Winkel deiner Fotos anpassen"</string>
+    <string name="discard_changes_dialog_message" msgid="8462485277292103457">"Änderungen verwerfen?"</string>
+    <string name="discard_changes_dialog_button_keep_editing" msgid="9118931326834547216">"Weiter bearbeiten"</string>
+    <string name="discard_changes_dialog_button_discard" msgid="6585071548322908206">"Verwerfen"</string>
+    <string name="action_zoom_in" msgid="3326782160671405449">"Heranzoomen"</string>
+    <string name="action_zoom_out" msgid="5454911090443175449">"Herauszoomen"</string>
+    <string name="zoomed_to_percent" msgid="1243039994190840132">"Zoom auf %d%%"</string>
+    <string name="max_zoom_percentage" msgid="2111670558746866030">"Maximaler Zoom erreicht"</string>
+    <string name="min_zoom_percentage" msgid="5931879817379214316">"Minimaler Zoom erreicht"</string>
 </resources>

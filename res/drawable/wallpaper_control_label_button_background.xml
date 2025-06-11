@@ -14,11 +14,8 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:clipChildren="false"
-    android:clipToPadding="false">
-
-    <include layout="@layout/wallpaper_preview_card2" />
-</FrameLayout>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_checked="true"
+        android:drawable="@drawable/wallpaper_control_label_button_on_background" />
+    <item android:drawable="@drawable/wallpaper_control_label_button_off_background" />
+</selector>

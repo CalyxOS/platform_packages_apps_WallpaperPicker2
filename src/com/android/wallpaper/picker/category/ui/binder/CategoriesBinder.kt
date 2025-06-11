@@ -25,7 +25,7 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.RecyclerView
 import com.android.wallpaper.R
 import com.android.wallpaper.picker.category.ui.viewmodel.CategoriesViewModel
-import kotlinx.coroutines.flow.distinctUntilChanged
+import com.android.wallpaper.picker.customization.ui.viewmodel.ColorUpdateViewModel
 import kotlinx.coroutines.launch
 
 /** Binds the wallpaper categories and its meta data to the category screen */
@@ -35,6 +35,9 @@ object CategoriesBinder {
         categoriesPage: View,
         viewModel: CategoriesViewModel,
         windowWidth: Int,
+        colorUpdateViewModel: ColorUpdateViewModel,
+        shouldAnimateColor: () -> Boolean,
+        bannerProvider: BannerProvider,
         lifecycleOwner: LifecycleOwner,
         navigationHandler:
             (navigationEvent: CategoriesViewModel.NavigationEvent, navLogic: (() -> Unit)?) -> Unit,
@@ -54,14 +57,24 @@ object CategoriesBinder {
                 // bind the state for List<SectionsViewModel>
                 launch {
                     viewModel.sections.collect { sections ->
-                        SectionsBinder.bind(sectionsListView, sections, windowWidth, lifecycleOwner)
+                        SectionsBinder.bind(
+                            sectionsListView,
+                            sections,
+                            windowWidth,
+                            colorUpdateViewModel,
+                            shouldAnimateColor,
+                            lifecycleOwner,
+                            onSignInBannerDismissed = { dismissed ->
+                                viewModel.setBannerDismissed(dismissed)
+                            },
+                            bannerProvider,
+                        )
                     }
                 }
 
                 launch {
-                    viewModel.isConnectionObtained.distinctUntilChanged().collect { _ ->
-                        // Trigger a refresh of the categories every time the network status changes
-                        viewModel.refreshNetworkCategories()
+                    viewModel.shouldRefreshCategories.collect { shouldRefreshCategories ->
+                        if (shouldRefreshCategories) viewModel.refreshNetworkCategories()
                     }
                 }
 

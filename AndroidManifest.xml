@@ -55,6 +55,9 @@
             <action android:name="android.intent.action.MAIN" />
             <category android:name="android.intent.category.HOME" />
         </intent>
+      <intent>
+          <action android:name="com.android.photopicker.core.embedded.EmbeddedService.BIND" />
+      </intent>
   </queries>
 
   <application
@@ -66,6 +69,7 @@
       android:name="com.android.wallpaper.picker.WallpapersApplication"
       android:requiredForAllUsers="true"
       android:restoreAnyVersion="true"
+      android:enableOnBackInvokedCallback="false"
       android:supportsRtl="true">
 
     <meta-data android:name="com.android.wallpaper.asset.WallpaperGlideModule"
@@ -84,7 +88,7 @@
         android:relinquishTaskIdentity="true"
         android:resizeableActivity="false"
         android:theme="@style/WallpaperTheme.NoBackground"
-        android:configChanges="assetsPaths"
+        android:configChanges="assetsPaths|uiMode"
         android:exported="true">
     </activity>
 

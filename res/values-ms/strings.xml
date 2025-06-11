@@ -24,12 +24,14 @@
     <string name="set_wallpaper_button_text" msgid="5445978864530156290">"Tetapkan hiasan latar"</string>
     <string name="set_wallpaper_progress_message" msgid="7986528287618716715">"Menetapkan kertas dinding…"</string>
     <string name="try_again" msgid="8278874823700921234">"Cuba lagi"</string>
+    <string name="select_a_photo" msgid="7273925950262860696">"Pilih foto"</string>
     <string name="set_wallpaper_error_message" msgid="6819986999041085130">"Tidak dapat menetapkan kertas dinding."</string>
     <string name="load_wallpaper_error_message" msgid="7913278480467707374">"Tidak dapat memuatkan kertas dinding. Imej rosak atau tidak tersedia."</string>
     <string name="static_wallpaper_presentation_mode_message" msgid="417940227049360906">"Ditetapkan pada masa ini"</string>
     <string name="rotating_wallpaper_presentation_mode_message" msgid="3361676041605733288">"Kertas dinding harian"</string>
     <string name="wallpaper_destination_both" msgid="1124197176741944063">"Skrin utama &amp; Skrin kunci"</string>
     <string name="choose_a_wallpaper_section_title" msgid="1009823506890453891">"Pilih Hiasan latar"</string>
+    <string name="choose_a_curated_photo_section_title" msgid="7360675459203465887">"Foto yang dicadangkan"</string>
     <string name="creative_wallpaper_title" msgid="3581650238648981372">"Buat hiasan latar"</string>
     <string name="home_screen_message" msgid="106444102822522813">"Skrin utama"</string>
     <string name="lock_screen_message" msgid="1534506081955058013">"Skrin kunci"</string>
@@ -43,6 +45,7 @@
     <string name="permission_needed_explanation_go_to_settings" msgid="3923551582092599609">"Untuk memaparkan kertas dinding semasa di sini, Kertas Dinding memerlukan akses kepada storan peranti anda.\n\nUntuk menukar tetapan ini, pergi ke kawasan Kebenaran bagi maklumat apl Kertas Dinding."</string>
     <string name="permission_needed_allow_access_button_label" msgid="1943133660612924306">"Benarkan akses"</string>
     <string name="no_backup_image_wallpaper_description" msgid="8303268619408738057">"Perkhidmatan kertas dinding langsung untuk menggilirkan kertas dinding"</string>
+    <string name="more_photos" msgid="2183343115041498453">"Lagi Foto"</string>
     <string name="daily_refresh_tile_title" msgid="3270456074558525091">"Kertas dinding harian"</string>
     <string name="daily_refresh_tile_subtitle" msgid="3976682014885446443">"Ketik untuk menghidupkan"</string>
     <string name="start_rotation_dialog_body_live_wallpaper_needed" msgid="5132580257563846082">"Kertas dinding akan ditukar secara automatik setiap hari. Untuk menyelesaikan persediaan, ketik &lt;strong&gt;Tetapkan kertas dinding&lt;/strong&gt; pada skrin seterusnya."</string>
@@ -67,7 +70,8 @@
     <string name="refresh_daily_wallpaper_home_content_description" msgid="2770445044556164259">"Muat semula kertas dinding skrin utama harian"</string>
     <string name="refresh_daily_wallpaper_content_description" msgid="4362142658237147583">"Muat semula kertas dinding harian"</string>
     <string name="preview_screen_description" msgid="3386387053327775919">"Skrin pratonton hiasan latar"</string>
-    <string name="preview_screen_description_editable" msgid="506875963019888699">"Skrin pratonton hiasan latar %1$s. Gunakan dua jari untuk menyorot dan mengezum."</string>
+    <string name="preview_screen_description_editable" msgid="5558037286562127705">"Skrin pratonton hiasan latar %1$s. Gunakan dua jari untuk menyorot dan mengezum"</string>
+    <string name="preview_screen_description_non_editable" msgid="5861996326502454566">"Skrin pratonton hiasan latar %1$s"</string>
     <string name="folded_device_state_description" msgid="4972608448265616264">"Terlipat"</string>
     <string name="unfolded_device_state_description" msgid="3071975681472460627">"Tidak terlipat"</string>
     <string name="full_preview_check_button_description" msgid="700484353763952975">"Selesai mengedit hiasan latar"</string>
@@ -105,7 +109,8 @@
     <string name="previous_page_content_description" msgid="1138597031571078429">"Sebelumnya"</string>
     <string name="wallpaper_title" msgid="6754214682228331092">"Hiasan latar"</string>
     <string name="wallpaper_preview_card_content_description" msgid="6049261033541034584">"Pratonton kertas dinding"</string>
-    <string name="wallpaper_preview_card_content_description_editable" msgid="3111763100515242340">"Pratonton hiasan latar %1$s, ketik untuk edit foto"</string>
+    <string name="wallpaper_preview_card_content_description_editable" msgid="8147628993184862003">"%1$s pratonton hiasan latar %2$s, ketik dua kali untuk mengedit foto anda"</string>
+    <string name="wallpaper_preview_card_content_description_non_editable" msgid="2201116657175733260">"%1$s pratonton hiasan latar %2$s"</string>
     <string name="lock_wallpaper_preview_card_content_description" msgid="5236839857695985498">"Pratonton hiasan latar skrin kunci"</string>
     <string name="home_wallpaper_preview_card_content_description" msgid="4059418716070821630">"Pratonton hiasan latar skrin utama"</string>
     <string name="collection_not_exist_msg" msgid="3504852962885064842">"Koleksi tersebut tidak wujud"</string>
@@ -138,8 +143,17 @@
     <string name="reset_confirmation_dialog_title" msgid="3391905685838213712">"Tetapkan semula perubahan?"</string>
     <string name="reset_confirmation_dialog_message" msgid="888669268626289603">"Perubahan anda tidak akan disimpan"</string>
     <string name="more_wallpapers" msgid="8116268433411881705">"Lagi hiasan latar"</string>
+    <string name="wallpapers" msgid="7133442512006469886">"Hiasan latar"</string>
     <string name="recents_wallpaper_label" msgid="8653165542635660222">"%1$s, %2$d"</string>
     <string name="default_wallpaper_title" msgid="2541071182656978180">"Hiasan latar"</string>
     <string name="small_preview_tooltip" msgid="1920430079013352071">"Ketik untuk mengedit foto"</string>
     <string name="full_preview_tooltip" msgid="4648994028015322759">"Laraskan kedudukan, skala dan sudut foto anda"</string>
+    <string name="discard_changes_dialog_message" msgid="8462485277292103457">"Buang perubahan?"</string>
+    <string name="discard_changes_dialog_button_keep_editing" msgid="9118931326834547216">"Teruskan pengeditan"</string>
+    <string name="discard_changes_dialog_button_discard" msgid="6585071548322908206">"Buang"</string>
+    <string name="action_zoom_in" msgid="3326782160671405449">"Zum masuk"</string>
+    <string name="action_zoom_out" msgid="5454911090443175449">"Zum keluar"</string>
+    <string name="zoomed_to_percent" msgid="1243039994190840132">"Dizum kepada %d%%"</string>
+    <string name="max_zoom_percentage" msgid="2111670558746866030">"Zum maksimum dicapai"</string>
+    <string name="min_zoom_percentage" msgid="5931879817379214316">"Zum minimum dicapai"</string>
 </resources>

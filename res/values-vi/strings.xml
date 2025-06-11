@@ -24,12 +24,14 @@
     <string name="set_wallpaper_button_text" msgid="5445978864530156290">"Đặt làm hình nền"</string>
     <string name="set_wallpaper_progress_message" msgid="7986528287618716715">"Đang đặt hình nền..."</string>
     <string name="try_again" msgid="8278874823700921234">"Thử lại"</string>
+    <string name="select_a_photo" msgid="7273925950262860696">"Chọn một ảnh"</string>
     <string name="set_wallpaper_error_message" msgid="6819986999041085130">"Không thể đặt hình nền."</string>
     <string name="load_wallpaper_error_message" msgid="7913278480467707374">"Không thể tải hình nền. Hình ảnh bị hỏng hoặc không có sẵn."</string>
     <string name="static_wallpaper_presentation_mode_message" msgid="417940227049360906">"Hình nền hiện tại"</string>
     <string name="rotating_wallpaper_presentation_mode_message" msgid="3361676041605733288">"Hình nền hàng ngày"</string>
     <string name="wallpaper_destination_both" msgid="1124197176741944063">"Màn hình chính và màn hình khóa"</string>
     <string name="choose_a_wallpaper_section_title" msgid="1009823506890453891">"Chọn hình nền"</string>
+    <string name="choose_a_curated_photo_section_title" msgid="7360675459203465887">"Ảnh được đề xuất"</string>
     <string name="creative_wallpaper_title" msgid="3581650238648981372">"Tạo hình nền"</string>
     <string name="home_screen_message" msgid="106444102822522813">"Màn hình chính"</string>
     <string name="lock_screen_message" msgid="1534506081955058013">"Màn hình khóa"</string>
@@ -43,6 +45,7 @@
     <string name="permission_needed_explanation_go_to_settings" msgid="3923551582092599609">"Để hiển thị hình nền hiện tại ở đây, ứng dụng Hình nền cần quyền truy cập vào bộ nhớ của thiết bị.\n\nĐể thay đổi cài đặt này, hãy chuyển đến khu vực Quyền của thông tin ứng dụng Hình nền."</string>
     <string name="permission_needed_allow_access_button_label" msgid="1943133660612924306">"Cho phép truy cập"</string>
     <string name="no_backup_image_wallpaper_description" msgid="8303268619408738057">"Dịch vụ hình nền động để xoay vòng hình nền"</string>
+    <string name="more_photos" msgid="2183343115041498453">"Ảnh khác"</string>
     <string name="daily_refresh_tile_title" msgid="3270456074558525091">"Hình nền hàng ngày"</string>
     <string name="daily_refresh_tile_subtitle" msgid="3976682014885446443">"Nhấn để bật"</string>
     <string name="start_rotation_dialog_body_live_wallpaper_needed" msgid="5132580257563846082">"Hình nền sẽ tự động thay đổi hàng ngày. Để hoàn tất thiết lập, hãy nhấn vào tùy chọn &lt;strong&gt;Đặt hình nền&lt;/strong&gt; trên màn hình tiếp theo."</string>
@@ -67,7 +70,8 @@
     <string name="refresh_daily_wallpaper_home_content_description" msgid="2770445044556164259">"Làm mới hình nền màn hình chính hàng ngày"</string>
     <string name="refresh_daily_wallpaper_content_description" msgid="4362142658237147583">"Làm mới hình nền hàng ngày"</string>
     <string name="preview_screen_description" msgid="3386387053327775919">"Màn hình xem trước hình nền"</string>
-    <string name="preview_screen_description_editable" msgid="506875963019888699">"Màn hình xem trước hình nền %1$s. Hãy dùng hai ngón tay để di chuyển và thu phóng."</string>
+    <string name="preview_screen_description_editable" msgid="5558037286562127705">"Màn hình xem trước hình nền %1$s. Hãy dùng 2 ngón tay để di chuyển và thu phóng"</string>
+    <string name="preview_screen_description_non_editable" msgid="5861996326502454566">"Màn hình xem trước hình nền %1$s"</string>
     <string name="folded_device_state_description" msgid="4972608448265616264">"Khi gập"</string>
     <string name="unfolded_device_state_description" msgid="3071975681472460627">"Khi mở"</string>
     <string name="full_preview_check_button_description" msgid="700484353763952975">"Hoàn tất chỉnh sửa hình nền"</string>
@@ -105,7 +109,8 @@
     <string name="previous_page_content_description" msgid="1138597031571078429">"Trước"</string>
     <string name="wallpaper_title" msgid="6754214682228331092">"Hình nền"</string>
     <string name="wallpaper_preview_card_content_description" msgid="6049261033541034584">"Xem trước hình nền"</string>
-    <string name="wallpaper_preview_card_content_description_editable" msgid="3111763100515242340">"Bản xem trước hình nền %1$s, nhấn để chỉnh sửa ảnh"</string>
+    <string name="wallpaper_preview_card_content_description_editable" msgid="8147628993184862003">"Bản xem trước hình nền %1$s %2$s, nhấn đúp để chỉnh sửa ảnh của bạn"</string>
+    <string name="wallpaper_preview_card_content_description_non_editable" msgid="2201116657175733260">"Bản xem trước hình nền %1$s %2$s"</string>
     <string name="lock_wallpaper_preview_card_content_description" msgid="5236839857695985498">"Xem trước hình nền trên màn hình khoá"</string>
     <string name="home_wallpaper_preview_card_content_description" msgid="4059418716070821630">"Xem trước hình nền trên màn hình chính"</string>
     <string name="collection_not_exist_msg" msgid="3504852962885064842">"Bộ sưu tập không tồn tại"</string>
@@ -138,8 +143,17 @@
     <string name="reset_confirmation_dialog_title" msgid="3391905685838213712">"Đặt lại các thay đổi?"</string>
     <string name="reset_confirmation_dialog_message" msgid="888669268626289603">"Thay đổi của bạn sẽ không được lưu"</string>
     <string name="more_wallpapers" msgid="8116268433411881705">"Hình nền khác"</string>
+    <string name="wallpapers" msgid="7133442512006469886">"Hình nền"</string>
     <string name="recents_wallpaper_label" msgid="8653165542635660222">"%1$s, %2$d"</string>
     <string name="default_wallpaper_title" msgid="2541071182656978180">"Hình nền"</string>
     <string name="small_preview_tooltip" msgid="1920430079013352071">"Nhấn để chỉnh sửa ảnh"</string>
     <string name="full_preview_tooltip" msgid="4648994028015322759">"Điều chỉnh vị trí, tỷ lệ và góc ảnh"</string>
+    <string name="discard_changes_dialog_message" msgid="8462485277292103457">"Loại bỏ thay đổi?"</string>
+    <string name="discard_changes_dialog_button_keep_editing" msgid="9118931326834547216">"Tiếp tục chỉnh sửa"</string>
+    <string name="discard_changes_dialog_button_discard" msgid="6585071548322908206">"Loại bỏ"</string>
+    <string name="action_zoom_in" msgid="3326782160671405449">"Phóng to"</string>
+    <string name="action_zoom_out" msgid="5454911090443175449">"Thu nhỏ"</string>
+    <string name="zoomed_to_percent" msgid="1243039994190840132">"Đã phóng to đến %d%%"</string>
+    <string name="max_zoom_percentage" msgid="2111670558746866030">"Đã phóng to hết mức"</string>
+    <string name="min_zoom_percentage" msgid="5931879817379214316">"Đã thu nhỏ hết mức"</string>
 </resources>

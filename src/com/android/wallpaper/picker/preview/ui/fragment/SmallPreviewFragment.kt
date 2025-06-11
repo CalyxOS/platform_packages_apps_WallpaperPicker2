@@ -46,7 +46,7 @@ import com.android.wallpaper.model.Screen
 import com.android.wallpaper.module.logging.UserEventLogger
 import com.android.wallpaper.picker.AppbarFragment
 import com.android.wallpaper.picker.TrampolinePickerActivity
-import com.android.wallpaper.picker.customization.ui.CustomizationPickerFragment2
+import com.android.wallpaper.picker.customization.ui.util.EmptyTransitionListener
 import com.android.wallpaper.picker.di.modules.MainDispatcher
 import com.android.wallpaper.picker.preview.ui.WallpaperPreviewActivity
 import com.android.wallpaper.picker.preview.ui.binder.ApplyWallpaperScreenBinder
@@ -58,6 +58,7 @@ import com.android.wallpaper.picker.preview.ui.binder.SetWallpaperProgressDialog
 import com.android.wallpaper.picker.preview.ui.binder.SmallPreviewScreenBinder
 import com.android.wallpaper.picker.preview.ui.util.AnimationUtil
 import com.android.wallpaper.picker.preview.ui.util.ImageEffectDialogUtil
+import com.android.wallpaper.picker.preview.ui.view.ClickableMotionLayout
 import com.android.wallpaper.picker.preview.ui.view.DualPreviewViewPager
 import com.android.wallpaper.picker.preview.ui.view.PreviewActionFloatingSheet
 import com.android.wallpaper.picker.preview.ui.view.PreviewActionGroup
@@ -137,7 +138,8 @@ class SmallPreviewFragment : Hilt_SmallPreviewFragment() {
             if (isNewPickerUi) currentView.findViewById<MotionLayout>(R.id.small_preview_container)
             else null
         val previewPager =
-            if (isNewPickerUi) currentView.findViewById<MotionLayout>(R.id.preview_pager) else null
+            if (isNewPickerUi) currentView.findViewById<ClickableMotionLayout>(R.id.preview_pager)
+            else null
         previewPager?.let { setUpTransitionListener(it) }
         if (isNewPickerUi) {
             requireActivity().onBackPressedDispatcher.let {
@@ -161,6 +163,7 @@ class SmallPreviewFragment : Hilt_SmallPreviewFragment() {
             val activityReference = activity
             checkNotNull(previewPager)
             ApplyWallpaperScreenBinder.bind(
+                previewPager = previewPager,
                 applyButton = previewPager.requireViewById(R.id.apply_button),
                 cancelButton = previewPager.requireViewById(R.id.cancel_button),
                 homeCheckbox = previewPager.requireViewById(R.id.home_checkbox),
@@ -168,6 +171,7 @@ class SmallPreviewFragment : Hilt_SmallPreviewFragment() {
                 viewModel = wallpaperPreviewViewModel,
                 lifecycleOwner = viewLifecycleOwner,
                 mainScope = mainScope,
+                isFoldable = isFoldable,
             ) {
                 Toast.makeText(
                         context,
@@ -287,7 +291,7 @@ class SmallPreviewFragment : Hilt_SmallPreviewFragment() {
 
     private fun setUpTransitionListener(previewPager: MotionLayout) {
         previewPager.addTransitionListener(
-            object : CustomizationPickerFragment2.EmptyTransitionListener {
+            object : EmptyTransitionListener {
                 override fun onTransitionCompleted(motionLayout: MotionLayout?, currentId: Int) {
                     if (
                         currentId == R.id.lock_preview_selected ||

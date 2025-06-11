@@ -24,12 +24,14 @@
     <string name="set_wallpaper_button_text" msgid="5445978864530156290">"وال پیپر سیٹ کریں"</string>
     <string name="set_wallpaper_progress_message" msgid="7986528287618716715">"وال پیپر سیٹ ہو رہا ہے…"</string>
     <string name="try_again" msgid="8278874823700921234">"دوبارہ کوشش کریں"</string>
+    <string name="select_a_photo" msgid="7273925950262860696">"ایک تصویر منتخب کریں"</string>
     <string name="set_wallpaper_error_message" msgid="6819986999041085130">"وال پیپر سیٹ کرنے سے قاصر۔"</string>
     <string name="load_wallpaper_error_message" msgid="7913278480467707374">"وال پیپر لوڈ کرنے سے قاصر۔ تصویر یا تو خراب ہو گئی ہے یا دستیاب نہیں ہے۔"</string>
     <string name="static_wallpaper_presentation_mode_message" msgid="417940227049360906">"فی الحال سیٹ کردہ"</string>
     <string name="rotating_wallpaper_presentation_mode_message" msgid="3361676041605733288">"روزانہ وال پیپر"</string>
     <string name="wallpaper_destination_both" msgid="1124197176741944063">"ہوم اور مقفل اسکرین"</string>
     <string name="choose_a_wallpaper_section_title" msgid="1009823506890453891">"وال پیپر منتخب کریں"</string>
+    <string name="choose_a_curated_photo_section_title" msgid="7360675459203465887">"تجویز کردہ تصاویر"</string>
     <string name="creative_wallpaper_title" msgid="3581650238648981372">"وال پیپر تخلیق کریں"</string>
     <string name="home_screen_message" msgid="106444102822522813">"ہوم اسکرین"</string>
     <string name="lock_screen_message" msgid="1534506081955058013">"مقفل اسکرین"</string>
@@ -43,6 +45,7 @@
     <string name="permission_needed_explanation_go_to_settings" msgid="3923551582092599609">"یہاں موجودہ وال پیپر ڈسپلے کرنے کے لیے، وال پیپرز کو آپ کے آلہ کے اسٹوریج تک رسائی درکار ہے۔\n\nاس ترتیب کو بدلنے کے لیے، وال پیپرز کی ایپ کی معلومات کی اجازتوں کے ایریا میں جائیں۔"</string>
     <string name="permission_needed_allow_access_button_label" msgid="1943133660612924306">"رسائی کی اجازت دیں"</string>
     <string name="no_backup_image_wallpaper_description" msgid="8303268619408738057">"گردشی وال پیپرز کے لیے لائیو وال پیپر کی سروس"</string>
+    <string name="more_photos" msgid="2183343115041498453">"مزید تصاویر"</string>
     <string name="daily_refresh_tile_title" msgid="3270456074558525091">"روزانہ وال پیپر"</string>
     <string name="daily_refresh_tile_subtitle" msgid="3976682014885446443">"آن کرنے کے لیے تھپتھپائیں"</string>
     <string name="start_rotation_dialog_body_live_wallpaper_needed" msgid="5132580257563846082">"‏وال پیپر ہر روز خودکار طور پر تبدیل ہو جائے گا۔ سیٹ اپ مکمل کرنے کے لیے، اگلی اسکرین پر ‎&lt;strong&gt;‎وال پیپر سیٹ کریں‎&lt;/strong&gt;‎ پر تھپتھپائیں۔"</string>
@@ -67,7 +70,8 @@
     <string name="refresh_daily_wallpaper_home_content_description" msgid="2770445044556164259">"روزانہ ہوم اسکرین کا وال پیپر ریفریش کریں"</string>
     <string name="refresh_daily_wallpaper_content_description" msgid="4362142658237147583">"روزانہ وال پیپر ریفریش کریں"</string>
     <string name="preview_screen_description" msgid="3386387053327775919">"وال پیپر پیش منظر اسکرین"</string>
-    <string name="preview_screen_description_editable" msgid="506875963019888699">"‏وال پیپر کے پیش منظر کی اسکرین ‎%1$s۔ پین اور زوم کرنے کے لیے دو انگلیاں استعمال کریں۔"</string>
+    <string name="preview_screen_description_editable" msgid="5558037286562127705">"‏وال پیپر کے پیش منظر کی اسکرین ‎%1$s۔ پین اور زوم کرنے کے لیے دو انگلیاں استعمال کریں"</string>
+    <string name="preview_screen_description_non_editable" msgid="5861996326502454566">"‏وال پیپر کے پیش منظر کی اسکرین ‎%1$s"</string>
     <string name="folded_device_state_description" msgid="4972608448265616264">"فولڈ کردہ"</string>
     <string name="unfolded_device_state_description" msgid="3071975681472460627">"اَن فولڈ کردہ"</string>
     <string name="full_preview_check_button_description" msgid="700484353763952975">"وال پیپر میں ترمیم ہو گئی"</string>
@@ -105,7 +109,8 @@
     <string name="previous_page_content_description" msgid="1138597031571078429">"گزشتہ"</string>
     <string name="wallpaper_title" msgid="6754214682228331092">"وال پیپر"</string>
     <string name="wallpaper_preview_card_content_description" msgid="6049261033541034584">"وال پیپر کا پیش منظر"</string>
-    <string name="wallpaper_preview_card_content_description_editable" msgid="3111763100515242340">"‏وال پیپر کا پیش منظر ‏%1$s، اپنی تصویر میں ترمیم کرنے کیلئے تھپتھپائیں"</string>
+    <string name="wallpaper_preview_card_content_description_editable" msgid="8147628993184862003">"‏‫‎%1$s وال پیپر کا پیش منظر ‎%2$s، اپنی تصویر میں ترمیم کرنے کیلئے دو بار تھپتھپائیں"</string>
+    <string name="wallpaper_preview_card_content_description_non_editable" msgid="2201116657175733260">"‏‫%1$s وال پیپر کا پیش منظر ‎%2$s"</string>
     <string name="lock_wallpaper_preview_card_content_description" msgid="5236839857695985498">"مقفل اسکرین وال پیپر کا پیش منظر"</string>
     <string name="home_wallpaper_preview_card_content_description" msgid="4059418716070821630">"ہوم اسکرین وال پیپر کا پیش منظر"</string>
     <string name="collection_not_exist_msg" msgid="3504852962885064842">"مجموعہ موجود نہیں ہے"</string>
@@ -138,8 +143,17 @@
     <string name="reset_confirmation_dialog_title" msgid="3391905685838213712">"تبدیلیوں کو ری سیٹ کریں؟"</string>
     <string name="reset_confirmation_dialog_message" msgid="888669268626289603">"آپ کی تبدیلیاں محفوظ نہیں ہوں گی"</string>
     <string name="more_wallpapers" msgid="8116268433411881705">"مزید وال پیپرز"</string>
+    <string name="wallpapers" msgid="7133442512006469886">"وال پیپرز"</string>
     <string name="recents_wallpaper_label" msgid="8653165542635660222">"%1$s, %2$d"</string>
     <string name="default_wallpaper_title" msgid="2541071182656978180">"وال پیپر"</string>
     <string name="small_preview_tooltip" msgid="1920430079013352071">"اپنی تصویر میں ترمیم کرنے کے لیے تھپتھپائیں"</string>
     <string name="full_preview_tooltip" msgid="4648994028015322759">"اپنی تصاویر کی پوزیشن، اسکیل اور زاویہ کو ایڈجسٹ کریں"</string>
+    <string name="discard_changes_dialog_message" msgid="8462485277292103457">"تبدیلیاں مسترد کریں؟"</string>
+    <string name="discard_changes_dialog_button_keep_editing" msgid="9118931326834547216">"ترمیم جاری رکھیں"</string>
+    <string name="discard_changes_dialog_button_discard" msgid="6585071548322908206">"مسترد کریں"</string>
+    <string name="action_zoom_in" msgid="3326782160671405449">"زوم ان کریں"</string>
+    <string name="action_zoom_out" msgid="5454911090443175449">"زوم آؤٹ کریں"</string>
+    <string name="zoomed_to_percent" msgid="1243039994190840132">"‏‫‎%d%%‎ تک زوم کیا گیا"</string>
+    <string name="max_zoom_percentage" msgid="2111670558746866030">"زیادہ سے زیادہ زوم حاصل کر لیا گیا"</string>
+    <string name="min_zoom_percentage" msgid="5931879817379214316">"کم سے کم زوم حاصل کر لیا گیا"</string>
 </resources>

@@ -24,12 +24,14 @@
     <string name="set_wallpaper_button_text" msgid="5445978864530156290">"ልጣፍ አቀናብር"</string>
     <string name="set_wallpaper_progress_message" msgid="7986528287618716715">"ልጣፍን በማዘጋጀት ላይ…"</string>
     <string name="try_again" msgid="8278874823700921234">"እንደገና ሞክር"</string>
+    <string name="select_a_photo" msgid="7273925950262860696">"ፎቶ ይምረጡ"</string>
     <string name="set_wallpaper_error_message" msgid="6819986999041085130">"ልጣፍን ማዘጋጀት አልተቻለም።"</string>
     <string name="load_wallpaper_error_message" msgid="7913278480467707374">"ወደ ልጣፍ መጫን አልተቻለም። ምስሉ የተበላሸ ወይም የማይገኝ ነው።"</string>
     <string name="static_wallpaper_presentation_mode_message" msgid="417940227049360906">"በአሁኑ ጊዜ የተዘጋጀ"</string>
     <string name="rotating_wallpaper_presentation_mode_message" msgid="3361676041605733288">"ዕለታዊ ልጣፍ"</string>
     <string name="wallpaper_destination_both" msgid="1124197176741944063">"መነሻ ገፅ እና የማያ ገፅ ቁልፍ"</string>
     <string name="choose_a_wallpaper_section_title" msgid="1009823506890453891">"ልጣፍ ይምረጡ"</string>
+    <string name="choose_a_curated_photo_section_title" msgid="7360675459203465887">"የተጠቆሙ ፎቶዎች"</string>
     <string name="creative_wallpaper_title" msgid="3581650238648981372">"ልጣፍ ይፍጠሩ"</string>
     <string name="home_screen_message" msgid="106444102822522813">"መነሻ ገፅ"</string>
     <string name="lock_screen_message" msgid="1534506081955058013">"ማያ ገፅ ቁልፍ"</string>
@@ -43,6 +45,7 @@
     <string name="permission_needed_explanation_go_to_settings" msgid="3923551582092599609">"የአሁኑን ልጣፍ እዚህ ለማሳየት ልጣፎች የመሣሪያዎን ማከማቻ መድረስ አለባቸው።\n\nይህን ቅንብር ለመቀየር ወደ የልጣፎች መተግበሪያ መረጃው የፈቃዶች አካባቢ ይሂዱ።"</string>
     <string name="permission_needed_allow_access_button_label" msgid="1943133660612924306">"መዳረሻን ፍቀድ"</string>
     <string name="no_backup_image_wallpaper_description" msgid="8303268619408738057">"የሕያው ልጣፍ አገልግሎት ለተሽከርካሪ ልጣፎች"</string>
+    <string name="more_photos" msgid="2183343115041498453">"ተጨማሪ ፎቶዎች"</string>
     <string name="daily_refresh_tile_title" msgid="3270456074558525091">"ዕለታዊ ልጣፍ"</string>
     <string name="daily_refresh_tile_subtitle" msgid="3976682014885446443">"ለማብራት ነካ ያድርጉ"</string>
     <string name="start_rotation_dialog_body_live_wallpaper_needed" msgid="5132580257563846082">"ልጣፍ በየቀኑ በራስ-ሰር ይቀየራል። ማዋቀርን ለመጨረሽ በሚቀጥለው ማያ ገፅ ላይ &lt;strong&gt;ልጣፍ አዘጋጅ&gt;/strong&gt;ን መታ ያድርጉ።"</string>
@@ -67,7 +70,8 @@
     <string name="refresh_daily_wallpaper_home_content_description" msgid="2770445044556164259">"የዕለታዊ መነሻ ማያ ገፅ ልጣፍን ያድሱ"</string>
     <string name="refresh_daily_wallpaper_content_description" msgid="4362142658237147583">"ዕለታዊ ልጣፍን ያድሱ"</string>
     <string name="preview_screen_description" msgid="3386387053327775919">"የልጣፍ ቅድመ ዕይታ ማያ ገጽ"</string>
-    <string name="preview_screen_description_editable" msgid="506875963019888699">"የልጣፍ ቅድመ ዕይታ ማያ ገፅ %1$s። ለማንፏቀቅ እና ለማጉላት ሁለት ጣቶችን ይጠቀሙ።"</string>
+    <string name="preview_screen_description_editable" msgid="5558037286562127705">"የልጣፍ ቅድመ ዕይታ ማያ ገፅ %1$s። ለማንፏቀቅ እና ለማጉላት ሁለት ጣቶችን ይጠቀሙ"</string>
+    <string name="preview_screen_description_non_editable" msgid="5861996326502454566">"የልጣፍ ቅድመ ዕይታ ማያ ገፅ %1$s"</string>
     <string name="folded_device_state_description" msgid="4972608448265616264">"ታጥፏል"</string>
     <string name="unfolded_device_state_description" msgid="3071975681472460627">"ተዘርግቷል"</string>
     <string name="full_preview_check_button_description" msgid="700484353763952975">"የልጣፍ አርትዖት ተከናውኗል"</string>
@@ -105,7 +109,8 @@
     <string name="previous_page_content_description" msgid="1138597031571078429">"ቀዳሚ"</string>
     <string name="wallpaper_title" msgid="6754214682228331092">"ልጣፍ"</string>
     <string name="wallpaper_preview_card_content_description" msgid="6049261033541034584">"የልጣፍ ቅድመ-ዕይታ"</string>
-    <string name="wallpaper_preview_card_content_description_editable" msgid="3111763100515242340">"የልጣፍ ቅድመ ዕይታ %1$s፣ ፎቶውን ለማርትዕ መታ ያድርጉ"</string>
+    <string name="wallpaper_preview_card_content_description_editable" msgid="8147628993184862003">"%1$s ልጣፍ ቅድመ ዕይታ %2$s፣ ፎቶዎን ለማርትዕ ሁለቴ መታ ያድርጉ"</string>
+    <string name="wallpaper_preview_card_content_description_non_editable" msgid="2201116657175733260">"%1$s ልጣፍ ቅድመ ዕይታ %2$s"</string>
     <string name="lock_wallpaper_preview_card_content_description" msgid="5236839857695985498">"የማያ ገጽ ቁልፍ ልጣፍ ቅድመ ዕይታ"</string>
     <string name="home_wallpaper_preview_card_content_description" msgid="4059418716070821630">"የመነሻ ማያ ገጽ ልጣፍ ቅድመ ዕይታ"</string>
     <string name="collection_not_exist_msg" msgid="3504852962885064842">"ስብስቡ የለም"</string>
@@ -138,8 +143,17 @@
     <string name="reset_confirmation_dialog_title" msgid="3391905685838213712">"ለውጦች ዳግም ይጀመሩ?"</string>
     <string name="reset_confirmation_dialog_message" msgid="888669268626289603">"የእርስዎ ለውጦች አይቀመጡም"</string>
     <string name="more_wallpapers" msgid="8116268433411881705">"ተጨማሪ ልጣፎች"</string>
+    <string name="wallpapers" msgid="7133442512006469886">"ልጣፎች"</string>
     <string name="recents_wallpaper_label" msgid="8653165542635660222">"%1$s፣ %2$d"</string>
     <string name="default_wallpaper_title" msgid="2541071182656978180">"ልጣፍ"</string>
     <string name="small_preview_tooltip" msgid="1920430079013352071">"ፎቶዎን ለማርትዕ መታ ያድርጉ"</string>
     <string name="full_preview_tooltip" msgid="4648994028015322759">"የፎቶዎችዎን አቀማመጥ፣ ልኬት ለውጥ እና አንግል ያስተካክሉ"</string>
+    <string name="discard_changes_dialog_message" msgid="8462485277292103457">"ለውጦች ይወገዱ?"</string>
+    <string name="discard_changes_dialog_button_keep_editing" msgid="9118931326834547216">"ማርትዕ ቀጥል"</string>
+    <string name="discard_changes_dialog_button_discard" msgid="6585071548322908206">"አስወግድ"</string>
+    <string name="action_zoom_in" msgid="3326782160671405449">"አጉላ"</string>
+    <string name="action_zoom_out" msgid="5454911090443175449">"አሳንሥ"</string>
+    <string name="zoomed_to_percent" msgid="1243039994190840132">"ወደ %d%% ጎልቷል"</string>
+    <string name="max_zoom_percentage" msgid="2111670558746866030">"ከፍተኛው ማጉላት ላይ ተደርሷል"</string>
+    <string name="min_zoom_percentage" msgid="5931879817379214316">"አነስተኛው ማጉላት ላይ ተደርሷል"</string>
 </resources>

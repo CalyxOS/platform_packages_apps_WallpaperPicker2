@@ -35,6 +35,7 @@ import android.graphics.Color
 import android.graphics.Point
 import android.graphics.Rect
 import android.net.Uri
+import android.os.Handler
 import android.util.Log
 import androidx.exifinterface.media.ExifInterface
 import com.android.app.tracing.TraceUtils.traceAsync
@@ -48,6 +49,7 @@ import com.android.wallpaper.model.StaticWallpaperPrefMetadata
 import com.android.wallpaper.model.WallpaperInfo
 import com.android.wallpaper.model.WallpaperModelsPair
 import com.android.wallpaper.module.InjectorProvider
+import com.android.wallpaper.module.RecentWallpaperManager
 import com.android.wallpaper.module.WallpaperPreferences
 import com.android.wallpaper.module.logging.UserEventLogger
 import com.android.wallpaper.module.logging.UserEventLogger.SetWallpaperEntryPoint
@@ -62,6 +64,7 @@ import com.android.wallpaper.picker.data.WallpaperModel.LiveWallpaperModel
 import com.android.wallpaper.picker.data.WallpaperModel.StaticWallpaperModel
 import com.android.wallpaper.picker.di.modules.BackgroundDispatcher
 import com.android.wallpaper.picker.preview.shared.model.FullPreviewCropModel
+import com.android.wallpaper.util.CurrentWallpaperInfoUtils.getCurrentWallpapers
 import com.android.wallpaper.util.WallpaperCropUtils
 import com.android.wallpaper.util.converter.WallpaperModelFactory
 import dagger.hilt.android.qualifiers.ApplicationContext
@@ -71,15 +74,13 @@ import javax.inject.Inject
 import javax.inject.Singleton
 import kotlinx.coroutines.CancellableContinuation
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.filterNotNull
-import kotlinx.coroutines.flow.take
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.suspendCancellableCoroutine
 
-@OptIn(ExperimentalCoroutinesApi::class)
 @Singleton
 class WallpaperClientImpl
 @Inject
@@ -89,6 +90,7 @@ constructor(
     private val wallpaperPreferences: WallpaperPreferences,
     private val wallpaperModelFactory: WallpaperModelFactory,
     private val logger: UserEventLogger,
+    private val recentWallpaperManager: RecentWallpaperManager,
     @BackgroundDispatcher val backgroundScope: CoroutineScope,
 ) : WallpaperClient {
 
@@ -120,8 +122,22 @@ constructor(
 
     override fun recentWallpapers(destination: WallpaperDestination, limit: Int) =
         when (destination) {
-            HOME -> recentHomeWallpapers.asStateFlow().filterNotNull().take(limit)
-            LOCK -> recentLockWallpapers.asStateFlow().filterNotNull().take(limit)
+            HOME ->
+                recentHomeWallpapers.asStateFlow().filterNotNull().map { wallpapers ->
+                    if (wallpapers.size > limit) {
+                        wallpapers.subList(0, limit)
+                    } else {
+                        wallpapers
+                    }
+                }
+            LOCK ->
+                recentLockWallpapers.asStateFlow().filterNotNull().map { wallpapers ->
+                    if (wallpapers.size > limit) {
+                        wallpapers.subList(0, limit)
+                    } else {
+                        wallpapers
+                    }
+                }
             BOTH ->
                 throw IllegalStateException(
                     "Destination $destination should not be used for getting recent wallpapers."
@@ -234,6 +250,7 @@ constructor(
             bitmapHash,
             managerId,
             commonWallpaperData.id.uniqueId,
+            imageWallpaperData?.uri,
         )
     }
 
@@ -482,10 +499,15 @@ constructor(
     private suspend fun getCurrentWallpaperFromFactory(
         destination: WallpaperDestination
     ): RecentWallpaperModel {
-        val currentWallpapers = getCurrentWallpapers()
+        val currentWallpapers =
+            getCurrentWallpapers(context, updateRecents = false, forceRefresh = false) {
+                info,
+                screen ->
+                recentWallpaperManager.getCurrentWallpaperBitmapUri(info, screen)
+            }
         val wallpaper: WallpaperInfo =
             if (destination == LOCK) {
-                currentWallpapers.second ?: currentWallpapers.first
+                currentWallpapers.second
             } else {
                 currentWallpapers.first
             }
@@ -498,25 +520,16 @@ constructor(
         )
     }
 
-    private suspend fun getCurrentWallpapers(): Pair<WallpaperInfo, WallpaperInfo?> =
-        suspendCancellableCoroutine { continuation ->
-            InjectorProvider.getInjector()
-                .getCurrentWallpaperInfoFactory(context)
-                .createCurrentWallpaperInfos(context, /* forceRefresh= */ false) {
-                    homeWallpaper,
-                    lockWallpaper,
-                    _ ->
-                    continuation.resume(Pair(homeWallpaper, lockWallpaper), null)
-                }
-        }
-
-    override suspend fun getCurrentWallpaperModels(): WallpaperModelsPair {
-        val currentWallpapers = getCurrentWallpapers()
+    override suspend fun getCurrentWallpaperModels(forceRefresh: Boolean): WallpaperModelsPair {
+        val currentWallpapers =
+            getCurrentWallpapers(context, updateRecents = false, forceRefresh) { info, screen ->
+                recentWallpaperManager.getCurrentWallpaperBitmapUri(info, screen)
+            }
         val homeWallpaper = currentWallpapers.first
         val lockWallpaper = currentWallpapers.second
         return WallpaperModelsPair(
             wallpaperModelFactory.getWallpaperModel(context, homeWallpaper),
-            lockWallpaper?.let { wallpaperModelFactory.getWallpaperModel(context, it) },
+            wallpaperModelFactory.getWallpaperModel(context, lockWallpaper),
         )
     }
 
@@ -552,11 +565,16 @@ constructor(
                 )
             }
         } else {
-            val currentWallpapers = getCurrentWallpapers()
+            val currentWallpapers =
+                getCurrentWallpapers(context, updateRecents = false, forceRefresh = false) {
+                    info,
+                    screen ->
+                    recentWallpaperManager.getCurrentWallpaperBitmapUri(info, screen)
+                }
             val wallpaper =
                 if (currentWallpapers.first.wallpaperId == wallpaperId) {
                     currentWallpapers.first
-                } else if (currentWallpapers.second?.wallpaperId == wallpaperId) {
+                } else if (currentWallpapers.second.wallpaperId == wallpaperId) {
                     currentWallpapers.second
                 } else null
             return wallpaper?.getThumbAsset(context)?.getLowResBitmap(context)
@@ -663,6 +681,17 @@ constructor(
                 k.resumeWith(Result.success(null))
             }
         }
+
+    override fun addOnColorsChangedListener(
+        listener: (WallpaperColors?, Int) -> Unit,
+        handler: Handler,
+    ) {
+        wallpaperManager.addOnColorsChangedListener(listener, handler)
+    }
+
+    override fun removeOnColorsChangedListener(listener: (WallpaperColors?, Int) -> Unit) {
+        wallpaperManager.removeOnColorsChangedListener(listener)
+    }
 
     companion object {
         private const val TAG = "WallpaperClientImpl"

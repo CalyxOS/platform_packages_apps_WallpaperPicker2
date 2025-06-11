@@ -24,12 +24,14 @@
     <string name="set_wallpaper_button_text" msgid="5445978864530156290">"ຕັ້ງເປັນຮູບພື້ນຫຼັງ"</string>
     <string name="set_wallpaper_progress_message" msgid="7986528287618716715">"ກຳລັງຕັ້ງຮູບພື້ນຫຼັງ..."</string>
     <string name="try_again" msgid="8278874823700921234">"ລອງໃໝ່"</string>
+    <string name="select_a_photo" msgid="7273925950262860696">"ເລືອກຮູບພາບ"</string>
     <string name="set_wallpaper_error_message" msgid="6819986999041085130">"ບໍ່ສາມາດຕັ້ງເປັນຮູບພື້ນຫຼັງໄດ້."</string>
     <string name="load_wallpaper_error_message" msgid="7913278480467707374">"ບໍ່ສາມາດໂຫຼດພາບພື້ນຫຼັງໄດ້"</string>
     <string name="static_wallpaper_presentation_mode_message" msgid="417940227049360906">"ຕັ້ງຕອນນີ້"</string>
     <string name="rotating_wallpaper_presentation_mode_message" msgid="3361676041605733288">"ຮູບພື້ນຫຼັງປະຈຳວັນ"</string>
     <string name="wallpaper_destination_both" msgid="1124197176741944063">"ໜ້າຫຼັກ ແລະ ໜ້າຈໍລັອກ"</string>
     <string name="choose_a_wallpaper_section_title" msgid="1009823506890453891">"ເລືອກຮູບພື້ນຫຼັງ"</string>
+    <string name="choose_a_curated_photo_section_title" msgid="7360675459203465887">"ຮູບພາບທີ່ແນະນຳ"</string>
     <string name="creative_wallpaper_title" msgid="3581650238648981372">"ສ້າງຮູບພື້ນຫຼັງ"</string>
     <string name="home_screen_message" msgid="106444102822522813">"ໜ້າຈໍຫຼັກ"</string>
     <string name="lock_screen_message" msgid="1534506081955058013">"ໜ້າຈໍລັອກ"</string>
@@ -43,6 +45,7 @@
     <string name="permission_needed_explanation_go_to_settings" msgid="3923551582092599609">"ເພື່ອສະແດງຮູບພື້ນຫຼັງປັດຈຸບັນຢູ່ບ່ອນນີ້, ແອັບ Wallpapers ຈະຕ້ອງໃຊ້ສິດອະນຸຍາດເຂົ້າເຖິງບ່ອນຈັດເກັບຂໍ້ມູນອຸປະກອນຂອງທ່ານກ່ອນ.\n\nເພື່ອປ່ຽນການຕັ້ງຄ່ານີ້, ໃຫ້ໄປທີ່ພື້ນທີ່ສິດອະນຸຍາດຂອງຂໍ້ມູນແອັບຂອງ Wallpapers."</string>
     <string name="permission_needed_allow_access_button_label" msgid="1943133660612924306">"ອະນຸຍາດການເຂົ້າເຖິງ"</string>
     <string name="no_backup_image_wallpaper_description" msgid="8303268619408738057">"ບໍລິການຮູບພື້ນຫຼັງແບບເຄື່ອນໄຫວສຳລັບຮູບພື້ນຫຼັງແບບໝຸນໄດ້"</string>
+    <string name="more_photos" msgid="2183343115041498453">"ຮູບພາບເພີ່ມເຕີມ"</string>
     <string name="daily_refresh_tile_title" msgid="3270456074558525091">"ຮູບພື້ນຫຼັງປະຈຳວັນ"</string>
     <string name="daily_refresh_tile_subtitle" msgid="3976682014885446443">"ແຕະເພື່ອເປີດໃຊ້"</string>
     <string name="start_rotation_dialog_body_live_wallpaper_needed" msgid="5132580257563846082">"ຮູບພື້ນຫຼັງຈະຖືກປ່ຽນໃໝ່ທຸກມື້ໂດຍອັດຕະໂນມັດ. ເພື່ອສຳເລັດການຕັ້ງຄ່າ, ໃຫ້ແຕະໃສ່ &lt;strong&gt;ຕັ້ງເປັນຮູບພື້ນຫຼັງ&lt;/strong&gt; ຢູ່ໜ້າຈໍຖັດໄປ."</string>
@@ -67,7 +70,8 @@
     <string name="refresh_daily_wallpaper_home_content_description" msgid="2770445044556164259">"ໂຫຼດຂໍ້ມູນຮູບພື້ນຫຼັງໜ້າຈໍຫຼັກຄືນໃໝ່ທຸກມື້"</string>
     <string name="refresh_daily_wallpaper_content_description" msgid="4362142658237147583">"ໂຫຼດຮູບພື້ນຫຼັງຄືນໃໝ່ທຸກມື້"</string>
     <string name="preview_screen_description" msgid="3386387053327775919">"ໜ້າຈໍຕົວຢ່າງຮູບພື້ນຫຼັງ"</string>
-    <string name="preview_screen_description_editable" msgid="506875963019888699">"ໜ້າຈໍຕົວຢ່າງຮູບພື້ນຫຼັງ %1$s. ໃຊ້ 2 ນິ້ວເພື່ອເລື່ອນ ແລະ ຊູມ."</string>
+    <string name="preview_screen_description_editable" msgid="5558037286562127705">"ໜ້າຈໍຕົວຢ່າງຮູບພື້ນຫຼັງແບບ %1$s. ໃຊ້ 2 ນິ້ວເພື່ອເລື່ອນ ແລະ ຊູມ"</string>
+    <string name="preview_screen_description_non_editable" msgid="5861996326502454566">"ໜ້າຈໍຕົວຢ່າງຮູບພື້ນຫຼັງແບບ %1$s"</string>
     <string name="folded_device_state_description" msgid="4972608448265616264">"ພັບ"</string>
     <string name="unfolded_device_state_description" msgid="3071975681472460627">"ກາງອອກ"</string>
     <string name="full_preview_check_button_description" msgid="700484353763952975">"ການແກ້ໄຂຮູບພື້ນຫຼັງແລ້ວໆ"</string>
@@ -105,7 +109,8 @@
     <string name="previous_page_content_description" msgid="1138597031571078429">"ກ່ອນໜ້າ"</string>
     <string name="wallpaper_title" msgid="6754214682228331092">"ຮູບພື້ນຫຼັງ"</string>
     <string name="wallpaper_preview_card_content_description" msgid="6049261033541034584">"ຕົວຢ່າງຮູບພື້ນຫຼັງ"</string>
-    <string name="wallpaper_preview_card_content_description_editable" msgid="3111763100515242340">"ຕົວຢ່າງຮູບພື້ນຫຼັງ %1$s, ແຕະເພື່ອແກ້ໄຂຮູບພາບຂອງທ່ານ"</string>
+    <string name="wallpaper_preview_card_content_description_editable" msgid="8147628993184862003">"%1$s ຕົວຢ່າງຮູບພື້ນຫຼັງ %2$s, ແຕະສອງເທື່ອເພື່ອແກ້ໄຂຮູບພາບຂອງທ່ານ"</string>
+    <string name="wallpaper_preview_card_content_description_non_editable" msgid="2201116657175733260">"ຕົວຢ່າງຮູບພື້ນຫຼັງ %1$s ແບບ %2$s"</string>
     <string name="lock_wallpaper_preview_card_content_description" msgid="5236839857695985498">"ຕົວຢ່າງຮູບພື້ນຫຼັງໜ້າຈໍລັອກ"</string>
     <string name="home_wallpaper_preview_card_content_description" msgid="4059418716070821630">"ຕົວຢ່າງຮູບພື້ນຫຼັງໂຮມສະກຣີນ"</string>
     <string name="collection_not_exist_msg" msgid="3504852962885064842">"ບໍ່ມິຄໍເລັກຊັນ"</string>
@@ -138,8 +143,17 @@
     <string name="reset_confirmation_dialog_title" msgid="3391905685838213712">"ຣີເຊັດການປ່ຽນແປງບໍ?"</string>
     <string name="reset_confirmation_dialog_message" msgid="888669268626289603">"ການປ່ຽນ​ແປງ​ຂອງ​ທ່ານ​ຈະບໍ່​ຖືກບັນ​ທຶກ"</string>
     <string name="more_wallpapers" msgid="8116268433411881705">"ຮູບພື້ນຫຼັງເພີ່ມເຕີມ"</string>
+    <string name="wallpapers" msgid="7133442512006469886">"ພາບພື້ນຫຼັງ"</string>
     <string name="recents_wallpaper_label" msgid="8653165542635660222">"%1$s, %2$d"</string>
     <string name="default_wallpaper_title" msgid="2541071182656978180">"ຮູບພື້ນຫຼັງ"</string>
     <string name="small_preview_tooltip" msgid="1920430079013352071">"ແຕະເພື່ອແກ້ໄຂຮູບພາບຂອງທ່ານ"</string>
     <string name="full_preview_tooltip" msgid="4648994028015322759">"ປັບຕຳແໜ່ງ, ຂະໜາດ ແລະ ມຸມຂອງຮູບພາບຂອງທ່ານ"</string>
+    <string name="discard_changes_dialog_message" msgid="8462485277292103457">"ຖິ້ມການປ່ຽນແປງບໍ?"</string>
+    <string name="discard_changes_dialog_button_keep_editing" msgid="9118931326834547216">"ສືບຕໍ່ແກ້ໄຂ"</string>
+    <string name="discard_changes_dialog_button_discard" msgid="6585071548322908206">"ຖິ້ມ"</string>
+    <string name="action_zoom_in" msgid="3326782160671405449">"ຊູມເຂົ້າ"</string>
+    <string name="action_zoom_out" msgid="5454911090443175449">"ຊູມອອກ"</string>
+    <string name="zoomed_to_percent" msgid="1243039994190840132">"ຊູມໄປທີ່ %d%%"</string>
+    <string name="max_zoom_percentage" msgid="2111670558746866030">"ຊູມຮອດລະດັບສູງສຸດແລ້ວ"</string>
+    <string name="min_zoom_percentage" msgid="5931879817379214316">"ຊູມຮອດລະດັບຕ່ຳສຸດແລ້ວ"</string>
 </resources>

@@ -24,12 +24,14 @@
     <string name="set_wallpaper_button_text" msgid="5445978864530156290">"வால்பேப்பரை அமை"</string>
     <string name="set_wallpaper_progress_message" msgid="7986528287618716715">"வால்பேப்பரை அமைக்கிறது…"</string>
     <string name="try_again" msgid="8278874823700921234">"மீண்டும் முயல்க"</string>
+    <string name="select_a_photo" msgid="7273925950262860696">"படத்தைத் தேர்ந்தெடுங்கள்"</string>
     <string name="set_wallpaper_error_message" msgid="6819986999041085130">"வால்பேப்பரை அமைக்க முடியவில்லை."</string>
     <string name="load_wallpaper_error_message" msgid="7913278480467707374">"வால்பேப்பரை ஏற்ற முடியவில்லை. படம் சிதைந்துவிட்டது அல்லது இல்லை."</string>
     <string name="static_wallpaper_presentation_mode_message" msgid="417940227049360906">"தற்போது அமைத்துள்ள வால்பேப்பர்"</string>
     <string name="rotating_wallpaper_presentation_mode_message" msgid="3361676041605733288">"தினசரி வால்பேப்பர்"</string>
     <string name="wallpaper_destination_both" msgid="1124197176741944063">"முகப்பு &amp; பூட்டுத் திரை"</string>
     <string name="choose_a_wallpaper_section_title" msgid="1009823506890453891">"வால்பேப்பரைத் தேர்வுசெய்யுங்கள்"</string>
+    <string name="choose_a_curated_photo_section_title" msgid="7360675459203465887">"பரிந்துரைக்கப்படும் படங்கள்"</string>
     <string name="creative_wallpaper_title" msgid="3581650238648981372">"வால்பேப்பரை உருவாக்குதல்"</string>
     <string name="home_screen_message" msgid="106444102822522813">"முகப்புத் திரை"</string>
     <string name="lock_screen_message" msgid="1534506081955058013">"பூட்டுத் திரை"</string>
@@ -43,6 +45,7 @@
     <string name="permission_needed_explanation_go_to_settings" msgid="3923551582092599609">"இந்த வால்பேப்பரை இங்கே காட்ட, வால்பேப்பர்களுக்கு உங்கள் சாதனத்தின் சேமிப்பகத்திற்கான அணுகல் தேவை.\n\nஇந்த அமைப்பை மாற்ற, வால்பேப்பர்களின் ஆப்ஸ் தகவல் பக்கத்தில் உள்ள அனுமதிகள் பகுதிக்குச் செல்லவும்."</string>
     <string name="permission_needed_allow_access_button_label" msgid="1943133660612924306">"அணுகலை அனுமதி"</string>
     <string name="no_backup_image_wallpaper_description" msgid="8303268619408738057">"சுழலும் வால்பேப்பர்களுக்கான லைவ் வால்பேப்பர் சேவை"</string>
+    <string name="more_photos" msgid="2183343115041498453">"மேலும் படங்கள்"</string>
     <string name="daily_refresh_tile_title" msgid="3270456074558525091">"தினசரி வால்பேப்பர்"</string>
     <string name="daily_refresh_tile_subtitle" msgid="3976682014885446443">"ஆன் செய்ய, தட்டவும்"</string>
     <string name="start_rotation_dialog_body_live_wallpaper_needed" msgid="5132580257563846082">"ஒவ்வொரு நாளும் வால்பேப்பர் தானாகவே மாறும். அமைவை முடிக்க, அடுத்த திரையிலுள்ள &lt;strong&gt;வால்பேப்பரை அமை&lt;/strong&gt; என்பதைத் தட்டவும்."</string>
@@ -67,7 +70,8 @@
     <string name="refresh_daily_wallpaper_home_content_description" msgid="2770445044556164259">"முகப்புத் திரையில் தினசரி வால்பேப்பரைப் புதுப்பிக்கும் பட்டன்"</string>
     <string name="refresh_daily_wallpaper_content_description" msgid="4362142658237147583">"தினசரி வால்பேப்பரைப் புதுப்பிக்கும் பட்டன்"</string>
     <string name="preview_screen_description" msgid="3386387053327775919">"வால்பேப்பர் மாதிரிக்காட்சித் திரை"</string>
-    <string name="preview_screen_description_editable" msgid="506875963019888699">"வால்பேப்பர் மாதிரிக்காட்சித் திரை %1$s. இரு விரல்களைப் பயன்படுத்தி நகர்த்தலாம், அளவை மாற்றலாம்."</string>
+    <string name="preview_screen_description_editable" msgid="5558037286562127705">"வால்பேப்பர் மாதிரிக்காட்சித் திரை %1$s. இரு விரல்களைப் பயன்படுத்தி நகர்த்தலாம், அளவை மாற்றலாம்."</string>
+    <string name="preview_screen_description_non_editable" msgid="5861996326502454566">"வால்பேப்பர் மாதிரிக்காட்சித் திரை %1$s"</string>
     <string name="folded_device_state_description" msgid="4972608448265616264">"மடக்கப்பட்டுள்ளது"</string>
     <string name="unfolded_device_state_description" msgid="3071975681472460627">"விரிக்கப்பட்டுள்ளது"</string>
     <string name="full_preview_check_button_description" msgid="700484353763952975">"வால்பேப்பரை எடிட் செய்வதை முடிக்கும்"</string>
@@ -101,11 +105,12 @@
     <string name="bottom_action_bar_slideshow_wallpaper" msgid="509770525179533154">"ஸ்லைடுகாட்சி வால்பேப்பர்"</string>
     <string name="bottom_action_bar_apply" msgid="2983308349819178932">"பயன்படுத்துவதற்கான பட்டன்"</string>
     <string name="accessibility_preview_pager" msgid="1839869637405028575">"பக்கம் <xliff:g id="ID_1">%1$d</xliff:g> / <xliff:g id="ID_2">%2$d</xliff:g>"</string>
-    <string name="next_page_content_description" msgid="6268461446679584152">"அடுத்த பக்கத்திற்குச் செல்வதற்கான பட்டன்"</string>
+    <string name="next_page_content_description" msgid="6268461446679584152">"அடுத்து"</string>
     <string name="previous_page_content_description" msgid="1138597031571078429">"முந்தைய பக்கத்திற்குச் செல்வதற்கான பட்டன்"</string>
     <string name="wallpaper_title" msgid="6754214682228331092">"வால்பேப்பர்"</string>
     <string name="wallpaper_preview_card_content_description" msgid="6049261033541034584">"வால்பேப்பர் மாதிரிக்காட்சி"</string>
-    <string name="wallpaper_preview_card_content_description_editable" msgid="3111763100515242340">"மாதிரிக்காட்சி %1$s, மாற்ற தட்டுங்கள்"</string>
+    <string name="wallpaper_preview_card_content_description_editable" msgid="8147628993184862003">"%1$s வால்பேப்பரின் மாதிரிக்காட்சி %2$s, உங்கள் படத்தை மாற்ற இருமுறை தட்டுங்கள்"</string>
+    <string name="wallpaper_preview_card_content_description_non_editable" msgid="2201116657175733260">"%1$s வால்பேப்பர் மாதிரிக்காட்சி %2$s"</string>
     <string name="lock_wallpaper_preview_card_content_description" msgid="5236839857695985498">"பூட்டுத் திரை வால்பேப்பரின் மாதிரிக்காட்சி"</string>
     <string name="home_wallpaper_preview_card_content_description" msgid="4059418716070821630">"முகப்புத் திரை வால்பேப்பரின் மாதிரிக்காட்சி"</string>
     <string name="collection_not_exist_msg" msgid="3504852962885064842">"இந்தத் தொகுப்பு இல்லை"</string>
@@ -138,8 +143,17 @@
     <string name="reset_confirmation_dialog_title" msgid="3391905685838213712">"மாற்றங்களை மீட்டமைக்கவா?"</string>
     <string name="reset_confirmation_dialog_message" msgid="888669268626289603">"உங்கள் மாற்றங்கள் சேமிக்கப்படாது"</string>
     <string name="more_wallpapers" msgid="8116268433411881705">"மேலும் வால்பேப்பர்கள்"</string>
+    <string name="wallpapers" msgid="7133442512006469886">"வால்பேப்பர்கள்"</string>
     <string name="recents_wallpaper_label" msgid="8653165542635660222">"%1$s, %2$d"</string>
     <string name="default_wallpaper_title" msgid="2541071182656978180">"வால்பேப்பர்"</string>
     <string name="small_preview_tooltip" msgid="1920430079013352071">"உங்கள் படத்தில் மாற்றம் செய்ய தட்டலாம்"</string>
     <string name="full_preview_tooltip" msgid="4648994028015322759">"உங்கள் படங்களின் நிலை, அளவு மற்றும் ஆங்கிளை மாற்றலாம்"</string>
+    <string name="discard_changes_dialog_message" msgid="8462485277292103457">"மாற்றங்களை நிராகரிக்கவா?"</string>
+    <string name="discard_changes_dialog_button_keep_editing" msgid="9118931326834547216">"தொடர்ந்து திருத்து"</string>
+    <string name="discard_changes_dialog_button_discard" msgid="6585071548322908206">"நிராகரி"</string>
+    <string name="action_zoom_in" msgid="3326782160671405449">"பெரிதாக்கும்"</string>
+    <string name="action_zoom_out" msgid="5454911090443175449">"சிறிதாக்கும்"</string>
+    <string name="zoomed_to_percent" msgid="1243039994190840132">"%d%%க்குப் பெரிதாக்கப்பட்டது"</string>
+    <string name="max_zoom_percentage" msgid="2111670558746866030">"அதிகபட்ச அளவை அடைந்துவிட்டது"</string>
+    <string name="min_zoom_percentage" msgid="5931879817379214316">"குறைந்தபட்ச அளவை அடைந்துவிட்டது"</string>
 </resources>

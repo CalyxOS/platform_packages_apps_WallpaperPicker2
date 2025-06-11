@@ -16,64 +16,162 @@
 
 package com.android.wallpaper.picker.category.ui.view.viewholder
 
+import android.app.ActivityOptions
+import android.app.PendingIntent
 import android.graphics.Rect
+import android.util.Log
 import android.view.View
+import android.view.ViewStub
+import android.widget.Button
+import android.widget.RelativeLayout
 import android.widget.TextView
+import androidx.lifecycle.LifecycleOwner
 import androidx.recyclerview.widget.RecyclerView
 import com.android.wallpaper.R
+import com.android.wallpaper.config.BaseFlags
+import com.android.wallpaper.picker.category.ui.binder.BannerProvider
 import com.android.wallpaper.picker.category.ui.view.adapter.CategoryAdapter
+import com.android.wallpaper.picker.category.ui.view.adapter.CuratedPhotosAdapter
+import com.android.wallpaper.picker.category.ui.viewmodel.CategoriesViewModel
+import com.android.wallpaper.picker.category.ui.viewmodel.PhotosViewModel
 import com.android.wallpaper.picker.category.ui.viewmodel.SectionViewModel
+import com.android.wallpaper.picker.customization.ui.binder.ColorUpdateBinder
+import com.android.wallpaper.picker.customization.ui.viewmodel.ColorUpdateViewModel
+import com.android.wallpaper.picker.data.PhotosErrorData
 import com.google.android.flexbox.AlignItems
 import com.google.android.flexbox.FlexDirection
 import com.google.android.flexbox.FlexWrap
 import com.google.android.flexbox.FlexboxLayoutManager
 import com.google.android.flexbox.JustifyContent
+import com.google.android.material.carousel.CarouselLayoutManager
+import com.google.android.material.carousel.CarouselSnapHelper
 
-/** This view holder caches reference to pertinent views in a [CategorySectionView] */
-class CategorySectionViewHolder(itemView: View, val windowWidth: Int) :
+/** This view holder caches reference to pertinent views in a list of section view */
+class CategorySectionViewHolder(itemView: View, private val windowWidth: Int) :
     RecyclerView.ViewHolder(itemView) {
 
     // recycler view for the tiles
-    private var sectionTiles: RecyclerView
-
+    private val sectionTiles: RecyclerView = itemView.requireViewById(R.id.category_wallpaper_tiles)
     // title for the section
-    private var sectionTitle: TextView
+    private val sectionTitle: TextView = itemView.requireViewById(R.id.section_title)
+    private val morePhotosButton: Button = itemView.requireViewById(R.id.more_photos_button)
+    private val categoryHeader: RelativeLayout = itemView.requireViewById(R.id.category_header)
 
-    init {
-        sectionTiles = itemView.requireViewById(R.id.category_wallpaper_tiles)
-        sectionTitle = itemView.requireViewById(R.id.section_title)
-    }
+    fun bind(
+        item: SectionViewModel,
+        colorUpdateViewModel: ColorUpdateViewModel,
+        shouldAnimateColor: () -> Boolean,
+        lifecycleOwner: LifecycleOwner,
+        bannerProvider: BannerProvider?,
+        isSignInBannerVisible: Boolean,
+        onSignInBannerDismissed: (dismissed: Boolean) -> Unit? = {},
+    ) {
+        val isNewPickerUi = BaseFlags.get().isNewPickerUi()
+        if (isNewPickerUi) {
+            ColorUpdateBinder.bind(
+                setColor = { color -> sectionTitle.setTextColor(color) },
+                color = colorUpdateViewModel.colorOnSurface,
+                shouldAnimate = shouldAnimateColor,
+                lifecycleOwner = lifecycleOwner,
+            )
+        }
 
-    fun bind(item: SectionViewModel) {
         // TODO: this probably is not necessary but if in the case the sections get updated we
         //  should just update the adapter instead of instantiating a new instance
-        sectionTiles.adapter = CategoryAdapter(item.tileViewModels, item.columnCount, windowWidth)
+        when (item.displayType) {
+            // This is the display type for suggested photos carousel
+            CategoriesViewModel.DisplayType.Carousel -> {
+                sectionTiles.adapter = CuratedPhotosAdapter(item.tileViewModels)
+                val layoutManagerCuratedPhotos = CarouselLayoutManager()
+                sectionTiles.layoutManager = layoutManagerCuratedPhotos
+                val snapHelper = CarouselSnapHelper()
 
-        val layoutManager = FlexboxLayoutManager(itemView.context)
+                // in case there are no suggested photos
+                if (item.tileViewModels.isEmpty()) {
+                    val signInBannerView = bannerProvider?.getSignInBanner()
+                    val layoutParams = morePhotosButton.layoutParams as RelativeLayout.LayoutParams
+                    layoutParams.removeRule(RelativeLayout.ALIGN_PARENT_END)
+                    layoutParams.addRule(RelativeLayout.CENTER_HORIZONTAL)
+                    morePhotosButton.layoutParams = layoutParams
+                    val pendingIntentForPhotos = (item as PhotosViewModel).pendingIntent
 
-        // Horizontal orientation
-        layoutManager.flexDirection = FlexDirection.ROW
+                    if (item.status == PhotosErrorData.UNAUTHENTICATED && !isSignInBannerVisible) {
+                        val viewStub = categoryHeader.findViewById<ViewStub>(R.id.sign_in_banner_id)
+                        val viewStubLayoutParams = viewStub.layoutParams
+                        val index = categoryHeader.indexOfChild(viewStub)
+                        categoryHeader.removeView(viewStub)
+                        signInBannerView?.layoutParams = viewStubLayoutParams
+                        categoryHeader.addView(signInBannerView, index)
+                    }
 
-        // disable wrapping to make sure everything fits on a single row
-        layoutManager.flexWrap = FlexWrap.NOWRAP
+                    // This is needed in order to allow activity starts using pending intent
+                    // Ref:
+                    // https://developer.android.com/guide/components/activities/background-starts
+                    val options = ActivityOptions.makeBasic()
+                    options.setPendingIntentBackgroundActivityStartMode(
+                        ActivityOptions.MODE_BACKGROUND_ACTIVITY_START_ALLOW_IF_VISIBLE
+                    )
+                    val bundle = options.toBundle()
 
-        // Stretch items to fill the horizontal axis
-        layoutManager.alignItems = AlignItems.STRETCH
+                    val dismissButton: Button? = signInBannerView?.findViewById(R.id.dismiss_button)
+                    val signInButton: Button? = signInBannerView?.findViewById(R.id.sign_in_button)
 
-        // Distribute items evenly on the horizontal axis
-        layoutManager.justifyContent = JustifyContent.SPACE_AROUND
+                    dismissButton?.setOnClickListener({ _ ->
+                        signInBannerView.visibility = View.GONE
+                        onSignInBannerDismissed(true)
+                    })
 
-        sectionTiles.layoutManager = layoutManager as RecyclerView.LayoutManager?
+                    signInButton?.setOnClickListener({ _ ->
+                        try {
+                            pendingIntentForPhotos?.send(bundle)
+                        } catch (e: PendingIntent.CanceledException) {
+                            // nothing will happen in this case, so we can simply log
+                            Log.e(TAG, "PendingIntent was canceled: $e")
+                        }
+                    })
+                }
+                snapHelper.attachToRecyclerView(sectionTiles)
+                morePhotosButton.setOnClickListener { _ -> item.onSectionClicked?.invoke() }
+            }
+            else -> {
+                morePhotosButton.visibility = View.GONE
+                sectionTiles.adapter =
+                    CategoryAdapter(
+                        item.tileViewModels,
+                        item.columnCount,
+                        windowWidth,
+                        colorUpdateViewModel,
+                        shouldAnimateColor,
+                        lifecycleOwner,
+                    )
 
-        val itemDecoration =
-            HorizontalSpaceItemDecoration(
-                itemView.context.resources
-                    .getDimension(R.dimen.creative_category_grid_padding_horizontal)
-                    .toInt()
-            )
-        sectionTiles.addItemDecoration(itemDecoration)
+                val layoutManager = FlexboxLayoutManager(itemView.context)
 
-        if (item.sectionTitle != null) {
+                // Horizontal orientation
+                layoutManager.flexDirection = FlexDirection.ROW
+
+                // disable wrapping to make sure everything fits on a single row
+                layoutManager.flexWrap = FlexWrap.NOWRAP
+
+                // Stretch items to fill the horizontal axis
+                layoutManager.alignItems = AlignItems.STRETCH
+
+                // Distribute items evenly on the horizontal axis
+                layoutManager.justifyContent = JustifyContent.SPACE_AROUND
+
+                sectionTiles.layoutManager = layoutManager
+
+                val itemDecoration =
+                    HorizontalSpaceItemDecoration(
+                        itemView.context.resources
+                            .getDimension(R.dimen.creative_category_grid_padding_horizontal)
+                            .toInt()
+                    )
+                sectionTiles.addItemDecoration(itemDecoration)
+            }
+        }
+
+        if (item.sectionTitle != null && item.tileViewModels.isNotEmpty()) {
             sectionTitle.text = item.sectionTitle
             sectionTitle.visibility = View.VISIBLE
         } else {
@@ -88,11 +186,15 @@ class CategorySectionViewHolder(itemView: View, val windowWidth: Int) :
             outRect: Rect,
             view: View,
             parent: RecyclerView,
-            state: RecyclerView.State
+            state: RecyclerView.State,
         ) {
             if (parent.getChildAdapterPosition(view) != 0) {
                 outRect.left = horizontalSpace
             }
         }
+    }
+
+    companion object {
+        private const val TAG = "CategorySectionViewHolder"
     }
 }

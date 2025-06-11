@@ -24,12 +24,14 @@
     <string name="set_wallpaper_button_text" msgid="5445978864530156290">"വാൾപേപ്പർ സജ്ജീകരിക്കൂ"</string>
     <string name="set_wallpaper_progress_message" msgid="7986528287618716715">"വാൾപേപ്പർ സജ്ജമാക്കുന്നു…"</string>
     <string name="try_again" msgid="8278874823700921234">"വീണ്ടും ശ്രമിക്കുക"</string>
+    <string name="select_a_photo" msgid="7273925950262860696">"ഒരു ഫോട്ടോ തിരഞ്ഞെടുക്കുക"</string>
     <string name="set_wallpaper_error_message" msgid="6819986999041085130">"വാൾപേപ്പർ സജ്ജമാക്കാനാവുന്നില്ല."</string>
     <string name="load_wallpaper_error_message" msgid="7913278480467707374">"വാൾപേപ്പർ ലോഡുചെയ്യാനാവുന്നില്ല. ചിത്രം കേടായിരിക്കുന്നു അല്ലെങ്കിൽ ലഭ്യമല്ല."</string>
     <string name="static_wallpaper_presentation_mode_message" msgid="417940227049360906">"നിലവിൽ സജ്ജമാക്കിയിരിക്കുന്നത്"</string>
     <string name="rotating_wallpaper_presentation_mode_message" msgid="3361676041605733288">"പ്രതിദിന വാൾപേപ്പർ"</string>
     <string name="wallpaper_destination_both" msgid="1124197176741944063">"ഹോമും ലോക്ക് സ്‌ക്രീനും"</string>
     <string name="choose_a_wallpaper_section_title" msgid="1009823506890453891">"ഒരു വാൾപേപ്പർ തിരഞ്ഞെടുക്കുക"</string>
+    <string name="choose_a_curated_photo_section_title" msgid="7360675459203465887">"നിർദ്ദേശിക്കുന്ന ഫോട്ടോകൾ"</string>
     <string name="creative_wallpaper_title" msgid="3581650238648981372">"വാൾപേപ്പർ സൃഷ്‌ടിക്കുക"</string>
     <string name="home_screen_message" msgid="106444102822522813">"ഹോം സ്‌ക്രീൻ"</string>
     <string name="lock_screen_message" msgid="1534506081955058013">"ലോക്ക് സ്‌ക്രീൻ"</string>
@@ -43,6 +45,7 @@
     <string name="permission_needed_explanation_go_to_settings" msgid="3923551582092599609">"നിലവിലെ വാൾപേപ്പർ ഇവിടെ പ്രദർശിപ്പിക്കുന്നതിന്, Wallpapers-ന് നിങ്ങളുടെ ഉപകരണത്തിന്റെ സ്റ്റോറേജിലേക്ക് ആക്സസ് ആവശ്യമാണ്.\n\nഈ ക്രമീകരണം മാറ്റുന്നതിന്, Wallpapers ആപ്പ് വിവരങ്ങളുടെ അനുമതികളിലേക്ക് പോവുക."</string>
     <string name="permission_needed_allow_access_button_label" msgid="1943133660612924306">"ആക്‌സസ്സ് അനുവദിക്കുക"</string>
     <string name="no_backup_image_wallpaper_description" msgid="8303268619408738057">"വാൾപേപ്പറുകൾ തിരിക്കുന്നതിനുള്ള സജീവ വാൾപേപ്പർ സേവനം"</string>
+    <string name="more_photos" msgid="2183343115041498453">"കൂടുതൽ ഫോട്ടോകൾ"</string>
     <string name="daily_refresh_tile_title" msgid="3270456074558525091">"പ്രതിദിന വാൾപേപ്പർ"</string>
     <string name="daily_refresh_tile_subtitle" msgid="3976682014885446443">"ഓണാക്കാൻ ടാപ്പ് ചെയ്യുക"</string>
     <string name="start_rotation_dialog_body_live_wallpaper_needed" msgid="5132580257563846082">"എല്ലാ ദിവസവും വാൾപേപ്പർ സ്വയമേവ മാറും. സജ്ജീകരണം പൂർത്തിയാക്കാൻ, അടുത്ത സ്ക്രീനിലെ &lt;strong&gt;വാൾപേപ്പർ സജ്ജീകരിക്കുക&lt;/strong&gt; എന്നതിൽ ടാപ്പ് ചെയ്യുക."</string>
@@ -67,7 +70,8 @@
     <string name="refresh_daily_wallpaper_home_content_description" msgid="2770445044556164259">"പ്രതിദിന ഹോം സ്ക്രീൻ വാൾപേപ്പർ പുതുക്കുക"</string>
     <string name="refresh_daily_wallpaper_content_description" msgid="4362142658237147583">"പ്രതിദിന വാൾപേപ്പർ പുതുക്കുക"</string>
     <string name="preview_screen_description" msgid="3386387053327775919">"വാൾപേപ്പർ പ്രിവ്യൂ സ്‌ക്രീൻ"</string>
-    <string name="preview_screen_description_editable" msgid="506875963019888699">"വാൾപേപ്പർ പ്രിവ്യൂ സ്ക്രീൻ %1$s. പാൻ ചെയ്യാനും സൂം ചെയ്യാനും രണ്ട് വിരലുകൾ ഉപയോഗിക്കുക."</string>
+    <string name="preview_screen_description_editable" msgid="5558037286562127705">"വാൾപേപ്പർ പ്രിവ്യൂ സ്ക്രീൻ %1$s. പാൻ ചെയ്യാനും സൂം ചെയ്യാനും രണ്ട് വിരലുകൾ ഉപയോഗിക്കുക"</string>
+    <string name="preview_screen_description_non_editable" msgid="5861996326502454566">"വാൾപേപ്പർ പ്രിവ്യൂ സ്ക്രീൻ %1$s"</string>
     <string name="folded_device_state_description" msgid="4972608448265616264">"ഫോൾഡ് ചെയ്തിരിക്കുന്നു"</string>
     <string name="unfolded_device_state_description" msgid="3071975681472460627">"അൺഫോൾഡ് ചെയ്തിരിക്കുന്നു"</string>
     <string name="full_preview_check_button_description" msgid="700484353763952975">"വാൾപേപ്പർ എഡിറ്റിംഗ് പൂർത്തിയായി"</string>
@@ -105,7 +109,8 @@
     <string name="previous_page_content_description" msgid="1138597031571078429">"മുമ്പത്തെ"</string>
     <string name="wallpaper_title" msgid="6754214682228331092">"വാൾപേപ്പർ"</string>
     <string name="wallpaper_preview_card_content_description" msgid="6049261033541034584">"വാൾപേപ്പർ പ്രിവ്യൂ"</string>
-    <string name="wallpaper_preview_card_content_description_editable" msgid="3111763100515242340">"വാൾപേപ്പർ പ്രിവ്യൂ %1$s, ഫോട്ടോ എഡിറ്റുചെയ്യാൻ ടാപ്പുചെയ്യൂ"</string>
+    <string name="wallpaper_preview_card_content_description_editable" msgid="8147628993184862003">"%1$s വാൾപേപ്പർ പ്രിവ്യൂ %2$s, നിങ്ങളുടെ ഫോട്ടോ എഡിറ്റ് ചെയ്യാൻ ഡബിൾ ടാപ്പ് ചെയ്യുക"</string>
+    <string name="wallpaper_preview_card_content_description_non_editable" msgid="2201116657175733260">"%1$s വാൾപേപ്പർ പ്രിവ്യൂ %2$s"</string>
     <string name="lock_wallpaper_preview_card_content_description" msgid="5236839857695985498">"ലോക്ക് സ്‌ക്രീൻ വാൾപേപ്പർ പ്രിവ്യൂ"</string>
     <string name="home_wallpaper_preview_card_content_description" msgid="4059418716070821630">"ഹോം സ്‌ക്രീൻ വാൾപേപ്പർ പ്രിവ്യൂ"</string>
     <string name="collection_not_exist_msg" msgid="3504852962885064842">"ശേഖരം നിലവിലില്ല"</string>
@@ -138,8 +143,17 @@
     <string name="reset_confirmation_dialog_title" msgid="3391905685838213712">"മാറ്റങ്ങൾ റീസെറ്റ് ചെയ്യണോ?"</string>
     <string name="reset_confirmation_dialog_message" msgid="888669268626289603">"നിങ്ങളുടെ മാറ്റങ്ങൾ സംരക്ഷിക്കില്ല"</string>
     <string name="more_wallpapers" msgid="8116268433411881705">"കൂടുതൽ വാൾപേപ്പറുകൾ"</string>
+    <string name="wallpapers" msgid="7133442512006469886">"വാൾപേപ്പറുകൾ"</string>
     <string name="recents_wallpaper_label" msgid="8653165542635660222">"%1$s, %2$d"</string>
     <string name="default_wallpaper_title" msgid="2541071182656978180">"വാൾപേപ്പർ"</string>
     <string name="small_preview_tooltip" msgid="1920430079013352071">"നിങ്ങളുടെ ഫോട്ടോ എഡിറ്റ് ചെയ്യാൻ ടാപ്പ് ചെയ്യുക"</string>
     <string name="full_preview_tooltip" msgid="4648994028015322759">"നിങ്ങളുടെ ഫോട്ടോകളുടെ സ്ഥാനം, സ്‌കെയിൽ, ആംഗിൾ എന്നിവ ക്രമീകരിക്കുക"</string>
+    <string name="discard_changes_dialog_message" msgid="8462485277292103457">"മാറ്റങ്ങൾ ഉപേക്ഷിക്കണോ?"</string>
+    <string name="discard_changes_dialog_button_keep_editing" msgid="9118931326834547216">"എഡിറ്റ് ചെയ്യുന്നത് തുടരുക"</string>
+    <string name="discard_changes_dialog_button_discard" msgid="6585071548322908206">"ഉപേക്ഷിക്കുക"</string>
+    <string name="action_zoom_in" msgid="3326782160671405449">"സൂം ഇൻ ചെയ്യുക"</string>
+    <string name="action_zoom_out" msgid="5454911090443175449">"സൂം ഔട്ട് ചെയ്യുക"</string>
+    <string name="zoomed_to_percent" msgid="1243039994190840132">"%d%% സൂം ചെയ്തു"</string>
+    <string name="max_zoom_percentage" msgid="2111670558746866030">"പരമാവധി സൂം പരിധിയിൽ എത്തിച്ചേർന്നു"</string>
+    <string name="min_zoom_percentage" msgid="5931879817379214316">"ഏറ്റവും കുറഞ്ഞ സൂം പരിധിയിൽ എത്തിച്ചേർന്നു"</string>
 </resources>

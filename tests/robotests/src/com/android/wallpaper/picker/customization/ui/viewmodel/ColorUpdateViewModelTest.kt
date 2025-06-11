@@ -21,9 +21,12 @@ import android.util.SparseIntArray
 import android.widget.RemoteViews.ColorResources
 import androidx.test.filters.SmallTest
 import androidx.test.platform.app.InstrumentationRegistry
+import com.android.customization.picker.mode.data.repository.DarkModeStateRepository
 import com.android.systemui.monet.Style
+import com.android.wallpaper.system.UiModeManagerWrapper
 import com.android.wallpaper.testing.collectLastValue
 import com.google.common.truth.Truth.assertThat
+import dagger.hilt.android.internal.lifecycle.RetainedLifecycleImpl
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
 import javax.inject.Inject
@@ -44,13 +47,15 @@ class ColorUpdateViewModelTest {
     private lateinit var context: Context
     private lateinit var underTest: ColorUpdateViewModel
     @Inject lateinit var testScope: TestScope
+    @Inject lateinit var uiModeManager: UiModeManagerWrapper
+    @Inject lateinit var darkModeStateRepository: DarkModeStateRepository
 
     @Before
     fun setUp() {
         hiltRule.inject()
 
         context = InstrumentationRegistry.getInstrumentation().targetContext
-        underTest = ColorUpdateViewModel(context)
+        underTest = ColorUpdateViewModel(context, RetainedLifecycleImpl(), darkModeStateRepository)
     }
 
     private fun overlayColors(context: Context, colorMapping: SparseIntArray) {
@@ -77,7 +82,23 @@ class ColorUpdateViewModelTest {
     }
 
     @Test
-    fun previewColors() {
+    fun updateTheme_darkMode() {
+        testScope.runTest {
+            // Turn off dark mode
+            uiModeManager.setNightModeActivated(false)
+            val isDarkMode = collectLastValue(underTest.isDarkMode)
+            assertThat(isDarkMode()).isFalse()
+
+            // Turn on dark mode
+            uiModeManager.setNightModeActivated(true)
+            underTest.updateDarkModeAndColors()
+
+            assertThat(isDarkMode()).isTrue()
+        }
+    }
+
+    @Test
+    fun previewColors_withPreviewEnabled() {
         testScope.runTest {
             val colorPrimary = collectLastValue(underTest.colorPrimary)
             overlayColors(
@@ -88,11 +109,31 @@ class ColorUpdateViewModelTest {
                 },
             )
             underTest.updateColors()
-            assertThat(colorPrimary()).isEqualTo(12345)
 
-            underTest.previewColors(54321, Style.VIBRANT)
+            underTest.setPreviewEnabled(true)
+            underTest.previewColors(54321, Style.VIBRANT, isDarkMode = false)
 
             assertThat(colorPrimary()).isNotEqualTo(12345)
+        }
+    }
+
+    @Test
+    fun previewColors_withPreviewDisabled() {
+        testScope.runTest {
+            val colorPrimary = collectLastValue(underTest.colorPrimary)
+            overlayColors(
+                context,
+                SparseIntArray().apply {
+                    put(android.R.color.system_primary_light, 12345)
+                    put(android.R.color.system_primary_dark, 12345)
+                },
+            )
+            underTest.updateColors()
+
+            underTest.setPreviewEnabled(false)
+            underTest.previewColors(54321, Style.VIBRANT, isDarkMode = false)
+
+            assertThat(colorPrimary()).isEqualTo(12345)
         }
     }
 
@@ -110,7 +151,7 @@ class ColorUpdateViewModelTest {
             underTest.updateColors()
             assertThat(colorPrimary()).isEqualTo(12345)
 
-            underTest.previewColors(54321, Style.VIBRANT)
+            underTest.previewColors(54321, Style.VIBRANT, isDarkMode = false)
             underTest.resetPreview()
 
             assertThat(colorPrimary()).isEqualTo(12345)

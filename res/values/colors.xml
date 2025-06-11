@@ -61,15 +61,19 @@
     <!-- Material 3 colors -->
     <color name="system_primary">@android:color/system_primary_light</color>
     <color name="system_primary_container">@android:color/system_primary_container_light</color>
+    <color name="system_primary_fixed_dim">@android:color/system_primary_fixed_dim</color>
     <color name="system_secondary">@android:color/system_secondary_light</color>
     <color name="system_tertiary">@android:color/system_tertiary_light</color>
     <color name="system_on_primary">@android:color/system_on_primary_light</color>
+    <color name="system_on_primary_container">@android:color/system_on_primary_container_light</color>
+    <color name="system_on_primary_fixed">@android:color/system_on_primary_fixed</color>
     <color name="system_on_primary_fixed_variant">@android:color/system_on_primary_fixed_variant</color>
     <color name="system_on_secondary">@android:color/system_on_secondary_light</color>
     <color name="system_on_secondary_container">@android:color/system_on_secondary_container_light</color>
     <color name="system_on_surface">@android:color/system_on_surface_light</color>
     <color name="system_on_surface_variant">@android:color/system_on_surface_variant_light</color>
     <color name="system_surface_container">@android:color/system_surface_container_light</color>
+    <color name="system_surface_container_low">@android:color/system_surface_container_low_light</color>
     <color name="system_surface_container_high">@android:color/system_surface_container_high_light</color>
     <color name="system_surface_container_highest">@android:color/system_surface_container_highest_light</color>
     <color name="system_surface_bright">@android:color/system_surface_bright_light</color>
@@ -78,11 +82,12 @@
     <color name="system_secondary_container">@android:color/system_secondary_container_light</color>
 
     <!-- UI elements with Dark/Light Theme Variances -->
-    <color name="option_item_background">@color/system_surface_container_high</color>
+    <color name="option_item_background">@color/system_surface_container_low</color>
     <color name="clock_color_and_size_button_background">@color/system_surface_bright</color>
     <color name="connected_sections_background">@color/system_surface_bright</color>
     <color name="picker_section_icon_background">@color/system_surface_bright</color>
     <color name="picker_fragment_background">@color/system_surface_bright</color>
+    <color name="floating_toolbar_background">@color/system_surface_bright</color>
 
     <color name="ripple_material">#1f000000</color>
 </resources>

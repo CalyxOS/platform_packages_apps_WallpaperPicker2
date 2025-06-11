@@ -24,12 +24,14 @@
     <string name="set_wallpaper_button_text" msgid="5445978864530156290">"ფონის დაყენება"</string>
     <string name="set_wallpaper_progress_message" msgid="7986528287618716715">"მიმდინარეობს ფონის დაყენება…"</string>
     <string name="try_again" msgid="8278874823700921234">"ხელახლა ცდა"</string>
+    <string name="select_a_photo" msgid="7273925950262860696">"სურათის არჩევა"</string>
     <string name="set_wallpaper_error_message" msgid="6819986999041085130">"ფონის დაყენება ვერ მოხერხდა."</string>
     <string name="load_wallpaper_error_message" msgid="7913278480467707374">"ფონი ვერ ჩაიტვირთა. სურათი დაზიანებული ან მიუწვდომელია."</string>
     <string name="static_wallpaper_presentation_mode_message" msgid="417940227049360906">"ამჟამად დაყენებული"</string>
     <string name="rotating_wallpaper_presentation_mode_message" msgid="3361676041605733288">"ყოველდღიური ფონი"</string>
     <string name="wallpaper_destination_both" msgid="1124197176741944063">"მთავარი და ჩაკეტილი ეკრანები"</string>
     <string name="choose_a_wallpaper_section_title" msgid="1009823506890453891">"აირჩიეთ ფონი"</string>
+    <string name="choose_a_curated_photo_section_title" msgid="7360675459203465887">"შეთავაზებული ფოტოები"</string>
     <string name="creative_wallpaper_title" msgid="3581650238648981372">"ფონის შექმნა"</string>
     <string name="home_screen_message" msgid="106444102822522813">"მთავარი ეკრანი"</string>
     <string name="lock_screen_message" msgid="1534506081955058013">"ჩაკეტილი ეკრანი"</string>
@@ -43,6 +45,7 @@
     <string name="permission_needed_explanation_go_to_settings" msgid="3923551582092599609">"ამჟამინდელი ფონის აქ საჩვენებლად Wallpapers საჭიროებს წვდომას თქვენი მოწყობილობის მეხსიერებაზე.\n\nამ პარამეტრის შესაცვლელად გადადით Wallpapers-ის აპის ინფორმაციის ნებართვების არეზე."</string>
     <string name="permission_needed_allow_access_button_label" msgid="1943133660612924306">"წვდომის დაშვება"</string>
     <string name="no_backup_image_wallpaper_description" msgid="8303268619408738057">"ცოცხალი ფონის სერვისი ცვალებადი ფონებისთვის"</string>
+    <string name="more_photos" msgid="2183343115041498453">"სხვა ფოტოები"</string>
     <string name="daily_refresh_tile_title" msgid="3270456074558525091">"ყოველდღიური ფონი"</string>
     <string name="daily_refresh_tile_subtitle" msgid="3976682014885446443">"შეეხეთ ჩასართავად"</string>
     <string name="start_rotation_dialog_body_live_wallpaper_needed" msgid="5132580257563846082">"ფონი ავტომატურად შეიცვლება ყოველდღიურად. დაყენების დასასრულებლად შემდეგ ეკრანზე შეეხეთ &lt;strong&gt;ფონის დაყენებას&lt;/strong&gt;."</string>
@@ -67,7 +70,8 @@
     <string name="refresh_daily_wallpaper_home_content_description" msgid="2770445044556164259">"მთავარი ეკრანის ყოველდღიური ფონის განახლება"</string>
     <string name="refresh_daily_wallpaper_content_description" msgid="4362142658237147583">"ყოველდღიური ფონის განახლება"</string>
     <string name="preview_screen_description" msgid="3386387053327775919">"ფონის გადახედვის ეკრანი"</string>
-    <string name="preview_screen_description_editable" msgid="506875963019888699">"ფონის ეკრანის წინასწარი ვერსია %1$s. პანირებისა და მასშტაბირებისთვის გამოიყენეთ ორი თითი."</string>
+    <string name="preview_screen_description_editable" msgid="5558037286562127705">"ფონის ეკრანის წინასწარი ვერსია %1$s. პანირებისა და მასშტაბირებისთვის გამოიყენეთ ორი თითი."</string>
+    <string name="preview_screen_description_non_editable" msgid="5861996326502454566">"ფონის ეკრანის წინასწარი ვერსია %1$s."</string>
     <string name="folded_device_state_description" msgid="4972608448265616264">"დაკეცილი"</string>
     <string name="unfolded_device_state_description" msgid="3071975681472460627">"გაშლილი"</string>
     <string name="full_preview_check_button_description" msgid="700484353763952975">"ფონის რედაქტირება დასრულდა"</string>
@@ -105,7 +109,8 @@
     <string name="previous_page_content_description" msgid="1138597031571078429">"წინა"</string>
     <string name="wallpaper_title" msgid="6754214682228331092">"ფონი"</string>
     <string name="wallpaper_preview_card_content_description" msgid="6049261033541034584">"ფონის გადახედვა"</string>
-    <string name="wallpaper_preview_card_content_description_editable" msgid="3111763100515242340">"ფონის წინასწარი ვერსია %1$s, შეეხეთ თქვენი ფოტოს რედაქტირებისთვის."</string>
+    <string name="wallpaper_preview_card_content_description_editable" msgid="8147628993184862003">"%1$s ფონის წინასწარი ვერსია %2$s, თქვენი ფოტოს დასარედაქტირებლად შეეხეთ ორმაგად"</string>
+    <string name="wallpaper_preview_card_content_description_non_editable" msgid="2201116657175733260">"%1$s ფონის წინასწარი ვერსია %2$s"</string>
     <string name="lock_wallpaper_preview_card_content_description" msgid="5236839857695985498">"ჩაკეტილი ეკრანის ფონის გადახედვა"</string>
     <string name="home_wallpaper_preview_card_content_description" msgid="4059418716070821630">"მთავარი ეკრანის ფონის გადახედვა"</string>
     <string name="collection_not_exist_msg" msgid="3504852962885064842">"კოლექცია არ არსებობს"</string>
@@ -138,8 +143,17 @@
     <string name="reset_confirmation_dialog_title" msgid="3391905685838213712">"ცვლილებების გადაყენება?"</string>
     <string name="reset_confirmation_dialog_message" msgid="888669268626289603">"თქვენი ცვლილებები არ შეინახება"</string>
     <string name="more_wallpapers" msgid="8116268433411881705">"მეტი ფონი"</string>
+    <string name="wallpapers" msgid="7133442512006469886">"ფონები"</string>
     <string name="recents_wallpaper_label" msgid="8653165542635660222">"SD%1$s, %2$d"</string>
     <string name="default_wallpaper_title" msgid="2541071182656978180">"ფონი"</string>
     <string name="small_preview_tooltip" msgid="1920430079013352071">"ფოტოს რედაქტირებისთვის შეეხეთ"</string>
     <string name="full_preview_tooltip" msgid="4648994028015322759">"დააკორექტირეთ თქვენი ფოტოების პოზიცია, მასშტაბი და დახრის კუთხე"</string>
+    <string name="discard_changes_dialog_message" msgid="8462485277292103457">"გსურთ ცვლილებების გაუქმება?"</string>
+    <string name="discard_changes_dialog_button_keep_editing" msgid="9118931326834547216">"რედაქტირების გაგრძელება"</string>
+    <string name="discard_changes_dialog_button_discard" msgid="6585071548322908206">"გაუქმება"</string>
+    <string name="action_zoom_in" msgid="3326782160671405449">"მასშტაბის გადიდება"</string>
+    <string name="action_zoom_out" msgid="5454911090443175449">"მასშტაბის შემცირება"</string>
+    <string name="zoomed_to_percent" msgid="1243039994190840132">"მასშტაბი: %d%%"</string>
+    <string name="max_zoom_percentage" msgid="2111670558746866030">"მაქსიმალური მასშტაბია მიღწეული"</string>
+    <string name="min_zoom_percentage" msgid="5931879817379214316">"მინიმალური მასშტაბია მიღწეული"</string>
 </resources>

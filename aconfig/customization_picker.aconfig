@@ -1,5 +1,5 @@
 package: "com.android.wallpaper"
-container: "system"
+container: "system_ext"
 
 flag {
     name: "wallpaper_restorer_flag"
@@ -16,15 +16,15 @@ flag {
 }
 
 flag {
-    name: "magic_portrait_flag"
+    name: "new_creative_wallpaper_category"
     namespace: "customization_picker"
-    description: "Enables magic portrait integration when flag is turned on."
-    bug: "334125919"
+    description: "Add new column for the new creative wallpaper."
+    bug: "381009822"
 }
 
 flag {
-   name: "clock_reactive_variants"
-   namespace: "systemui"
-   description: "Add reactive variant fonts to some clocks"
-   bug: "343495953"
+   name: "compose_refactor_flag"
+   namespace: "customization_picker"
+   description: "Refactor pieces of picker UI into compose."
+   bug: "391918848"
 }

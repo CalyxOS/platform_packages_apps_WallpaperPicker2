@@ -24,12 +24,14 @@
     <string name="set_wallpaper_button_text" msgid="5445978864530156290">"वॉलपेपर सेट करें"</string>
     <string name="set_wallpaper_progress_message" msgid="7986528287618716715">"वॉलपेपर सेट किया जा रहा है…"</string>
     <string name="try_again" msgid="8278874823700921234">"फिर से कोशिश करें"</string>
+    <string name="select_a_photo" msgid="7273925950262860696">"कोई फ़ोटो चुनें"</string>
     <string name="set_wallpaper_error_message" msgid="6819986999041085130">"वॉलपेपर सेट नहीं हो पा रहा है."</string>
     <string name="load_wallpaper_error_message" msgid="7913278480467707374">"वॉलपेपर लोड नहीं हो पा रहा है. इमेज उपलब्ध नहीं है या उसमें खराबी है."</string>
     <string name="static_wallpaper_presentation_mode_message" msgid="417940227049360906">"फ़िलहाल यह वॉलपेपर सेट किया गया है"</string>
     <string name="rotating_wallpaper_presentation_mode_message" msgid="3361676041605733288">"रोज़ वॉलपेपर बदलने की सुविधा"</string>
     <string name="wallpaper_destination_both" msgid="1124197176741944063">"होम स्क्रीन और लॉक स्क्रीन पर"</string>
     <string name="choose_a_wallpaper_section_title" msgid="1009823506890453891">"कोई वॉलपेपर चुनें"</string>
+    <string name="choose_a_curated_photo_section_title" msgid="7360675459203465887">"सुझाई गई फ़ोटो"</string>
     <string name="creative_wallpaper_title" msgid="3581650238648981372">"वॉलपेपर बनाएं"</string>
     <string name="home_screen_message" msgid="106444102822522813">"होम स्क्रीन"</string>
     <string name="lock_screen_message" msgid="1534506081955058013">"लॉक स्‍क्रीन"</string>
@@ -43,6 +45,7 @@
     <string name="permission_needed_explanation_go_to_settings" msgid="3923551582092599609">"यहां पर मौजूदा वॉलपेपर दिखाने के लिए, वॉलपेपर को आपके डिवाइस की मेमोरी का ऐक्सेस चाहिए. \n\nवॉलपेपर ऐप्लिकेशन की जानकारी के मंज़ूरी वाले विकल्प पर जाकर आप यह सेटिंग बदल सकते हैं."</string>
     <string name="permission_needed_allow_access_button_label" msgid="1943133660612924306">"ऐक्सेस दें"</string>
     <string name="no_backup_image_wallpaper_description" msgid="8303268619408738057">"तय समय के बाद बदलने वाले वॉलपेपर के लिए लाइव वॉलपेपर सेवा"</string>
+    <string name="more_photos" msgid="2183343115041498453">"और फ़ोटो"</string>
     <string name="daily_refresh_tile_title" msgid="3270456074558525091">"रोज़ वॉलपेपर बदलने की सुविधा"</string>
     <string name="daily_refresh_tile_subtitle" msgid="3976682014885446443">"चालू करने के लिए टैप करें"</string>
     <string name="start_rotation_dialog_body_live_wallpaper_needed" msgid="5132580257563846082">"वॉलपेपर रोज़ अपने आप बदल जाएगा. सेटअप पूरा करने के लिए अगली स्क्रीन पर मौजूद &lt;strong&gt;वॉलपेपर सेट करें&lt;/strong&gt; पर टैप करें."</string>
@@ -67,7 +70,8 @@
     <string name="refresh_daily_wallpaper_home_content_description" msgid="2770445044556164259">"होम स्क्रीन का रोज़ बदलने वाला वॉलपेपर रीफ़्रेश करें"</string>
     <string name="refresh_daily_wallpaper_content_description" msgid="4362142658237147583">"रोज़ बदलने वाला वॉलपेपर रीफ़्रेश करें"</string>
     <string name="preview_screen_description" msgid="3386387053327775919">"स्क्रीन पर दिखने वाले वॉलपेपर की झलक"</string>
-    <string name="preview_screen_description_editable" msgid="506875963019888699">"वॉलपेपर की झलक दिखाने वाली स्क्रीन %1$s. पैन और ज़ूम करने के लिए, दो उंगलियों का इस्तेमाल करें."</string>
+    <string name="preview_screen_description_editable" msgid="5558037286562127705">"वॉलपेपर की झलक दिखाने वाली स्क्रीन %1$s. पैन और ज़ूम करने के लिए, दो उंगलियों का इस्तेमाल करें"</string>
+    <string name="preview_screen_description_non_editable" msgid="5861996326502454566">"वॉलपेपर की झलक दिखाने वाली स्क्रीन %1$s"</string>
     <string name="folded_device_state_description" msgid="4972608448265616264">"डिवाइस फ़ोल्ड किया गया"</string>
     <string name="unfolded_device_state_description" msgid="3071975681472460627">"डिवाइस अनफ़ोल्ड किया गया"</string>
     <string name="full_preview_check_button_description" msgid="700484353763952975">"वॉलपेपर में बदलाव हो गया"</string>
@@ -105,11 +109,12 @@
     <string name="previous_page_content_description" msgid="1138597031571078429">"पीछे जाएं"</string>
     <string name="wallpaper_title" msgid="6754214682228331092">"वॉलपेपर"</string>
     <string name="wallpaper_preview_card_content_description" msgid="6049261033541034584">"वॉलपेपर की झलक देखें"</string>
-    <string name="wallpaper_preview_card_content_description_editable" msgid="3111763100515242340">"वॉलपेपर की झलक %1$s, टैप करके फ़ोटो एडिट करें"</string>
+    <string name="wallpaper_preview_card_content_description_editable" msgid="8147628993184862003">"%1$s वॉलपेपर की झलक %2$s, फ़ोटो में बदलाव करने के लिए दो बार टैप करें"</string>
+    <string name="wallpaper_preview_card_content_description_non_editable" msgid="2201116657175733260">"%1$s वॉलपेपर की झलक %2$s"</string>
     <string name="lock_wallpaper_preview_card_content_description" msgid="5236839857695985498">"लॉक स्क्रीन पर दिखने वाले वॉलपेपर की झलक"</string>
     <string name="home_wallpaper_preview_card_content_description" msgid="4059418716070821630">"होम स्क्रीन पर दिखने वाले वॉलपेपर की झलक"</string>
     <string name="collection_not_exist_msg" msgid="3504852962885064842">"वॉलपेपर का संग्रह मौजूद नहीं है"</string>
-    <string name="wallpaper_exit_split_screen" msgid="1928870664619591636">"दो-स्क्रीन मोड को बंद करके दोबारा कोशिश करें"</string>
+    <string name="wallpaper_exit_split_screen" msgid="1928870664619591636">"स्प्लिट स्क्रीन मोड बंद करके, दोबारा कोशिश करें"</string>
     <string name="set_wallpaper_dialog_set_button" msgid="5760149969510325088">"सेट करें"</string>
     <string name="cancel" msgid="4970902691067201584">"रद्द करें"</string>
     <string name="hide_ui_preview_text" msgid="6766076482511252295">"यूज़र इंटरफ़ेस की झलक छिपाएं"</string>
@@ -124,22 +129,31 @@
     <string name="wallpaper_picker_entry_title" msgid="5185793991582084891">"वॉलपेपर बदलें"</string>
     <string name="lockscreen_wallpaper_preview_card_content_description" msgid="2244890820627302245">"लॉकस्क्रीन पर दिखने वाले वॉलपेपर की झलक"</string>
     <string name="apply_btn" msgid="5764555565943538528">"लागू करें"</string>
-    <string name="apply_wallpaper_title_text" msgid="2100301064316744087">"क्या वॉलपेपर लगाना है?"</string>
+    <string name="apply_wallpaper_title_text" msgid="2100301064316744087">"क्या यह वॉलपेपर लगाना है?"</string>
     <string name="accessibility_customize_hidden" msgid="6320568529768181691">"पसंद के मुताबिक बनाने वाले पैनल को छिपाया गया"</string>
     <string name="accessibility_customize_shown" msgid="590964727831547651">"पसंद के मुताबिक बनाने वाले पैनल को दिखाया गया"</string>
     <string name="accessibility_info_hidden" msgid="2288603712350168107">"जानकारी देने वाले पैनल को छिपाया गया"</string>
     <string name="accessibility_info_shown" msgid="6626025722456105632">"जानकारी देने वाले पैनल को दिखाया गया"</string>
     <string name="settings_snackbar_description" msgid="890168814524778486">"कृपया सेटिंग में जाकर फ़ाइलों और मीडिया को ऐक्सेस करने की सुविधा चालू करें."</string>
     <string name="settings_snackbar_enable" msgid="5992112808061426068">"चालू करें"</string>
-    <string name="open_my_photos" msgid="4107196465713868381">"मेरी फ़ोटो खोलो"</string>
+    <string name="open_my_photos" msgid="4107196465713868381">"मेरी फ़ोटो गैलरी खोलें"</string>
     <string name="lock_screen_tab" msgid="6672930765010407652">"लॉक स्क्रीन"</string>
     <string name="home_screen_tab" msgid="1080445697837877526">"होम स्क्रीन"</string>
     <string name="reset" msgid="4945445169532850631">"रीसेट करें"</string>
     <string name="reset_confirmation_dialog_title" msgid="3391905685838213712">"क्या आपको बदलाव रीसेट करने हैं?"</string>
     <string name="reset_confirmation_dialog_message" msgid="888669268626289603">"आपके बदलाव सेव नहीं किए जाएंगे"</string>
     <string name="more_wallpapers" msgid="8116268433411881705">"कुछ और वॉलपेपर"</string>
+    <string name="wallpapers" msgid="7133442512006469886">"वॉलपेपर चुनें"</string>
     <string name="recents_wallpaper_label" msgid="8653165542635660222">"%1$s, %2$d"</string>
     <string name="default_wallpaper_title" msgid="2541071182656978180">"वॉलपेपर"</string>
     <string name="small_preview_tooltip" msgid="1920430079013352071">"फ़ोटो में बदलाव करने के लिए उस पर टैप करें"</string>
     <string name="full_preview_tooltip" msgid="4648994028015322759">"फ़ोटो की पोज़िशन अडजस्ट करें, उसे स्केल करें, और सही ऐंगल पर लाएं"</string>
+    <string name="discard_changes_dialog_message" msgid="8462485277292103457">"क्या आपको बदलाव खारिज करने हैं?"</string>
+    <string name="discard_changes_dialog_button_keep_editing" msgid="9118931326834547216">"बदलाव करना जारी रखें"</string>
+    <string name="discard_changes_dialog_button_discard" msgid="6585071548322908206">"खारिज करें"</string>
+    <string name="action_zoom_in" msgid="3326782160671405449">"ज़ूम इन करें"</string>
+    <string name="action_zoom_out" msgid="5454911090443175449">"ज़ूम आउट करें"</string>
+    <string name="zoomed_to_percent" msgid="1243039994190840132">"%d%% तक ज़ूम किया गया"</string>
+    <string name="max_zoom_percentage" msgid="2111670558746866030">"इससे ज़्यादा ज़ूम नहीं किया जा सकता"</string>
+    <string name="min_zoom_percentage" msgid="5931879817379214316">"इससे कम ज़ूम नहीं किया जा सकता"</string>
 </resources>

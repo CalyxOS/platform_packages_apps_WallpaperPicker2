@@ -16,15 +16,22 @@
 
 package com.android.wallpaper.picker.customization.ui
 
+import android.annotation.TargetApi
+import android.content.pm.ActivityInfo
+import android.content.res.Configuration
 import android.os.Bundle
+import android.widget.FrameLayout
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
 import com.android.customization.picker.clock.ui.view.ClockViewFactory
 import com.android.wallpaper.R
 import com.android.wallpaper.module.MultiPanesChecker
 import com.android.wallpaper.picker.AppbarFragment
+import com.android.wallpaper.picker.category.ui.viewmodel.CategoriesViewModel
 import com.android.wallpaper.picker.common.preview.data.repository.PersistentWallpaperModelRepository
 import com.android.wallpaper.picker.common.preview.ui.binder.WorkspaceCallbackBinder
+import com.android.wallpaper.picker.customization.ui.binder.ColorUpdateBinder
 import com.android.wallpaper.picker.customization.ui.binder.CustomizationOptionsBinder
 import com.android.wallpaper.picker.customization.ui.binder.ToolbarBinder
 import com.android.wallpaper.picker.customization.ui.util.CustomizationOptionUtil
@@ -43,6 +50,14 @@ import kotlinx.coroutines.CoroutineScope
 class CustomizationPickerActivity2 :
     Hilt_CustomizationPickerActivity2(), AppbarFragment.AppbarFragmentHost {
 
+    interface ActivityEnterAnimationCallback {
+        /**
+         * The callback is called when Fragment's parent Activity is the first time created and the
+         * enter animation is completed.
+         */
+        fun onEnterAnimationCompleteAfterActivityCreated()
+    }
+
     @Inject lateinit var multiPanesChecker: MultiPanesChecker
     @Inject lateinit var customizationOptionUtil: CustomizationOptionUtil
     @Inject lateinit var customizationOptionsBinder: CustomizationOptionsBinder
@@ -57,8 +72,18 @@ class CustomizationPickerActivity2 :
     @Inject lateinit var colorUpdateViewModel: ColorUpdateViewModel
     @Inject lateinit var clockViewFactory: ClockViewFactory
 
+    private var configuration: Configuration? = null
+    private val categoriesViewModel: CategoriesViewModel by viewModels()
+    private var isInitialCreation = true
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        if (savedInstanceState != null) {
+            // Activity is being restored, not initial creation
+            isInitialCreation = false
+        }
+
         if (
             multiPanesChecker.isMultiPanesEnabled(this) &&
                 !ActivityUtils.isLaunchedFromSettingsTrampoline(intent) &&
@@ -77,12 +102,44 @@ class CustomizationPickerActivity2 :
             finish()
             return
         }
+        categoriesViewModel.initialize()
+        configuration = Configuration(resources.configuration)
+        colorUpdateViewModel.updateDarkModeAndColors()
+        colorUpdateViewModel.setPreviewEnabled(!displayUtils.isLargeScreenOrUnfoldedDisplay(this))
 
         setContentView(R.layout.activity_cusomization_picker2)
         WindowCompat.setDecorFitsSystemWindows(window, ActivityUtils.isSUWMode(this))
 
-        val fragment = CustomizationPickerFragment2()
-        supportFragmentManager.beginTransaction().add(R.id.fragment_container, fragment).commit()
+        ColorUpdateBinder.bind(
+            setColor = { color ->
+                requireViewById<FrameLayout>(R.id.fragment_container).setBackgroundColor(color)
+            },
+            color = colorUpdateViewModel.colorSurfaceContainer,
+            shouldAnimate = {
+                supportFragmentManager.findFragmentById(R.id.fragment_container) is
+                    CustomizationPickerFragment2
+            },
+            lifecycleOwner = this,
+        )
+
+        val fragment = supportFragmentManager.findFragmentById(R.id.fragment_container)
+        if (fragment == null) {
+            supportFragmentManager
+                .beginTransaction()
+                .add(R.id.fragment_container, CustomizationPickerFragment2())
+                .commit()
+        }
+    }
+
+    override fun onEnterAnimationComplete() {
+        super.onEnterAnimationComplete()
+        if (isInitialCreation) {
+            val fragment =
+                supportFragmentManager.findFragmentById(R.id.fragment_container)
+                    as? CustomizationPickerFragment2
+            fragment?.onEnterAnimationCompleteAfterActivityCreated()
+            isInitialCreation = false
+        }
     }
 
     override fun onUpArrowPressed() {
@@ -91,5 +148,22 @@ class CustomizationPickerActivity2 :
 
     override fun isUpArrowSupported(): Boolean {
         return !ActivityUtils.isSUWMode(baseContext)
+    }
+
+    @TargetApi(36)
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        super.onConfigurationChanged(newConfig)
+        configuration?.let {
+            val diff = newConfig.diff(it)
+            val isAssetsPathsChange = diff and ActivityInfo.CONFIG_ASSETS_PATHS != 0
+            val isUiModeChange = diff and ActivityInfo.CONFIG_UI_MODE != 0
+            if (isAssetsPathsChange) {
+                colorUpdateViewModel.updateColors()
+            }
+            if (isUiModeChange) {
+                colorUpdateViewModel.updateDarkModeAndColors()
+            }
+        }
+        configuration?.setTo(newConfig)
     }
 }

@@ -21,13 +21,40 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/section_title"
+    <RelativeLayout
+        android:id="@+id/category_header"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAppearance="@style/CategorySectionTitleTextAppearance"
-        android:focusable="false"
-        android:layout_marginBottom="@dimen/grid_item_category_title_margin_bottom"/>
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/section_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/CategorySectionTitleTextAppearance"
+            android:focusable="false"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@id/more_photos_button"
+            android:layout_marginBottom="@dimen/grid_item_category_title_margin_bottom"/>
+
+        <Button
+            android:id="@+id/more_photos_button"
+            android:layout_width="@dimen/more_photos_button_length"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/more_photos"
+            android:textColor="@color/system_on_primary"
+            android:background="@drawable/button_rounded_corners"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="@dimen/grid_item_category_title_margin_bottom"/>
+
+        <ViewStub
+            android:id="@+id/sign_in_banner_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/more_photos_button"
+        />
+    </RelativeLayout>
 
     <!-- Tiles -->
     <androidx.recyclerview.widget.RecyclerView

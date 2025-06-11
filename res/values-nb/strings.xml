@@ -24,13 +24,15 @@
     <string name="set_wallpaper_button_text" msgid="5445978864530156290">"Bruk som bakgrunn"</string>
     <string name="set_wallpaper_progress_message" msgid="7986528287618716715">"Angir bakgrunn …"</string>
     <string name="try_again" msgid="8278874823700921234">"Prøv på nytt"</string>
+    <string name="select_a_photo" msgid="7273925950262860696">"Velg et bilde"</string>
     <string name="set_wallpaper_error_message" msgid="6819986999041085130">"Kunne ikke angi bakgrunn."</string>
     <string name="load_wallpaper_error_message" msgid="7913278480467707374">"Kan ikke laste inn bakgrunnen. Bildet er enten skadet eller utilgjengelig."</string>
     <string name="static_wallpaper_presentation_mode_message" msgid="417940227049360906">"Nåværende bakgrunn"</string>
     <string name="rotating_wallpaper_presentation_mode_message" msgid="3361676041605733288">"Daglig bakgrunn"</string>
     <string name="wallpaper_destination_both" msgid="1124197176741944063">"Startskjermen og låseskjermen"</string>
     <string name="choose_a_wallpaper_section_title" msgid="1009823506890453891">"Velg en bakgrunn"</string>
-    <string name="creative_wallpaper_title" msgid="3581650238648981372">"Opprett bakgrunn"</string>
+    <string name="choose_a_curated_photo_section_title" msgid="7360675459203465887">"Foreslåtte bilder"</string>
+    <string name="creative_wallpaper_title" msgid="3581650238648981372">"Lag bakgrunn"</string>
     <string name="home_screen_message" msgid="106444102822522813">"Startskjerm"</string>
     <string name="lock_screen_message" msgid="1534506081955058013">"Låseskjerm"</string>
     <string name="home_and_lock_short_label" msgid="2937922943541927983">"Startskjermen og låseskjermen"</string>
@@ -43,6 +45,7 @@
     <string name="permission_needed_explanation_go_to_settings" msgid="3923551582092599609">"For å vise bakgrunnen din her må du gi Bakgrunner tilgang til enhetens lagringsplass.\n\nFor å endre denne innstillingen, gå til Tillatelser-områder i appinformasjonen for Bakgrunner."</string>
     <string name="permission_needed_allow_access_button_label" msgid="1943133660612924306">"Gi tilgang"</string>
     <string name="no_backup_image_wallpaper_description" msgid="8303268619408738057">"Tjeneste for animerte bakgrunner med skiftende bilder"</string>
+    <string name="more_photos" msgid="2183343115041498453">"Flere bilder"</string>
     <string name="daily_refresh_tile_title" msgid="3270456074558525091">"Daglig bakgrunn"</string>
     <string name="daily_refresh_tile_subtitle" msgid="3976682014885446443">"Trykk for å slå på funksjonen"</string>
     <string name="start_rotation_dialog_body_live_wallpaper_needed" msgid="5132580257563846082">"Bakgrunnen endres automatisk hver dag. For å fullføre konfigureringen, trykk på &lt;strong&gt;Angi bakgrunn&lt;/strong&gt; på den neste skjermen."</string>
@@ -67,7 +70,8 @@
     <string name="refresh_daily_wallpaper_home_content_description" msgid="2770445044556164259">"Oppdater den daglige bakgrunnen på startskjermen"</string>
     <string name="refresh_daily_wallpaper_content_description" msgid="4362142658237147583">"Oppdater daglig bakgrunn"</string>
     <string name="preview_screen_description" msgid="3386387053327775919">"Skjerm for forhåndsvisning av bakgrunn"</string>
-    <string name="preview_screen_description_editable" msgid="506875963019888699">"Skjerm for forhåndsvisning av bakgrunn %1$s. Bruk to fingre for å panorere og zoome."</string>
+    <string name="preview_screen_description_editable" msgid="5558037286562127705">"Skjerm for forhåndsvisning av bakgrunn %1$s. Bruk to fingre for å panorere og zoome."</string>
+    <string name="preview_screen_description_non_editable" msgid="5861996326502454566">"Skjerm for forhåndsvisning av bakgrunnen %1$s."</string>
     <string name="folded_device_state_description" msgid="4972608448265616264">"Lagt sammen"</string>
     <string name="unfolded_device_state_description" msgid="3071975681472460627">"Åpnet"</string>
     <string name="full_preview_check_button_description" msgid="700484353763952975">"Ferdig med å endre bakgrunnen"</string>
@@ -105,7 +109,8 @@
     <string name="previous_page_content_description" msgid="1138597031571078429">"Forrige"</string>
     <string name="wallpaper_title" msgid="6754214682228331092">"Bakgrunn"</string>
     <string name="wallpaper_preview_card_content_description" msgid="6049261033541034584">"Forhåndsvisning av bakgrunn"</string>
-    <string name="wallpaper_preview_card_content_description_editable" msgid="3111763100515242340">"Bakgrunnforhåndskikk %1$s, trykk for bildered."</string>
+    <string name="wallpaper_preview_card_content_description_editable" msgid="8147628993184862003">"Forhåndsvisning av bakgrunnen for %1$s %2$s – dobbelttrykk for å redigere bildet"</string>
+    <string name="wallpaper_preview_card_content_description_non_editable" msgid="2201116657175733260">"Forhåndsvisning av bakgrunnen for %1$s %2$s"</string>
     <string name="lock_wallpaper_preview_card_content_description" msgid="5236839857695985498">"Forhåndsvisning av bakgrunn for låseskjermen"</string>
     <string name="home_wallpaper_preview_card_content_description" msgid="4059418716070821630">"Forhåndsvisning av bakgrunn for startskjermen"</string>
     <string name="collection_not_exist_msg" msgid="3504852962885064842">"Samlingen eksisterer ikke"</string>
@@ -138,8 +143,17 @@
     <string name="reset_confirmation_dialog_title" msgid="3391905685838213712">"Vil du tilbakestille endringene?"</string>
     <string name="reset_confirmation_dialog_message" msgid="888669268626289603">"Endringene lagres ikke"</string>
     <string name="more_wallpapers" msgid="8116268433411881705">"Flere bakgrunner"</string>
+    <string name="wallpapers" msgid="7133442512006469886">"Bakgrunner"</string>
     <string name="recents_wallpaper_label" msgid="8653165542635660222">"%1$s, %2$d"</string>
     <string name="default_wallpaper_title" msgid="2541071182656978180">"Bakgrunn"</string>
     <string name="small_preview_tooltip" msgid="1920430079013352071">"Trykk for å redigere bildet"</string>
     <string name="full_preview_tooltip" msgid="4648994028015322759">"Juster posisjonen, skalaen og vinkelen til bildene dine"</string>
+    <string name="discard_changes_dialog_message" msgid="8462485277292103457">"Vil du forkaste endringene?"</string>
+    <string name="discard_changes_dialog_button_keep_editing" msgid="9118931326834547216">"Fortsett å redigere"</string>
+    <string name="discard_changes_dialog_button_discard" msgid="6585071548322908206">"Forkast"</string>
+    <string name="action_zoom_in" msgid="3326782160671405449">"Zoom inn"</string>
+    <string name="action_zoom_out" msgid="5454911090443175449">"Zoom ut"</string>
+    <string name="zoomed_to_percent" msgid="1243039994190840132">"Zoomet til %d %%"</string>
+    <string name="max_zoom_percentage" msgid="2111670558746866030">"Maks. zoom er nådd"</string>
+    <string name="min_zoom_percentage" msgid="5931879817379214316">"Min. zoom er nådd"</string>
 </resources>

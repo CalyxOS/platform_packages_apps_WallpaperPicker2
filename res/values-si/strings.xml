@@ -24,12 +24,14 @@
     <string name="set_wallpaper_button_text" msgid="5445978864530156290">"වෝල්පේපරය සකසන්න"</string>
     <string name="set_wallpaper_progress_message" msgid="7986528287618716715">"වෝල්පේපරය සකසමින්…"</string>
     <string name="try_again" msgid="8278874823700921234">"නැවත උත්සාහ කර."</string>
+    <string name="select_a_photo" msgid="7273925950262860696">"ඡායාරූපයක් තෝරන්න"</string>
     <string name="set_wallpaper_error_message" msgid="6819986999041085130">"වෝල්පේපරය සැකසීමට නොහැකිය."</string>
     <string name="load_wallpaper_error_message" msgid="7913278480467707374">"වෝල්පේපරය පූරණය කිරීමට නොහැකිය. මෙම රූපය හානි වී හෝ ලබා ගත නොහැකිව ඇත."</string>
     <string name="static_wallpaper_presentation_mode_message" msgid="417940227049360906">"දැනට සකසා ඇත"</string>
     <string name="rotating_wallpaper_presentation_mode_message" msgid="3361676041605733288">"දෛනික වෝල්පේපරය"</string>
     <string name="wallpaper_destination_both" msgid="1124197176741944063">"මුල් පිටුව සහ අගුළු තිරය"</string>
     <string name="choose_a_wallpaper_section_title" msgid="1009823506890453891">"වෝල්පේපරයක් තෝරා ගන්න"</string>
+    <string name="choose_a_curated_photo_section_title" msgid="7360675459203465887">"යෝජිත ඡායාරූප"</string>
     <string name="creative_wallpaper_title" msgid="3581650238648981372">"වෝල්පේපරය තනන්න"</string>
     <string name="home_screen_message" msgid="106444102822522813">"මුල් පිටු තිරය"</string>
     <string name="lock_screen_message" msgid="1534506081955058013">"අගුලු තිරය"</string>
@@ -43,6 +45,7 @@
     <string name="permission_needed_explanation_go_to_settings" msgid="3923551582092599609">"මෙහි වත්මන් වෝල්පේපරය පෙන්වීමට, වෝල්පේපර වෙත ඔබගේ උපාංග ගබඩාව වෙත ප්‍රවේශය අවශ්‍යයි.\n\nමෙම සැකසීම වෙනස් කිරීමට, වෝල්පේපර යෙදුම් තොරතුරු වල අවසර වෙත යන්න."</string>
     <string name="permission_needed_allow_access_button_label" msgid="1943133660612924306">"ප්‍රවේශය ඉඩ දෙන්න"</string>
     <string name="no_backup_image_wallpaper_description" msgid="8303268619408738057">"කැරකෙන වෝල්පේපර සඳහා සජීවී වෝල්පේපර සේවාව"</string>
+    <string name="more_photos" msgid="2183343115041498453">"තවත් ඡායාරූප"</string>
     <string name="daily_refresh_tile_title" msgid="3270456074558525091">"දෛනික වෝල්පේපරය"</string>
     <string name="daily_refresh_tile_subtitle" msgid="3976682014885446443">"ක්‍රියාත්මක කිරීමට තට්ටු කරන්න"</string>
     <string name="start_rotation_dialog_body_live_wallpaper_needed" msgid="5132580257563846082">"සෑම දිනකම වෝල්පේපරය ස්වයංක්‍රියව වෙනස් වනු ඇත. පිහිටුවීම අවසන් කිරීමට, ඊළඟ තිරය මත &lt;strong&gt;වෝල්පේපරය සකසන්න&lt;/strong&gt; තට්ටු කරන්න."</string>
@@ -67,7 +70,8 @@
     <string name="refresh_daily_wallpaper_home_content_description" msgid="2770445044556164259">"දිනපතා මුල් පිටු තිර වෝල්පේපරය නැවුම් කරන්න"</string>
     <string name="refresh_daily_wallpaper_content_description" msgid="4362142658237147583">"දිනපතා වෝල්පේපරය නැවුම් කරන්න"</string>
     <string name="preview_screen_description" msgid="3386387053327775919">"වෝල්පේපර පෙරදසුන් තිරය"</string>
-    <string name="preview_screen_description_editable" msgid="506875963019888699">"වෝල්පේපර පෙරදසුන් තිරය %1$s. පෑන් සහ විශාලනය කිරීමට ඇඟිලි දෙකක් භාවිතා කරන්න."</string>
+    <string name="preview_screen_description_editable" msgid="5558037286562127705">"වෝල්පේපර පෙරදසුන් තිරය %1$s. පෑන් සහ විශාලනය කිරීමට ඇඟිලි දෙකක් භාවිතා කරන්න"</string>
+    <string name="preview_screen_description_non_editable" msgid="5861996326502454566">"වෝල්පේපර පෙරදසුන් තිරය %1$s"</string>
     <string name="folded_device_state_description" msgid="4972608448265616264">"නැවූ"</string>
     <string name="unfolded_device_state_description" msgid="3071975681472460627">"නොනැවූ"</string>
     <string name="full_preview_check_button_description" msgid="700484353763952975">"වෝල්පේපරය සංස්කරණය කර නිමයි"</string>
@@ -93,7 +97,7 @@
     <string name="configure_wallpaper" msgid="849882179182976621">"සැකසීම්…"</string>
     <string name="delete_live_wallpaper" msgid="589212696102662329">"මකන්න"</string>
     <string name="edit_live_wallpaper" msgid="3132060073690558045">"සංස්කරණය කරන්න"</string>
-    <string name="delete_wallpaper_confirmation" msgid="1905114562243802354">"ඔබේ උපාංගයෙන් මෙම බිතුපත මකන්න ද?"</string>
+    <string name="delete_wallpaper_confirmation" msgid="1905114562243802354">"ඔබේ උපාංගයෙන් මෙම වෝල්පේපරය මකන්න ද?"</string>
     <string name="bottom_action_bar_back" msgid="2620581414970740784">"ඉහළට සංචාලනය කරන්න"</string>
     <string name="bottom_action_bar_edit" msgid="1214742990893082138">"සංස්කරණය කරන්න"</string>
     <string name="bottom_action_bar_download" msgid="3983122338076389421">"බාගන්න"</string>
@@ -105,7 +109,8 @@
     <string name="previous_page_content_description" msgid="1138597031571078429">"පෙර"</string>
     <string name="wallpaper_title" msgid="6754214682228331092">"වෝල්පේපරය"</string>
     <string name="wallpaper_preview_card_content_description" msgid="6049261033541034584">"වෝල්පේපර පෙරදසුන"</string>
-    <string name="wallpaper_preview_card_content_description_editable" msgid="3111763100515242340">"වෝල්පේපර පෙරදසුන %1$s, ඔබේ ඡායාරූපය සංස්කරණය කිරීමට තට්ටු කරන්න"</string>
+    <string name="wallpaper_preview_card_content_description_editable" msgid="8147628993184862003">"%1$s වෝල්පේපර පෙරදසුන %2$s, ඔබේ ඡායාරූපය සංස්කරණය කිරීමට දෙවරක් තට්ටු කරන්න"</string>
+    <string name="wallpaper_preview_card_content_description_non_editable" msgid="2201116657175733260">"%1$s වෝල්පේපර පෙරදසුන %2$s"</string>
     <string name="lock_wallpaper_preview_card_content_description" msgid="5236839857695985498">"අගුළු තිර වෝල්පේපර පෙරදසුන"</string>
     <string name="home_wallpaper_preview_card_content_description" msgid="4059418716070821630">"මුල් තිරයේ බිතුපත් පෙරදසුන"</string>
     <string name="collection_not_exist_msg" msgid="3504852962885064842">"එකතුව නොපවතී"</string>
@@ -138,8 +143,17 @@
     <string name="reset_confirmation_dialog_title" msgid="3391905685838213712">"වෙනස්කම් යළි සකසන්න ද?"</string>
     <string name="reset_confirmation_dialog_message" msgid="888669268626289603">"ඔබේ වෙනස්කම් සුරැකෙන්නේ නැත"</string>
     <string name="more_wallpapers" msgid="8116268433411881705">"තවත් වෝල්පේපර"</string>
+    <string name="wallpapers" msgid="7133442512006469886">"වෝල්පේපර"</string>
     <string name="recents_wallpaper_label" msgid="8653165542635660222">"%1$s, %2$d"</string>
     <string name="default_wallpaper_title" msgid="2541071182656978180">"වෝල්පේපරය"</string>
     <string name="small_preview_tooltip" msgid="1920430079013352071">"ඔබේ ඡායාරූපය සංස්කරණය කිරීමට තට්ටු කරන්න"</string>
     <string name="full_preview_tooltip" msgid="4648994028015322759">"ඔබේ ඡායාරූපවල පිහිටීම, පරිමාණය, සහ කෝණය සකසන්න"</string>
+    <string name="discard_changes_dialog_message" msgid="8462485277292103457">"වෙනස් කිරීම් ඉවත ලන්නද?"</string>
+    <string name="discard_changes_dialog_button_keep_editing" msgid="9118931326834547216">"දිගටම සංස්කරණ කරන්න"</string>
+    <string name="discard_changes_dialog_button_discard" msgid="6585071548322908206">"ඉවත ලන්න"</string>
+    <string name="action_zoom_in" msgid="3326782160671405449">"විශාලනය කරන්න"</string>
+    <string name="action_zoom_out" msgid="5454911090443175449">"විශාලනය අඩු කරන්න"</string>
+    <string name="zoomed_to_percent" msgid="1243039994190840132">"%d%% දක්වා විශාලනය කරන ලදි"</string>
+    <string name="max_zoom_percentage" msgid="2111670558746866030">"උපරිම විශාලනය ලබා ගන්නා ලදි"</string>
+    <string name="min_zoom_percentage" msgid="5931879817379214316">"අවම විශාලනය ලබා ගන්නා ලදි"</string>
 </resources>

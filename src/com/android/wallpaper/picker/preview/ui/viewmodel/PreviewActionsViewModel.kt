@@ -27,13 +27,17 @@ import android.net.Uri
 import android.net.wifi.WifiManager
 import android.service.wallpaper.WallpaperSettingsActivity
 import android.util.Log
+import androidx.activity.result.ActivityResultLauncher
 import com.android.wallpaper.R
 import com.android.wallpaper.effects.Effect
 import com.android.wallpaper.effects.EffectsController.EffectEnumInterface
+import com.android.wallpaper.model.WallpaperInfoContract.WALLPAPER_DESCRIPTION_CONTENT_HANDLING
+import com.android.wallpaper.module.InjectorProvider
 import com.android.wallpaper.picker.data.CreativeWallpaperData
 import com.android.wallpaper.picker.data.LiveWallpaperData
 import com.android.wallpaper.picker.data.WallpaperModel
 import com.android.wallpaper.picker.data.WallpaperModel.LiveWallpaperModel
+import com.android.wallpaper.picker.data.WallpaperModel.StaticWallpaperModel
 import com.android.wallpaper.picker.preview.data.repository.ImageEffectsRepository.EffectStatus.EFFECT_APPLIED
 import com.android.wallpaper.picker.preview.data.repository.ImageEffectsRepository.EffectStatus.EFFECT_APPLY_FAILED
 import com.android.wallpaper.picker.preview.data.repository.ImageEffectsRepository.EffectStatus.EFFECT_APPLY_IN_PROGRESS
@@ -43,6 +47,7 @@ import com.android.wallpaper.picker.preview.data.repository.ImageEffectsReposito
 import com.android.wallpaper.picker.preview.data.repository.ImageEffectsRepository.EffectStatus.EFFECT_DOWNLOAD_READY
 import com.android.wallpaper.picker.preview.data.repository.ImageEffectsRepository.EffectStatus.EFFECT_READY
 import com.android.wallpaper.picker.preview.domain.interactor.PreviewActionsInteractor
+import com.android.wallpaper.picker.preview.domain.interactor.WallpaperPreviewInteractor
 import com.android.wallpaper.picker.preview.shared.model.DownloadStatus
 import com.android.wallpaper.picker.preview.shared.model.ImageEffectsModel
 import com.android.wallpaper.picker.preview.ui.util.LiveWallpaperDeleteUtil
@@ -69,7 +74,6 @@ import com.android.wallpaper.widget.floatingsheetcontent.WallpaperEffectsView2.S
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.android.scopes.ViewModelScoped
 import javax.inject.Inject
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -82,19 +86,20 @@ import kotlinx.coroutines.flow.map
 class PreviewActionsViewModel
 @Inject
 constructor(
-    private val interactor: PreviewActionsInteractor,
+    private val previewActionsInteractor: PreviewActionsInteractor,
+    wallpaperPreviewInteractor: WallpaperPreviewInteractor,
     liveWallpaperDeleteUtil: LiveWallpaperDeleteUtil,
     @ApplicationContext private val context: Context,
 ) {
-    private val TAG = "PreviewActionsViewModel"
-    private var EXTENDED_WALLPAPER_EFFECTS_PACKAGE =
+    private val flags = InjectorProvider.getInjector().getFlags()
+    private val extendedWallpaperEffectPkgName =
         context.getString(R.string.extended_wallpaper_effects_package)
-    private var EXTENDED_WALLPAPER_EFFECTS_ACTIVITY =
+    private val extendedWallpaperEffectActivityName =
         context.getString(R.string.extended_wallpaper_effects_activity)
 
     /** [INFORMATION] */
     private val informationFloatingSheetViewModel: Flow<InformationFloatingSheetViewModel?> =
-        interactor.wallpaperModel.map { wallpaperModel ->
+        previewActionsInteractor.wallpaperModel.map { wallpaperModel ->
             if (wallpaperModel == null || !wallpaperModel.shouldShowInformationFloatingSheet()) {
                 null
             } else {
@@ -137,21 +142,25 @@ constructor(
 
     /** [DOWNLOAD] */
     val isDownloadVisible: Flow<Boolean> =
-        interactor.downloadableWallpaperModel.map {
+        previewActionsInteractor.downloadableWallpaperModel.map {
             it.status == DownloadStatus.READY_TO_DOWNLOAD || it.status == DownloadStatus.DOWNLOADING
         }
     val isDownloading: Flow<Boolean> =
-        interactor.downloadableWallpaperModel.map { it.status == DownloadStatus.DOWNLOADING }
+        previewActionsInteractor.downloadableWallpaperModel.map {
+            it.status == DownloadStatus.DOWNLOADING
+        }
     val isDownloadButtonEnabled: Flow<Boolean> =
-        interactor.downloadableWallpaperModel.map { it.status == DownloadStatus.READY_TO_DOWNLOAD }
+        previewActionsInteractor.downloadableWallpaperModel.map {
+            it.status == DownloadStatus.READY_TO_DOWNLOAD
+        }
 
     fun downloadWallpaper() {
-        interactor.downloadWallpaper()
+        previewActionsInteractor.downloadWallpaper()
     }
 
     /** [DELETE] */
     private val liveWallpaperDeleteIntent: Flow<Intent?> =
-        interactor.wallpaperModel.map {
+        previewActionsInteractor.wallpaperModel.map {
             if (it is LiveWallpaperModel && it.creativeWallpaperData == null && it.canBeDeleted()) {
                 liveWallpaperDeleteUtil.getDeleteActionIntent(
                     it.liveWallpaperData.systemWallpaperInfo
@@ -161,7 +170,7 @@ constructor(
             }
         }
     private val creativeWallpaperDeleteUri: Flow<Uri?> =
-        interactor.wallpaperModel.map {
+        previewActionsInteractor.wallpaperModel.map {
             val deleteUri = (it as? LiveWallpaperModel)?.creativeWallpaperData?.deleteUri
             if (deleteUri != null && it.canBeDeleted()) {
                 deleteUri
@@ -211,7 +220,7 @@ constructor(
 
     /** [EDIT] */
     val editIntent: Flow<Intent?> =
-        interactor.wallpaperModel.map { model ->
+        previewActionsInteractor.wallpaperModel.map { model ->
             (model as? LiveWallpaperModel)?.liveWallpaperData?.getEditActivityIntent(false)?.let {
                 intent ->
                 if (intent.resolveActivityInfo(context.packageManager, 0) != null) intent else null
@@ -224,7 +233,7 @@ constructor(
 
     /** [CUSTOMIZE] */
     private val customizeFloatingSheetViewModel: Flow<CustomizeFloatingSheetViewModel?> =
-        interactor.wallpaperModel.map {
+        previewActionsInteractor.wallpaperModel.map {
             (it as? LiveWallpaperModel)
                 ?.liveWallpaperData
                 ?.systemWallpaperInfo
@@ -259,7 +268,7 @@ constructor(
         _imageEffectConfirmDownloadDialogViewModel.asStateFlow()
 
     private val imageEffectFloatingSheetViewModel: Flow<ImageEffectFloatingSheetViewModel?> =
-        combine(interactor.imageEffectsModel, interactor.imageEffect) {
+        combine(previewActionsInteractor.imageEffectsModel, previewActionsInteractor.imageEffect) {
             imageEffectsModel,
             imageEffect ->
             imageEffect?.let {
@@ -278,10 +287,11 @@ constructor(
         MutableStateFlow(null)
     val imageEffectConfirmExitDialogViewModel = _imageEffectConfirmExitDialogViewModel.asStateFlow()
     val handleOnBackPressed: Flow<(() -> Boolean)?> =
-        combine(imageEffectFloatingSheetViewModel, interactor.imageEffect, isDownloading) {
-            viewModel,
-            effect,
-            isDownloading ->
+        combine(
+            imageEffectFloatingSheetViewModel,
+            previewActionsInteractor.imageEffect,
+            isDownloading,
+        ) { viewModel, effect, isDownloading ->
             when {
                 viewModel?.status == DOWNLOADING -> { ->
                         _imageEffectConfirmExitDialogViewModel.value =
@@ -289,25 +299,27 @@ constructor(
                                 onDismiss = { _imageEffectConfirmExitDialogViewModel.value = null },
                                 onContinue = {
                                     // Continue to exit the screen. We should stop downloading.
-                                    effect?.let { interactor.interruptEffectsModelDownload(it) }
+                                    effect?.let {
+                                        previewActionsInteractor.interruptEffectsModelDownload(it)
+                                    }
                                 },
                             )
                         true
                     }
-                isDownloading -> { -> interactor.cancelDownloadWallpaper() }
+                isDownloading -> { -> previewActionsInteractor.cancelDownloadWallpaper() }
                 else -> null
             }
         }
 
     private val creativeEffectFloatingSheetViewModel: Flow<CreativeEffectFloatingSheetViewModel?> =
-        interactor.creativeEffectsModel.map { creativeEffectsModel ->
+        previewActionsInteractor.creativeEffectsModel.map { creativeEffectsModel ->
             creativeEffectsModel?.let {
                 CreativeEffectFloatingSheetViewModel(
                     title = it.title,
                     subtitle = it.subtitle,
                     wallpaperActions = it.actions,
                     wallpaperEffectSwitchListener = { actionPosition ->
-                        interactor.turnOnCreativeEffect(actionPosition)
+                        previewActionsInteractor.turnOnCreativeEffect(actionPosition)
                     },
                 )
             }
@@ -352,11 +364,11 @@ constructor(
                     effect: EffectEnumInterface,
                     isChecked: Boolean,
                 ) {
-                    if (interactor.isTargetEffect(effect)) {
+                    if (previewActionsInteractor.isTargetEffect(effect)) {
                         if (isChecked) {
-                            interactor.enableImageEffect(effect)
+                            previewActionsInteractor.enableImageEffect(effect)
                         } else {
-                            interactor.disableImageEffect()
+                            previewActionsInteractor.disableImageEffect()
                         }
                     }
                 }
@@ -364,7 +376,7 @@ constructor(
             object : EffectDownloadClickListener {
                 override fun onEffectDownloadClick() {
                     if (isWifiOnAndConnected()) {
-                        interactor.startEffectsModelDownload(effect)
+                        previewActionsInteractor.startEffectsModelDownload(effect)
                     } else {
                         _imageEffectConfirmDownloadDialogViewModel.value =
                             ImageEffectDialogViewModel(
@@ -373,7 +385,7 @@ constructor(
                                 },
                                 onContinue = {
                                     // Continue to download the ML model
-                                    interactor.startEffectsModelDownload(effect)
+                                    previewActionsInteractor.startEffectsModelDownload(effect)
                                 },
                             )
                     }
@@ -384,7 +396,7 @@ constructor(
             imageEffectsModel.errorMessage,
             effect.title,
             effect.type,
-            interactor.getEffectTextRes(),
+            previewActionsInteractor.getEffectTextRes(),
         )
     }
 
@@ -402,30 +414,42 @@ constructor(
         }
     }
 
-    val isEffectsVisible: Flow<Boolean> =
-        combine(imageEffectFloatingSheetViewModel, creativeEffectFloatingSheetViewModel) {
-            imageEffect,
-            creativeEffect ->
-            imageEffect != null || creativeEffect != null
-        }
-
     private val _isEffectsChecked: MutableStateFlow<Boolean> = MutableStateFlow(false)
     val isEffectsChecked: Flow<Boolean> = _isEffectsChecked.asStateFlow()
 
-    @OptIn(ExperimentalCoroutinesApi::class)
-    val onEffectsClicked: Flow<(() -> Unit)?> =
-        combine(isEffectsVisible, isEffectsChecked, imageEffectFloatingSheetViewModel) {
+    private val extendedWallpaperIntent =
+        Intent().apply {
+            component =
+                ComponentName(extendedWallpaperEffectPkgName, extendedWallpaperEffectActivityName)
+        }
+
+    private val isExtendedEffectAvailable: Flow<Boolean> =
+        wallpaperPreviewInteractor.wallpaperModel.map {
+            flags.isExtendedWallpaperEnabled() &&
+                ((it is StaticWallpaperModel && it.imageWallpaperData?.uri != null) ||
+                    (it is LiveWallpaperModel && it.liveWallpaperData.isEffectWallpaper)) &&
+                extendedWallpaperIntent.resolveActivityInfo(context.packageManager, 0) != null
+        }
+
+    val isEffectsVisible: Flow<Boolean> =
+        combine(
+            imageEffectFloatingSheetViewModel,
+            creativeEffectFloatingSheetViewModel,
+            isExtendedEffectAvailable,
+        ) { imageEffect, creativeEffect, isExtendedEffect ->
+            isExtendedEffect || imageEffect != null || creativeEffect != null
+        }
+
+    val onEffectsClicked: Flow<((ActivityResultLauncher<Intent>) -> Unit)?> =
+        combine(isEffectsVisible, isEffectsChecked, isExtendedEffectAvailable) {
             isVisible,
             isChecked,
-            imageEffect ->
+            extendedEffectAvailable ->
             if (isVisible) {
-                val intent = buildExtendedWallpaperIntent()
-                val isIntentValid =
-                    intent.resolveActivityInfo(context.getPackageManager(), 0) != null
-                if (imageEffect != null && isIntentValid) {
-                    { launchExtendedWallpaperEffects() }
+                if (extendedEffectAvailable) {
+                    { launcher -> launchExtendedWallpaperEffects(launcher) }
                 } else {
-                    fun() {
+                    fun(_: ActivityResultLauncher<Intent>) {
                         if (!isChecked) {
                             uncheckAllOthersExcept(EFFECTS)
                         }
@@ -437,52 +461,42 @@ constructor(
             }
         }
 
-    private fun launchExtendedWallpaperEffects() {
-        val previewedWallpaperModel = interactor.wallpaperModel.value
-        var photoUri: Uri? = null
-        if (
-            previewedWallpaperModel is WallpaperModel.StaticWallpaperModel &&
-                previewedWallpaperModel.imageWallpaperData != null
-        ) {
-            photoUri = previewedWallpaperModel.imageWallpaperData.uri
-        }
-
-        val intent = buildExtendedWallpaperIntent()
-        context.grantUriPermission(
-            EXTENDED_WALLPAPER_EFFECTS_PACKAGE,
-            photoUri,
-            Intent.FLAG_GRANT_READ_URI_PERMISSION,
-        )
-        Log.d(TAG, "PhotoURI is: $photoUri")
-        photoUri?.let { uri ->
-            intent.putExtra("PHOTO_URI", uri)
-            try {
-                context.startActivity(intent)
-            } catch (ex: ActivityNotFoundException) {
-                Log.e(TAG, "Extended Wallpaper Activity is not available", ex)
+    private fun launchExtendedWallpaperEffects(launcher: ActivityResultLauncher<Intent>) {
+        val wallpaperModel = previewActionsInteractor.wallpaperModel.value
+        if (isExtendedEffectWallpaperModel(wallpaperModel)) {
+            // Extended effect wallpaper, launch with description
+            extendedWallpaperIntent.putExtra(
+                WALLPAPER_DESCRIPTION_CONTENT_HANDLING,
+                (wallpaperModel as LiveWallpaperModel).liveWallpaperData.description,
+            )
+        } else {
+            val photoUri = (wallpaperModel as? StaticWallpaperModel)?.imageWallpaperData?.uri
+            Log.d(TAG, "PhotoURI is: $photoUri")
+            photoUri?.let {
+                context.grantUriPermission(
+                    extendedWallpaperEffectPkgName,
+                    photoUri,
+                    Intent.FLAG_GRANT_READ_URI_PERMISSION,
+                )
+                extendedWallpaperIntent.putExtra("PHOTO_URI", it)
             }
         }
-    }
 
-    private fun buildExtendedWallpaperIntent(): Intent {
-        return Intent().apply {
-            component =
-                ComponentName(
-                    EXTENDED_WALLPAPER_EFFECTS_PACKAGE,
-                    EXTENDED_WALLPAPER_EFFECTS_ACTIVITY,
-                )
-            flags = Intent.FLAG_ACTIVITY_NEW_TASK
+        try {
+            launcher.launch(extendedWallpaperIntent)
+        } catch (ex: ActivityNotFoundException) {
+            Log.e(TAG, "Extended Wallpaper Activity is not available", ex)
         }
     }
 
     val effectDownloadFailureToastText: Flow<String> =
-        interactor.imageEffectsModel
+        previewActionsInteractor.imageEffectsModel
             .map { if (it.status == EFFECT_DOWNLOAD_FAILED) it.errorMessage else null }
             .filterNotNull()
 
     /** [SHARE] */
     val shareIntent: Flow<Intent?> =
-        interactor.wallpaperModel.map { model ->
+        previewActionsInteractor.wallpaperModel.map { model ->
             (model as? LiveWallpaperModel)?.creativeWallpaperData?.let { data ->
                 if (data.shareUri == null || data.shareUri == Uri.EMPTY) null
                 else data.getShareIntent()
@@ -591,7 +605,13 @@ constructor(
         }
     }
 
+    private fun isExtendedEffectWallpaperModel(model: WallpaperModel?): Boolean =
+        flags.isExtendedWallpaperEnabled() &&
+            model is LiveWallpaperModel &&
+            model.liveWallpaperData.isEffectWallpaper
+
     companion object {
+        private const val TAG = "PreviewActionsViewModel"
         const val EXTRA_KEY_IS_CREATE_NEW = "is_create_new"
         const val EXTRA_WALLPAPER_DESCRIPTION = "wp_description"
 
@@ -659,7 +679,13 @@ constructor(
         }
 
         fun LiveWallpaperModel.isNewCreativeWallpaper(): Boolean {
-            return creativeWallpaperData?.deleteUri?.toString()?.isEmpty() == true
+            return if (
+                InjectorProvider.getInjector().getFlags().isNewCreativeWallpaperCategoryEnabled()
+            ) {
+                creativeWallpaperData?.isNewCreativeWallpaper ?: false
+            } else {
+                creativeWallpaperData?.deleteUri?.toString()?.isEmpty() == true
+            }
         }
 
         /** The original combine function can only take up to 5 flows. */

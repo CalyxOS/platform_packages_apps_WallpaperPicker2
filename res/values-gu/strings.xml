@@ -24,12 +24,14 @@
     <string name="set_wallpaper_button_text" msgid="5445978864530156290">"વૉલપેપર સેટ કરો"</string>
     <string name="set_wallpaper_progress_message" msgid="7986528287618716715">"વૉલપેપર સેટ કરી રહ્યાં છીએ…"</string>
     <string name="try_again" msgid="8278874823700921234">"ફરી પ્રયાસ કરો"</string>
+    <string name="select_a_photo" msgid="7273925950262860696">"કોઈ ફોટો પસંદ કરો"</string>
     <string name="set_wallpaper_error_message" msgid="6819986999041085130">"વૉલપેપર સેટ કરવામાં અસમર્થ છીએ."</string>
     <string name="load_wallpaper_error_message" msgid="7913278480467707374">"વૉલપેપર લોડ કરવામાં અસમર્થ છીએ. છબી કાં તો દૂષિત છે અથવા તો અનુપલબ્ધ છે."</string>
     <string name="static_wallpaper_presentation_mode_message" msgid="417940227049360906">"સેટ કરેલું વૉલપેપર"</string>
     <string name="rotating_wallpaper_presentation_mode_message" msgid="3361676041605733288">"દૈનિક વૉલપેપર"</string>
     <string name="wallpaper_destination_both" msgid="1124197176741944063">"હોમ અને લૉક સ્ક્રીન"</string>
     <string name="choose_a_wallpaper_section_title" msgid="1009823506890453891">"વૉલપેપર પસંદ કરો"</string>
+    <string name="choose_a_curated_photo_section_title" msgid="7360675459203465887">"સૂચવેલા ફોટા"</string>
     <string name="creative_wallpaper_title" msgid="3581650238648981372">"વૉલપેપર બનાવો"</string>
     <string name="home_screen_message" msgid="106444102822522813">"હોમ સ્ક્રીન"</string>
     <string name="lock_screen_message" msgid="1534506081955058013">"લૉક સ્ક્રીન"</string>
@@ -43,6 +45,7 @@
     <string name="permission_needed_explanation_go_to_settings" msgid="3923551582092599609">"વર્તમાન વૉલપેપરને અહીં પ્રદર્શિત કરવા માટે, વૉલપેપરને તમારા ઉપકરણના સ્ટોરેજનો ઍક્સેસ જરૂરી છે.\n\nઆ સેટિંગ બદલવા માટે, વૉલપેપર ઍપની માહિતીના પરવાનગીઓ વિભાગમાં જાઓ."</string>
     <string name="permission_needed_allow_access_button_label" msgid="1943133660612924306">"ઍક્સેસની મંજૂરી આપો"</string>
     <string name="no_backup_image_wallpaper_description" msgid="8303268619408738057">"સતત બદલાતા રહેતા વૉલપેપર માટે લાઇવ વૉલપેપર સેવા"</string>
+    <string name="more_photos" msgid="2183343115041498453">"વધુ ફોટા"</string>
     <string name="daily_refresh_tile_title" msgid="3270456074558525091">"દૈનિક વૉલપેપર"</string>
     <string name="daily_refresh_tile_subtitle" msgid="3976682014885446443">"ચાલુ કરવા માટે ટૅપ કરો"</string>
     <string name="start_rotation_dialog_body_live_wallpaper_needed" msgid="5132580257563846082">"વૉલપેપર દરરોજ ઑટોમૅટિક રીતે બદલાશે. સેટઅપ પૂર્ણ કરવા માટે, આગલી સ્ક્રીન પર &lt;strong&gt;વૉલપેપર સેટ કરો&lt;/strong&gt; પર ટૅપ કરો."</string>
@@ -67,7 +70,8 @@
     <string name="refresh_daily_wallpaper_home_content_description" msgid="2770445044556164259">"દૈનિક હોમ સ્ક્રીન વૉલપેપર રિફ્રેશ કરો"</string>
     <string name="refresh_daily_wallpaper_content_description" msgid="4362142658237147583">"દૈનિક વૉલપેપર રિફ્રેશ કરો"</string>
     <string name="preview_screen_description" msgid="3386387053327775919">"વૉલપેપરનો પ્રીવ્યૂ બતાવતી સ્ક્રીન"</string>
-    <string name="preview_screen_description_editable" msgid="506875963019888699">"વૉલપેપર પ્રીવ્યૂ સ્ક્રીન %1$s, પૅન અને નાનું-મોટું કરવા માટે બે આંગળીનો ઉપયોગ કરો."</string>
+    <string name="preview_screen_description_editable" msgid="5558037286562127705">"વૉલપેપર પ્રીવ્યૂ સ્ક્રીન %1$s, પૅન અને નાનું-મોટું કરવા માટે બે આંગળીનો ઉપયોગ કરો"</string>
+    <string name="preview_screen_description_non_editable" msgid="5861996326502454566">"વૉલપેપર પ્રીવ્યૂ સ્ક્રીન %1$s"</string>
     <string name="folded_device_state_description" msgid="4972608448265616264">"ફોલ્ડ કરેલું"</string>
     <string name="unfolded_device_state_description" msgid="3071975681472460627">"અનફોલ્ડ કરેલું"</string>
     <string name="full_preview_check_button_description" msgid="700484353763952975">"વૉલપેપરમાં ફેરફાર કરવાનું કામ પૂરું થયું"</string>
@@ -84,7 +88,7 @@
     <string name="center_wallpaper_position" msgid="4166894762352288883">"મધ્ય"</string>
     <string name="center_crop_wallpaper_position" msgid="1681980019815343348">"મધ્યમાંથી કાપેલ"</string>
     <string name="stretch_wallpaper_position" msgid="5002680983147456935">"ખેંચેલ"</string>
-    <string name="preview" msgid="1774602101743861071">"પ્રીવ્યૂ કરો"</string>
+    <string name="preview" msgid="1774602101743861071">"પ્રીવ્યૂ"</string>
     <string name="tab_info" msgid="818614080690111416">"માહિતી"</string>
     <string name="tab_customize" msgid="2533745409174959960">"કસ્ટમાઇઝ કરો"</string>
     <string name="tab_effects" msgid="3213606157589233901">"ઇફેક્ટ"</string>
@@ -105,7 +109,8 @@
     <string name="previous_page_content_description" msgid="1138597031571078429">"પાછળ"</string>
     <string name="wallpaper_title" msgid="6754214682228331092">"વૉલપેપર"</string>
     <string name="wallpaper_preview_card_content_description" msgid="6049261033541034584">"વૉલપેપરનો પ્રીવ્યૂ કરો"</string>
-    <string name="wallpaper_preview_card_content_description_editable" msgid="3111763100515242340">"વૉલપેપર પ્રીવ્યૂ %1$s, તમારા ફોટામાં ફેરફાર કરવા, ટૅપ કરો"</string>
+    <string name="wallpaper_preview_card_content_description_editable" msgid="8147628993184862003">"%1$s વૉલપેપર પ્રીવ્યૂ %2$s, તમારા ફોટામાં ફેરફાર કરવા બે વાર ટૅપ કરો"</string>
+    <string name="wallpaper_preview_card_content_description_non_editable" msgid="2201116657175733260">"%1$s વૉલપેપર પ્રીવ્યૂ %2$s"</string>
     <string name="lock_wallpaper_preview_card_content_description" msgid="5236839857695985498">"લૉક સ્ક્રીનના વૉલપેપરનો પ્રીવ્યૂ"</string>
     <string name="home_wallpaper_preview_card_content_description" msgid="4059418716070821630">"હોમ સ્ક્રીનના વૉલપેપરનો પ્રીવ્યૂ"</string>
     <string name="collection_not_exist_msg" msgid="3504852962885064842">"સંગ્રહ અસ્તિત્વમાં નથી"</string>
@@ -138,8 +143,17 @@
     <string name="reset_confirmation_dialog_title" msgid="3391905685838213712">"ફેરફારો રીસેટ કરીએ?"</string>
     <string name="reset_confirmation_dialog_message" msgid="888669268626289603">"તમારા ફેરફારો સાચવવામાં આવશે નહીં"</string>
     <string name="more_wallpapers" msgid="8116268433411881705">"વધુ વૉલપેપર"</string>
+    <string name="wallpapers" msgid="7133442512006469886">"વૉલપેપર"</string>
     <string name="recents_wallpaper_label" msgid="8653165542635660222">"%1$s, %2$d"</string>
     <string name="default_wallpaper_title" msgid="2541071182656978180">"વૉલપેપર"</string>
     <string name="small_preview_tooltip" msgid="1920430079013352071">"તમારા ફોટામાં ફેરફાર કરવા માટે ટૅપ કરો"</string>
     <string name="full_preview_tooltip" msgid="4648994028015322759">"તમારા ફોટાની જગ્યા, સ્કેલ અને ખૂણાની ગોઠવણી કરો"</string>
+    <string name="discard_changes_dialog_message" msgid="8462485277292103457">"શું ફેરફારો કાઢી નાખીએ?"</string>
+    <string name="discard_changes_dialog_button_keep_editing" msgid="9118931326834547216">"ફેરફાર કરવાનું ચાલુ રાખો"</string>
+    <string name="discard_changes_dialog_button_discard" msgid="6585071548322908206">"કાઢી નાખો"</string>
+    <string name="action_zoom_in" msgid="3326782160671405449">"મોટું કરો"</string>
+    <string name="action_zoom_out" msgid="5454911090443175449">"નાનું કરો"</string>
+    <string name="zoomed_to_percent" msgid="1243039994190840132">"%d%% પર નાનું-મોટું કર્યું"</string>
+    <string name="max_zoom_percentage" msgid="2111670558746866030">"મહત્તમ ઝૂમ હાંસલ કર્યું"</string>
+    <string name="min_zoom_percentage" msgid="5931879817379214316">"ન્યૂનતમ ઝૂમ હાંસલ કર્યું"</string>
 </resources>

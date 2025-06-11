@@ -25,11 +25,14 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.android.wallpaper.picker.customization.ui.viewmodel.ColorUpdateViewModel
 import com.android.wallpaper.picker.option.ui.binder.OptionItemBinder2
 import com.android.wallpaper.picker.option.ui.viewmodel.OptionItemViewModel2
+import java.lang.ref.WeakReference
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.DisposableHandle
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
@@ -39,55 +42,60 @@ class OptionItemAdapter2<T>(
     private val lifecycleOwner: LifecycleOwner,
     private val backgroundDispatcher: CoroutineDispatcher = Dispatchers.IO,
     private val bindPayload: (View, T) -> DisposableHandle?,
+    private val colorUpdateViewModel: WeakReference<ColorUpdateViewModel>,
+    private val shouldAnimateColor: () -> Boolean,
 ) : RecyclerView.Adapter<OptionItemAdapter2.ViewHolder>() {
 
     private val items = mutableListOf<OptionItemViewModel2<T>>()
+    private var setItemsJob: Job? = null
 
     fun setItems(items: List<OptionItemViewModel2<T>>, callback: (() -> Unit)? = null) {
-        lifecycleOwner.lifecycleScope.launch {
-            val oldItems = this@OptionItemAdapter2.items
-            val newItems = items
-            val diffResult =
-                withContext(backgroundDispatcher) {
-                    DiffUtil.calculateDiff(
-                        object : DiffUtil.Callback() {
-                            override fun getOldListSize(): Int {
-                                return oldItems.size
-                            }
+        setItemsJob?.cancel()
+        setItemsJob =
+            lifecycleOwner.lifecycleScope.launch {
+                val oldItems = this@OptionItemAdapter2.items
+                val newItems = items
+                val diffResult =
+                    withContext(backgroundDispatcher) {
+                        DiffUtil.calculateDiff(
+                            object : DiffUtil.Callback() {
+                                override fun getOldListSize(): Int {
+                                    return oldItems.size
+                                }
 
-                            override fun getNewListSize(): Int {
-                                return newItems.size
-                            }
+                                override fun getNewListSize(): Int {
+                                    return newItems.size
+                                }
 
-                            override fun areItemsTheSame(
-                                oldItemPosition: Int,
-                                newItemPosition: Int,
-                            ): Boolean {
-                                val oldItem = oldItems[oldItemPosition]
-                                val newItem = newItems[newItemPosition]
-                                return oldItem.key.value == newItem.key.value
-                            }
+                                override fun areItemsTheSame(
+                                    oldItemPosition: Int,
+                                    newItemPosition: Int,
+                                ): Boolean {
+                                    val oldItem = oldItems[oldItemPosition]
+                                    val newItem = newItems[newItemPosition]
+                                    return oldItem.key.value == newItem.key.value
+                                }
 
-                            override fun areContentsTheSame(
-                                oldItemPosition: Int,
-                                newItemPosition: Int,
-                            ): Boolean {
-                                val oldItem = oldItems[oldItemPosition]
-                                val newItem = newItems[newItemPosition]
-                                return oldItem == newItem
-                            }
-                        },
-                        /* detectMoves= */ false,
-                    )
+                                override fun areContentsTheSame(
+                                    oldItemPosition: Int,
+                                    newItemPosition: Int,
+                                ): Boolean {
+                                    val oldItem = oldItems[oldItemPosition]
+                                    val newItem = newItems[newItemPosition]
+                                    return oldItem == newItem
+                                }
+                            },
+                            /* detectMoves= */ false,
+                        )
+                    }
+
+                oldItems.clear()
+                oldItems.addAll(items)
+                diffResult.dispatchUpdatesTo(this@OptionItemAdapter2)
+                if (callback != null) {
+                    callback()
                 }
-
-            oldItems.clear()
-            oldItems.addAll(items)
-            diffResult.dispatchUpdatesTo(this@OptionItemAdapter2)
-            if (callback != null) {
-                callback()
             }
-        }
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -116,6 +124,8 @@ class OptionItemAdapter2<T>(
                 view = holder.itemView,
                 viewModel = item,
                 lifecycleOwner = lifecycleOwner,
+                colorUpdateViewModel = colorUpdateViewModel,
+                shouldAnimateColor = shouldAnimateColor,
             )
     }
 }

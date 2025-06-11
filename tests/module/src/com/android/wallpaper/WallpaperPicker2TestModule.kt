@@ -17,8 +17,10 @@ package com.android.wallpaper
 
 import com.android.wallpaper.effects.EffectsController
 import com.android.wallpaper.effects.FakeEffectsController
+import com.android.wallpaper.module.DefaultRecentWallpaperManager
 import com.android.wallpaper.module.Injector
 import com.android.wallpaper.module.PartnerProvider
+import com.android.wallpaper.module.RecentWallpaperManager
 import com.android.wallpaper.module.WallpaperPreferences
 import com.android.wallpaper.module.logging.TestUserEventLogger
 import com.android.wallpaper.module.logging.UserEventLogger
@@ -26,6 +28,8 @@ import com.android.wallpaper.modules.WallpaperPicker2AppModule
 import com.android.wallpaper.network.Requester
 import com.android.wallpaper.picker.category.client.DefaultWallpaperCategoryClient
 import com.android.wallpaper.picker.category.domain.interactor.CategoryInteractor
+import com.android.wallpaper.picker.category.domain.interactor.CuratedPhotosInteractor
+import com.android.wallpaper.picker.category.domain.interactor.OnDeviceWallpapersInteractor
 import com.android.wallpaper.picker.category.domain.interactor.ThirdPartyCategoryInteractor
 import com.android.wallpaper.picker.category.ui.view.providers.IndividualPickerFactory
 import com.android.wallpaper.picker.category.ui.view.providers.implementation.DefaultIndividualPickerFactory
@@ -39,14 +43,18 @@ import com.android.wallpaper.picker.customization.ui.binder.ToolbarBinder
 import com.android.wallpaper.picker.preview.ui.util.DefaultImageEffectDialogUtil
 import com.android.wallpaper.picker.preview.ui.util.ImageEffectDialogUtil
 import com.android.wallpaper.testing.FakeCategoryInteractor
+import com.android.wallpaper.testing.FakeCuratedPhotosInteractorImpl
+import com.android.wallpaper.testing.FakeDefaultPhotosErrorConvertor
 import com.android.wallpaper.testing.FakeDefaultRequester
 import com.android.wallpaper.testing.FakeDefaultWallpaperCategoryClient
 import com.android.wallpaper.testing.FakeDefaultWallpaperModelFactory
+import com.android.wallpaper.testing.FakeOnDeviceWallpapersInteractor
 import com.android.wallpaper.testing.FakeThirdPartyCategoryInteractor
 import com.android.wallpaper.testing.FakeWallpaperCategoryWrapper
 import com.android.wallpaper.testing.TestInjector
 import com.android.wallpaper.testing.TestPartnerProvider
 import com.android.wallpaper.testing.TestWallpaperPreferences
+import com.android.wallpaper.util.converter.PhotosErrorConvertor
 import com.android.wallpaper.util.converter.WallpaperModelFactory
 import dagger.Binds
 import dagger.Module
@@ -75,12 +83,6 @@ abstract class WallpaperPicker2TestModule {
 
     @Binds
     @Singleton
-    abstract fun bindThirdPartyCategoryInteractor(
-        impl: FakeThirdPartyCategoryInteractor
-    ): ThirdPartyCategoryInteractor
-
-    @Binds
-    @Singleton
     abstract fun bindEffectsController(impl: FakeEffectsController): EffectsController
 
     @Binds
@@ -95,15 +97,39 @@ abstract class WallpaperPicker2TestModule {
 
     @Binds
     @Singleton
+    abstract fun bindCuratedPhotosInteractor(
+        impl: FakeCuratedPhotosInteractorImpl
+    ): CuratedPhotosInteractor
+
+    @Binds
+    @Singleton
+    abstract fun bindDefaultPhotosErrorConvertor(
+        impl: FakeDefaultPhotosErrorConvertor
+    ): PhotosErrorConvertor
+
+    @Binds
+    @Singleton
     abstract fun bindImageEffectDialogUtil(
         impl: DefaultImageEffectDialogUtil
     ): ImageEffectDialogUtil
 
     @Binds @Singleton abstract fun bindInjector(impl: TestInjector): Injector
 
+    @Binds
+    @Singleton
+    abstract fun bindOnDeviceWallpapersInteractor(
+        impl: FakeOnDeviceWallpapersInteractor
+    ): OnDeviceWallpapersInteractor
+
     @Binds @Singleton abstract fun bindPartnerProvider(impl: TestPartnerProvider): PartnerProvider
 
     @Binds @Singleton abstract fun bindRequester(impl: FakeDefaultRequester): Requester
+
+    @Binds
+    @Singleton
+    abstract fun bindThirdPartyCategoryInteractor(
+        impl: FakeThirdPartyCategoryInteractor
+    ): ThirdPartyCategoryInteractor
 
     @Binds @Singleton abstract fun bindToolbarBinder(impl: DefaultToolbarBinder): ToolbarBinder
 
@@ -130,4 +156,10 @@ abstract class WallpaperPicker2TestModule {
     abstract fun bindWorkspaceCallbackBinder(
         impl: DefaultWorkspaceCallbackBinder
     ): WorkspaceCallbackBinder
+
+    @Binds
+    @Singleton
+    abstract fun bindRecentWallpaperManager(
+        impl: DefaultRecentWallpaperManager
+    ): RecentWallpaperManager
 }

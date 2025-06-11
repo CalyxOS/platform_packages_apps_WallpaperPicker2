@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2023 The Android Open Source Project
+     Copyright (C) 2024 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -14,8 +14,12 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<resources>
-    <integer name="rows_creative_category">2</integer>
-    <!-- Padding value for creative category individual item -->
-    <integer name="creative_category_individual_item_padding">15</integer>
-</resources>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <padding
+        android:left="@dimen/wallpaper_control_button_padding"
+        android:right="@dimen/wallpaper_control_button_padding"
+        android:top="@dimen/wallpaper_control_button_padding"
+        android:bottom="@dimen/wallpaper_control_button_padding" />
+    <solid android:color="@color/system_surface_container_high" />
+</shape>

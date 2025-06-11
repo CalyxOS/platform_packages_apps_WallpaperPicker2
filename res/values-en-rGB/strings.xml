@@ -24,12 +24,14 @@
     <string name="set_wallpaper_button_text" msgid="5445978864530156290">"Set wallpaper"</string>
     <string name="set_wallpaper_progress_message" msgid="7986528287618716715">"Setting wallpaper…"</string>
     <string name="try_again" msgid="8278874823700921234">"Try again"</string>
+    <string name="select_a_photo" msgid="7273925950262860696">"Select a photo"</string>
     <string name="set_wallpaper_error_message" msgid="6819986999041085130">"Unable to set wallpaper."</string>
     <string name="load_wallpaper_error_message" msgid="7913278480467707374">"Unable to load wallpaper. The image is either corrupted or unavailable."</string>
     <string name="static_wallpaper_presentation_mode_message" msgid="417940227049360906">"Currently set"</string>
     <string name="rotating_wallpaper_presentation_mode_message" msgid="3361676041605733288">"Daily wallpaper"</string>
     <string name="wallpaper_destination_both" msgid="1124197176741944063">"Home &amp; Lock screen"</string>
     <string name="choose_a_wallpaper_section_title" msgid="1009823506890453891">"Choose a wallpaper"</string>
+    <string name="choose_a_curated_photo_section_title" msgid="7360675459203465887">"Suggested photos"</string>
     <string name="creative_wallpaper_title" msgid="3581650238648981372">"Create wallpaper"</string>
     <string name="home_screen_message" msgid="106444102822522813">"Home screen"</string>
     <string name="lock_screen_message" msgid="1534506081955058013">"Lock screen"</string>
@@ -43,6 +45,7 @@
     <string name="permission_needed_explanation_go_to_settings" msgid="3923551582092599609">"To display the current wallpaper here, Wallpapers needs access to your device’s storage.\n\nTo change this setting, go to the Permissions area of the Wallpapers’ app info."</string>
     <string name="permission_needed_allow_access_button_label" msgid="1943133660612924306">"Allow access"</string>
     <string name="no_backup_image_wallpaper_description" msgid="8303268619408738057">"Live wallpaper service for rotating wallpapers"</string>
+    <string name="more_photos" msgid="2183343115041498453">"More photos"</string>
     <string name="daily_refresh_tile_title" msgid="3270456074558525091">"Daily wallpaper"</string>
     <string name="daily_refresh_tile_subtitle" msgid="3976682014885446443">"Tap to turn on"</string>
     <string name="start_rotation_dialog_body_live_wallpaper_needed" msgid="5132580257563846082">"Wallpaper will change automatically every day. To finish setup, tap &lt;strong&gt;Set wallpaper&lt;/strong&gt; on the next screen."</string>
@@ -67,7 +70,8 @@
     <string name="refresh_daily_wallpaper_home_content_description" msgid="2770445044556164259">"Refresh daily home screen wallpaper"</string>
     <string name="refresh_daily_wallpaper_content_description" msgid="4362142658237147583">"Refresh daily wallpaper"</string>
     <string name="preview_screen_description" msgid="3386387053327775919">"Wallpaper preview screen"</string>
-    <string name="preview_screen_description_editable" msgid="506875963019888699">"Wallpaper preview screen %1$s. Use two fingers to pan and zoom."</string>
+    <string name="preview_screen_description_editable" msgid="5558037286562127705">"Wallpaper preview screen %1$s. Use two fingers to pan and zoom"</string>
+    <string name="preview_screen_description_non_editable" msgid="5861996326502454566">"Wallpaper preview screen %1$s"</string>
     <string name="folded_device_state_description" msgid="4972608448265616264">"Folded"</string>
     <string name="unfolded_device_state_description" msgid="3071975681472460627">"Unfolded"</string>
     <string name="full_preview_check_button_description" msgid="700484353763952975">"Done editing wallpaper"</string>
@@ -105,7 +109,8 @@
     <string name="previous_page_content_description" msgid="1138597031571078429">"Previous"</string>
     <string name="wallpaper_title" msgid="6754214682228331092">"Wallpaper"</string>
     <string name="wallpaper_preview_card_content_description" msgid="6049261033541034584">"Wallpaper preview"</string>
-    <string name="wallpaper_preview_card_content_description_editable" msgid="3111763100515242340">"Wallpaper preview %1$s tap to edit photo"</string>
+    <string name="wallpaper_preview_card_content_description_editable" msgid="8147628993184862003">"%1$s wallpaper preview %2$s, double-tap to edit your photo"</string>
+    <string name="wallpaper_preview_card_content_description_non_editable" msgid="2201116657175733260">"%1$s wallpaper preview %2$s"</string>
     <string name="lock_wallpaper_preview_card_content_description" msgid="5236839857695985498">"Lock screen wallpaper preview"</string>
     <string name="home_wallpaper_preview_card_content_description" msgid="4059418716070821630">"Home screen wallpaper preview"</string>
     <string name="collection_not_exist_msg" msgid="3504852962885064842">"The collection doesn\'t exist"</string>
@@ -138,8 +143,17 @@
     <string name="reset_confirmation_dialog_title" msgid="3391905685838213712">"Reset changes?"</string>
     <string name="reset_confirmation_dialog_message" msgid="888669268626289603">"Your changes won\'t be saved"</string>
     <string name="more_wallpapers" msgid="8116268433411881705">"More wallpapers"</string>
+    <string name="wallpapers" msgid="7133442512006469886">"Wallpapers"</string>
     <string name="recents_wallpaper_label" msgid="8653165542635660222">"%1$s, %2$d"</string>
     <string name="default_wallpaper_title" msgid="2541071182656978180">"Wallpaper"</string>
     <string name="small_preview_tooltip" msgid="1920430079013352071">"Tap to edit your photo"</string>
     <string name="full_preview_tooltip" msgid="4648994028015322759">"Adjust the position, scale and angle of your photos"</string>
+    <string name="discard_changes_dialog_message" msgid="8462485277292103457">"Discard changes?"</string>
+    <string name="discard_changes_dialog_button_keep_editing" msgid="9118931326834547216">"Keep editing"</string>
+    <string name="discard_changes_dialog_button_discard" msgid="6585071548322908206">"Discard"</string>
+    <string name="action_zoom_in" msgid="3326782160671405449">"Zoom in"</string>
+    <string name="action_zoom_out" msgid="5454911090443175449">"Zoom out"</string>
+    <string name="zoomed_to_percent" msgid="1243039994190840132">"Zoomed to %d%%"</string>
+    <string name="max_zoom_percentage" msgid="2111670558746866030">"Maximum zoom achieved"</string>
+    <string name="min_zoom_percentage" msgid="5931879817379214316">"Minimum zoom achieved"</string>
 </resources>

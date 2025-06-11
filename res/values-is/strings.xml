@@ -24,12 +24,14 @@
     <string name="set_wallpaper_button_text" msgid="5445978864530156290">"Velja veggfóður"</string>
     <string name="set_wallpaper_progress_message" msgid="7986528287618716715">"Vistar sem veggfóður…"</string>
     <string name="try_again" msgid="8278874823700921234">"Reyna aftur"</string>
+    <string name="select_a_photo" msgid="7273925950262860696">"Veldu mynd"</string>
     <string name="set_wallpaper_error_message" msgid="6819986999041085130">"Ekki hægt að vista sem veggfóður."</string>
     <string name="load_wallpaper_error_message" msgid="7913278480467707374">"Ekki tókst að hlaða veggfóður. Myndin er annaðhvort skemmd eða ekki tiltæk."</string>
     <string name="static_wallpaper_presentation_mode_message" msgid="417940227049360906">"Valið núna"</string>
     <string name="rotating_wallpaper_presentation_mode_message" msgid="3361676041605733288">"Daglegt veggfóður"</string>
     <string name="wallpaper_destination_both" msgid="1124197176741944063">"Heima- og lásskjár"</string>
     <string name="choose_a_wallpaper_section_title" msgid="1009823506890453891">"Veldu veggfóður"</string>
+    <string name="choose_a_curated_photo_section_title" msgid="7360675459203465887">"Tillögur að myndum"</string>
     <string name="creative_wallpaper_title" msgid="3581650238648981372">"Búa til veggfóður"</string>
     <string name="home_screen_message" msgid="106444102822522813">"Heimaskjár"</string>
     <string name="lock_screen_message" msgid="1534506081955058013">"Lásskjár"</string>
@@ -43,6 +45,7 @@
     <string name="permission_needed_explanation_go_to_settings" msgid="3923551582092599609">"Veggfóður þarf að fá aðgang að geymslu tækisins þíns til að birta þetta veggfóður hér.\n\nTil að breyta þessari stillingu skaltu opna heimildir í forritsupplýsingum Veggfóðurs."</string>
     <string name="permission_needed_allow_access_button_label" msgid="1943133660612924306">"Leyfa aðgang"</string>
     <string name="no_backup_image_wallpaper_description" msgid="8303268619408738057">"Þjónusta fyrir kvikt, breytilegt veggfóður"</string>
+    <string name="more_photos" msgid="2183343115041498453">"Fleiri myndir"</string>
     <string name="daily_refresh_tile_title" msgid="3270456074558525091">"Daglegt veggfóður"</string>
     <string name="daily_refresh_tile_subtitle" msgid="3976682014885446443">"Ýttu til að kveikja"</string>
     <string name="start_rotation_dialog_body_live_wallpaper_needed" msgid="5132580257563846082">"Veggfóðrið breytist sjálfkrafa á hverjum degi. Ýttu á &lt;strong&gt;Velja veggfóður&lt;/strong&gt;á næsta skjá til að ljúka uppsetningu."</string>
@@ -67,7 +70,8 @@
     <string name="refresh_daily_wallpaper_home_content_description" msgid="2770445044556164259">"Uppfæra daglegt veggfóður á heimaskjá"</string>
     <string name="refresh_daily_wallpaper_content_description" msgid="4362142658237147583">"Uppfæra daglegt veggfóður"</string>
     <string name="preview_screen_description" msgid="3386387053327775919">"Forskoðunarskjár veggfóðurs"</string>
-    <string name="preview_screen_description_editable" msgid="506875963019888699">"Forskoðun á veggfóðri %1$s. Notaðu tvo fingur til að skoða og stækka/minnka."</string>
+    <string name="preview_screen_description_editable" msgid="5558037286562127705">"Forskoðun á %1$s veggfóðri. Notaðu tvo fingur til að hliðra og stækka/minnka"</string>
+    <string name="preview_screen_description_non_editable" msgid="5861996326502454566">"Forskoðun á %1$s veggfóðri"</string>
     <string name="folded_device_state_description" msgid="4972608448265616264">"Samanbrotið"</string>
     <string name="unfolded_device_state_description" msgid="3071975681472460627">"Opið"</string>
     <string name="full_preview_check_button_description" msgid="700484353763952975">"Búið að breyta veggfóðri"</string>
@@ -105,7 +109,8 @@
     <string name="previous_page_content_description" msgid="1138597031571078429">"Fyrri"</string>
     <string name="wallpaper_title" msgid="6754214682228331092">"Veggfóður"</string>
     <string name="wallpaper_preview_card_content_description" msgid="6049261033541034584">"Forskoðun veggfóðurs"</string>
-    <string name="wallpaper_preview_card_content_description_editable" msgid="3111763100515242340">"Forskoðun á veggfóðri %1$s, ýttu til að breyta mynd"</string>
+    <string name="wallpaper_preview_card_content_description_editable" msgid="8147628993184862003">"Forskoðun á veggfóðri á %2$s %1$s, ýttu tvisvar til að breyta myndinni"</string>
+    <string name="wallpaper_preview_card_content_description_non_editable" msgid="2201116657175733260">"Forskoðun á %2$s veggfóðri á %1$s"</string>
     <string name="lock_wallpaper_preview_card_content_description" msgid="5236839857695985498">"Forskoðun veggfóðurs á lásskjá"</string>
     <string name="home_wallpaper_preview_card_content_description" msgid="4059418716070821630">"Forskoðun veggfóðurs á heimaskjá"</string>
     <string name="collection_not_exist_msg" msgid="3504852962885064842">"Safnið er ekki til"</string>
@@ -138,8 +143,17 @@
     <string name="reset_confirmation_dialog_title" msgid="3391905685838213712">"Endurstilla breytingar?"</string>
     <string name="reset_confirmation_dialog_message" msgid="888669268626289603">"Breytingarnar verða ekki vistaðar"</string>
     <string name="more_wallpapers" msgid="8116268433411881705">"Fleiri veggfóður"</string>
+    <string name="wallpapers" msgid="7133442512006469886">"Veggfóður"</string>
     <string name="recents_wallpaper_label" msgid="8653165542635660222">"%1$s, %2$d"</string>
     <string name="default_wallpaper_title" msgid="2541071182656978180">"Veggfóður"</string>
     <string name="small_preview_tooltip" msgid="1920430079013352071">"Ýttu til að breyta myndinni þinni"</string>
     <string name="full_preview_tooltip" msgid="4648994028015322759">"Stilltu afstöðu, kvarða og halla myndanna þinna"</string>
+    <string name="discard_changes_dialog_message" msgid="8462485277292103457">"Fleygja breytingum?"</string>
+    <string name="discard_changes_dialog_button_keep_editing" msgid="9118931326834547216">"Halda áfram að breyta"</string>
+    <string name="discard_changes_dialog_button_discard" msgid="6585071548322908206">"Fleygja"</string>
+    <string name="action_zoom_in" msgid="3326782160671405449">"Stækka"</string>
+    <string name="action_zoom_out" msgid="5454911090443175449">"Minnka"</string>
+    <string name="zoomed_to_percent" msgid="1243039994190840132">"Stækkað/minnkað í %d%%"</string>
+    <string name="max_zoom_percentage" msgid="2111670558746866030">"Hámarksstærð náð"</string>
+    <string name="min_zoom_percentage" msgid="5931879817379214316">"Lágmarksstærð náð"</string>
 </resources>

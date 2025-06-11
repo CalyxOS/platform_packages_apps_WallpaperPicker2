@@ -24,12 +24,14 @@
     <string name="set_wallpaper_button_text" msgid="5445978864530156290">"배경화면 설정"</string>
     <string name="set_wallpaper_progress_message" msgid="7986528287618716715">"배경화면을 설정하는 중..."</string>
     <string name="try_again" msgid="8278874823700921234">"다시 시도"</string>
+    <string name="select_a_photo" msgid="7273925950262860696">"사진 선택"</string>
     <string name="set_wallpaper_error_message" msgid="6819986999041085130">"배경화면을 설정할 수 없습니다."</string>
     <string name="load_wallpaper_error_message" msgid="7913278480467707374">"배경화면을 로드할 수 없습니다. 이미지가 손상되었거나 사용할 수 없습니다."</string>
     <string name="static_wallpaper_presentation_mode_message" msgid="417940227049360906">"현재 설정"</string>
     <string name="rotating_wallpaper_presentation_mode_message" msgid="3361676041605733288">"일일 배경화면"</string>
     <string name="wallpaper_destination_both" msgid="1124197176741944063">"홈 및 잠금 화면"</string>
     <string name="choose_a_wallpaper_section_title" msgid="1009823506890453891">"배경화면 선택하기"</string>
+    <string name="choose_a_curated_photo_section_title" msgid="7360675459203465887">"추천 사진"</string>
     <string name="creative_wallpaper_title" msgid="3581650238648981372">"배경화면 만들기"</string>
     <string name="home_screen_message" msgid="106444102822522813">"홈 화면"</string>
     <string name="lock_screen_message" msgid="1534506081955058013">"잠금 화면"</string>
@@ -43,6 +45,7 @@
     <string name="permission_needed_explanation_go_to_settings" msgid="3923551582092599609">"여기에 현재 배경화면을 표시하려면 배경화면 앱에서 기기의 저장소에 액세스할 수 있어야 합니다.\n\n이 설정을 변경하려면 배경화면 앱 정보의 권한 섹션으로 이동하세요."</string>
     <string name="permission_needed_allow_access_button_label" msgid="1943133660612924306">"액세스 허용"</string>
     <string name="no_backup_image_wallpaper_description" msgid="8303268619408738057">"회전 배경화면을 위한 라이브 배경화면 서비스"</string>
+    <string name="more_photos" msgid="2183343115041498453">"사진 더보기"</string>
     <string name="daily_refresh_tile_title" msgid="3270456074558525091">"일일 배경화면"</string>
     <string name="daily_refresh_tile_subtitle" msgid="3976682014885446443">"탭하여 사용"</string>
     <string name="start_rotation_dialog_body_live_wallpaper_needed" msgid="5132580257563846082">"배경화면이 매일 자동으로 변경됩니다. 설정을 완료하려면 다음 화면에서 &lt;strong&gt;배경화면 설정&lt;/strong&gt;을 탭하세요."</string>
@@ -67,7 +70,8 @@
     <string name="refresh_daily_wallpaper_home_content_description" msgid="2770445044556164259">"일일 홈 화면 배경화면 새로고침"</string>
     <string name="refresh_daily_wallpaper_content_description" msgid="4362142658237147583">"일일 배경화면 새로고침"</string>
     <string name="preview_screen_description" msgid="3386387053327775919">"배경화면 미리보기 화면"</string>
-    <string name="preview_screen_description_editable" msgid="506875963019888699">"배경화면 미리보기 화면 %1$s. 두 손가락으로 이동하거나 확대/축소하세요."</string>
+    <string name="preview_screen_description_editable" msgid="5558037286562127705">"배경화면 미리보기 화면 %1$s. 두 손가락으로 이동하거나 확대/축소하세요."</string>
+    <string name="preview_screen_description_non_editable" msgid="5861996326502454566">"배경화면 미리보기 화면 %1$s"</string>
     <string name="folded_device_state_description" msgid="4972608448265616264">"접힌 상태"</string>
     <string name="unfolded_device_state_description" msgid="3071975681472460627">"펼친 상태"</string>
     <string name="full_preview_check_button_description" msgid="700484353763952975">"배경화면 편집 완료"</string>
@@ -105,7 +109,8 @@
     <string name="previous_page_content_description" msgid="1138597031571078429">"이전"</string>
     <string name="wallpaper_title" msgid="6754214682228331092">"배경화면"</string>
     <string name="wallpaper_preview_card_content_description" msgid="6049261033541034584">"배경화면 미리보기"</string>
-    <string name="wallpaper_preview_card_content_description_editable" msgid="3111763100515242340">"배경화면 미리보기 %1$s. 사진을 수정하려면 탭하세요."</string>
+    <string name="wallpaper_preview_card_content_description_editable" msgid="8147628993184862003">"%2$s 상태의 %1$s 배경화면 미리보기. 사진을 수정하려면 두 번 탭하세요."</string>
+    <string name="wallpaper_preview_card_content_description_non_editable" msgid="2201116657175733260">"%1$s 배경화면 미리보기 %2$s"</string>
     <string name="lock_wallpaper_preview_card_content_description" msgid="5236839857695985498">"잠금 화면 배경화면 미리보기"</string>
     <string name="home_wallpaper_preview_card_content_description" msgid="4059418716070821630">"홈 화면 배경화면 미리보기"</string>
     <string name="collection_not_exist_msg" msgid="3504852962885064842">"컬렉션이 없습니다."</string>
@@ -138,8 +143,17 @@
     <string name="reset_confirmation_dialog_title" msgid="3391905685838213712">"변경사항을 초기화하시겠습니까?"</string>
     <string name="reset_confirmation_dialog_message" msgid="888669268626289603">"변경사항이 저장되지 않습니다."</string>
     <string name="more_wallpapers" msgid="8116268433411881705">"배경화면 더보기"</string>
+    <string name="wallpapers" msgid="7133442512006469886">"배경화면"</string>
     <string name="recents_wallpaper_label" msgid="8653165542635660222">"%1$s, %2$d"</string>
     <string name="default_wallpaper_title" msgid="2541071182656978180">"배경화면"</string>
     <string name="small_preview_tooltip" msgid="1920430079013352071">"탭하여 사진 수정"</string>
     <string name="full_preview_tooltip" msgid="4648994028015322759">"사진의 위치, 크기, 각도 조정"</string>
+    <string name="discard_changes_dialog_message" msgid="8462485277292103457">"변경사항을 삭제하시겠습니까?"</string>
+    <string name="discard_changes_dialog_button_keep_editing" msgid="9118931326834547216">"계속 수정"</string>
+    <string name="discard_changes_dialog_button_discard" msgid="6585071548322908206">"삭제"</string>
+    <string name="action_zoom_in" msgid="3326782160671405449">"확대"</string>
+    <string name="action_zoom_out" msgid="5454911090443175449">"축소"</string>
+    <string name="zoomed_to_percent" msgid="1243039994190840132">"%d%%로 확대/축소됨"</string>
+    <string name="max_zoom_percentage" msgid="2111670558746866030">"최대 확대 수준입니다"</string>
+    <string name="min_zoom_percentage" msgid="5931879817379214316">"최소 축소 수준입니다"</string>
 </resources>

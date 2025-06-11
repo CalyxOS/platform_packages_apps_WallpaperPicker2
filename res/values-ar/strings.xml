@@ -24,12 +24,14 @@
     <string name="set_wallpaper_button_text" msgid="5445978864530156290">"ضبط كصورة خلفية"</string>
     <string name="set_wallpaper_progress_message" msgid="7986528287618716715">"جارٍ تعيين الخلفية…"</string>
     <string name="try_again" msgid="8278874823700921234">"إعادة المحاولة"</string>
+    <string name="select_a_photo" msgid="7273925950262860696">"اختيار صورة"</string>
     <string name="set_wallpaper_error_message" msgid="6819986999041085130">"يتعذّر تعيين الخلفية."</string>
     <string name="load_wallpaper_error_message" msgid="7913278480467707374">"يتعذّر تحميل الخلفية. قد تكون الصورة تالفة أو غير متاحة."</string>
     <string name="static_wallpaper_presentation_mode_message" msgid="417940227049360906">"الخلفية المختارة حاليًا"</string>
     <string name="rotating_wallpaper_presentation_mode_message" msgid="3361676041605733288">"خلفية يومية"</string>
     <string name="wallpaper_destination_both" msgid="1124197176741944063">"الشاشة الرئيسية وشاشة القفل"</string>
     <string name="choose_a_wallpaper_section_title" msgid="1009823506890453891">"اختيار خلفية"</string>
+    <string name="choose_a_curated_photo_section_title" msgid="7360675459203465887">"الصور المقترَحة"</string>
     <string name="creative_wallpaper_title" msgid="3581650238648981372">"إنشاء خلفية"</string>
     <string name="home_screen_message" msgid="106444102822522813">"الشاشة الرئيسية"</string>
     <string name="lock_screen_message" msgid="1534506081955058013">"شاشة القفل"</string>
@@ -43,6 +45,7 @@
     <string name="permission_needed_explanation_go_to_settings" msgid="3923551582092599609">"لعرض الخلفية الحالية هنا، يحتاج تطبيق \"الخلفيات\" إلى الدخول إلى مساحة تخزين جهازك.\n\nلتغيير هذا الإعداد، انتقل إلى \"منطقة الأذونات\" في المعلومات التي يقدّمها تطبيق \"الخلفيات\"."</string>
     <string name="permission_needed_allow_access_button_label" msgid="1943133660612924306">"السماح بالدخول"</string>
     <string name="no_backup_image_wallpaper_description" msgid="8303268619408738057">"خدمة الخلفيات المتحركة التي يتم عرضها بالتناوب"</string>
+    <string name="more_photos" msgid="2183343115041498453">"المزيد من الصور"</string>
     <string name="daily_refresh_tile_title" msgid="3270456074558525091">"خلفية يومية"</string>
     <string name="daily_refresh_tile_subtitle" msgid="3976682014885446443">"انقر لتفعيل الميزة"</string>
     <string name="start_rotation_dialog_body_live_wallpaper_needed" msgid="5132580257563846082">"‏سيتم تغيير الخلفية تلقائيًا كل يوم. لإنهاء الإعداد، انقر على &lt;strong&gt;تعيين الخلفية&lt;/strong&gt; على الشاشة التالية."</string>
@@ -67,7 +70,8 @@
     <string name="refresh_daily_wallpaper_home_content_description" msgid="2770445044556164259">"إعادة تحميل خلفية الشاشة الرئيسية اليومية"</string>
     <string name="refresh_daily_wallpaper_content_description" msgid="4362142658237147583">"إعادة تحميل الخلفية اليومية"</string>
     <string name="preview_screen_description" msgid="3386387053327775919">"شاشة معاينة الخلفية"</string>
-    <string name="preview_screen_description_editable" msgid="506875963019888699">"‏شاشة معاينة الخلفية \"%1$s\". استخدِم إصبعين لتحريك الخلفية وتكبيرها/تصغيرها."</string>
+    <string name="preview_screen_description_editable" msgid="5558037286562127705">"‏شاشة معاينة الخلفية \"%1$s\". يمكنك استخدام إصبعين لتحريك الخلفية وتكبيرها أو تصغيرها."</string>
+    <string name="preview_screen_description_non_editable" msgid="5861996326502454566">"‏شاشة معاينة الخلفية \"%1$s\""</string>
     <string name="folded_device_state_description" msgid="4972608448265616264">"مطوي"</string>
     <string name="unfolded_device_state_description" msgid="3071975681472460627">"غير مطوي"</string>
     <string name="full_preview_check_button_description" msgid="700484353763952975">"تم تعديل الخلفية"</string>
@@ -105,7 +109,8 @@
     <string name="previous_page_content_description" msgid="1138597031571078429">"الصفحة السابقة"</string>
     <string name="wallpaper_title" msgid="6754214682228331092">"الخلفية"</string>
     <string name="wallpaper_preview_card_content_description" msgid="6049261033541034584">"معاينة عرض الشرائح"</string>
-    <string name="wallpaper_preview_card_content_description_editable" msgid="3111763100515242340">"‏معاينة الخلفية \"%1$s\"، انقر لتعديل الصورة"</string>
+    <string name="wallpaper_preview_card_content_description_editable" msgid="8147628993184862003">"‏معاينة خلفية \"%1$s\" في وضع \"%2$s\": يمكنك النقر مرّتين لتعديل صورتك"</string>
+    <string name="wallpaper_preview_card_content_description_non_editable" msgid="2201116657175733260">"‏معاينة الخلفية \"%1$s\" في وضع \"%2$s\""</string>
     <string name="lock_wallpaper_preview_card_content_description" msgid="5236839857695985498">"معاينة خلفية شاشة القفل"</string>
     <string name="home_wallpaper_preview_card_content_description" msgid="4059418716070821630">"معاينة خلفية الشاشة الرئيسية"</string>
     <string name="collection_not_exist_msg" msgid="3504852962885064842">"المجموعة غير متوفرة."</string>
@@ -138,8 +143,17 @@
     <string name="reset_confirmation_dialog_title" msgid="3391905685838213712">"هل تريد إعادة ضبط التغييرات؟"</string>
     <string name="reset_confirmation_dialog_message" msgid="888669268626289603">"لن يتم حفظ تغييراتك."</string>
     <string name="more_wallpapers" msgid="8116268433411881705">"المزيد من الخلفيات"</string>
+    <string name="wallpapers" msgid="7133442512006469886">"الخلفيات"</string>
     <string name="recents_wallpaper_label" msgid="8653165542635660222">"‏%1$s،‏ %2$d"</string>
     <string name="default_wallpaper_title" msgid="2541071182656978180">"الخلفية"</string>
     <string name="small_preview_tooltip" msgid="1920430079013352071">"يمكنك النقر لتعديل الصورة"</string>
     <string name="full_preview_tooltip" msgid="4648994028015322759">"يمكنك تعديل موضع الصور وحجمها وزاويتها"</string>
+    <string name="discard_changes_dialog_message" msgid="8462485277292103457">"هل المطلوب تجاهل التغييرات؟"</string>
+    <string name="discard_changes_dialog_button_keep_editing" msgid="9118931326834547216">"مواصلة التعديل"</string>
+    <string name="discard_changes_dialog_button_discard" msgid="6585071548322908206">"تجاهل"</string>
+    <string name="action_zoom_in" msgid="3326782160671405449">"تكبير"</string>
+    <string name="action_zoom_out" msgid="5454911090443175449">"تصغير"</string>
+    <string name="zoomed_to_percent" msgid="1243039994190840132">"‏تم التكبير إلى %d%%"</string>
+    <string name="max_zoom_percentage" msgid="2111670558746866030">"تم تكبير الصورة إلى الحد الأقصى"</string>
+    <string name="min_zoom_percentage" msgid="5931879817379214316">"تم تصغير الصورة إلى الحد الأقصى"</string>
 </resources>
