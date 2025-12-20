@@ -361,59 +361,34 @@ constructor(
             }
 
     private val myPhotosSectionViewModel: Flow<SectionViewModel> =
-        curatedPhotosInteractor.category
-            .distinctUntilChanged(PhotoMediaUtils.distinctMediaKeyChanged())
+        myPhotosInteractor.category
+            .distinctUntilChanged()
             .map { category ->
-                val tileViewModels =
-                    category
-                        ?.categoryModel
-                        ?.collectionCategoryData
-                        ?.wallpaperModels
-                        ?.withIndex()
-                        ?.map { wallpaperModel ->
-                            val staticWallpaperModel =
-                                wallpaperModel.value as? WallpaperModel.StaticWallpaperModel
-                            val total =
-                                category.categoryModel.collectionCategoryData.wallpaperModels.size
-
+                SectionViewModel(
+                    tileViewModels =
+                        listOf(
                             TileViewModel(
-                                defaultDrawable = null,
-                                thumbnailAsset =
-                                    ContentUriAsset(
-                                        context,
-                                        staticWallpaperModel?.imageWallpaperData?.uri,
-                                    ),
-                                text = category.categoryModel.commonCategoryData.title,
+                                defaultDrawable = category.imageCategoryData?.defaultDrawable,
+                                thumbnailAsset = category.imageCategoryData?.thumbnailAsset,
+                                text = category.commonCategoryData.title,
                                 maxCategoriesInRow = SectionCardinality.Single,
-                                contentDescription =
-                                    context.getString(
-                                        R.string.carousel_content_description_photos,
-                                        wallpaperModel.index + 1,
-                                        total,
-                                    ),
                             ) {
-                                navigateToPreviewScreen(
-                                    wallpaperModel.value,
-                                    CategoryType.MyPhotosCategories,
-                                    StyleEnums
-                                        .SET_WALLPAPER_ENTRY_POINT_WALLPAPER_PREVIEW_SUGGESTED_PHOTOS_CATEGORY_SCREEN,
-                                )
+                                // TODO(b/352081782): trigger the effect with effect controller
+                                navigateToPhotosPicker(null)
                             }
-                        } ?: emptyList()
-
-                val isSuggestedPhotoCarouselVisible = tileViewModels.size >= 3
-                PhotosViewModel(
-                    tileViewModels = tileViewModels,
+                        ),
                     columnCount = context.resources.getInteger(R.integer.category_span_count),
-                    sectionTitle = context.getString(R.string.choose_a_curated_photo_section_title),
-                    displayType = DisplayType.Carousel,
-                    status = category?.status,
-                    isDismissed = curatedPhotosInteractor.dismissBanner.value,
-                    pendingIntent = category?.pendingIntent,
-                    isSuggestedPhotoCarouselVisible = isSuggestedPhotoCarouselVisible,
-                ) {
-                    navigateToPhotosPicker(null)
-                }
+                    sectionTitle = context.getString(R.string.choose_a_wallpaper_section_title),
+                )
+            }
+            .onEmpty {
+                emit(
+                    SectionViewModel(
+                        tileViewModels = emptyList(),
+                        columnCount = 0,
+                        sectionTitle = "No Photos Available",
+                    )
+                )
             }
 
     // The ordering of addition of viewModels here decides the final ordering how sections would
@@ -429,11 +404,8 @@ constructor(
         ) { individualViewModels, creativeViewModel, myPhotosViewModel, standaloneCreativeViewModel
             ->
             buildList {
-                add(myPhotosViewModel)
-                if (BaseFlags.get(context).isMagicPortraitEntryPointsEnabled()) {
-                    standaloneCreativeViewModel?.let { add(it) }
-                }
                 creativeViewModel?.let { add(it) }
+                add(myPhotosViewModel)
                 addAll(individualViewModels)
             }
         }
