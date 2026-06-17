@@ -264,7 +264,7 @@ object WallpaperPickerEntryBinder {
 
                     viewModel.wallpaperCarouselItems.collect {
                         if (it.isNotEmpty()) {
-                            wallpaperPickerEntryView.setExpandable(expandable = false)
+                            wallpaperPickerEntryView.setExpandable(expandable = true)
                             wallpaperCarousel.swapAdapter(
                                 CuratedPhotosAdapter(
                                     items = it,
@@ -311,7 +311,7 @@ object WallpaperPickerEntryBinder {
                 launch {
                     viewModel.wallpaperCarouselItems.collect { items ->
                         if (items.isNotEmpty()) {
-                            wallpaperPickerEntryView.setExpandable(expandable = false)
+                            wallpaperPickerEntryView.setExpandable(expandable = true)
                             wallpaperCarouselDesktop.setContent {
                                 WallpaperCarouselDesktop(
                                     items = items,

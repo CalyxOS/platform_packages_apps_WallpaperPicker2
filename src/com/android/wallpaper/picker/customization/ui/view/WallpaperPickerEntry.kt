@@ -72,8 +72,8 @@ constructor(context: Context, attrs: AttributeSet? = null) : FrameLayout(context
     var collapsedHeight = 0
     private var progress = 1f
     private var animator: ValueAnimator? = null
-    private var state: State = State.COLLAPSED
-    private var expandable: Boolean = false
+    private var state: State = State.EXPANDED
+    private var expandable: Boolean = true
 
     init {
         val shouldShowDesktopUi = BaseFlags.get(context).shouldShowDesktopUi(context)
@@ -94,7 +94,7 @@ constructor(context: Context, attrs: AttributeSet? = null) : FrameLayout(context
         wallpaperCarouselDesktop =
             if (shouldShowDesktopUi) requireViewById(R.id.wallpaper_carousel_desktop) else null
         backgroundLayout = requireViewById(R.id.wallpaper_picker_entry_background)
-        background = collapsedButton.background as GradientDrawable
+        background = backgroundLayout.background as GradientDrawable
         expandedContainer = requireViewById(R.id.wallpaper_picker_entry_expanded_container)
 
         defaultCornerRadius =
